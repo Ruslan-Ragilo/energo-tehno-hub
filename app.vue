@@ -2,7 +2,7 @@
 <template>
   <TheHeader />
   <main>
-    <nuxt-page />
+    <NuxtPage />
   </main>
   <TheFooter />
 </template>
@@ -12,9 +12,5 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
 }
 </style>

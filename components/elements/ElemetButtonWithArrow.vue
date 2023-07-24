@@ -1,7 +1,7 @@
 <script setup>
 const props = defineProps({
   type: {
-    type: 'link' || 'button',
+    type: String,
     default: 'link'
   },
   href: {
