@@ -11,25 +11,18 @@ const props = defineProps({
     required: true,
     default: ''
   },
-  family: {
-    type: String,
-    default: 'onest',
-    validator (value) {
-      return ['onest', 'gilroy'].includes(value)
-    }
-  },
   theme: {
     type: String,
     default: 'dark',
     validator (value) {
-      return ['dark', 'black', 'gray', 'white', 'light', 'red'].includes(value)
+      return ['dark', 'black', 'gray', 'white', 'light'].includes(value)
     }
   },
   size: {
     type: String,
     default: 'm',
     validator (value) {
-      return ['xs', 's', 'm', 'l', 'xl'].includes(value)
+      return ['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl'].includes(value)
     }
   },
   weight: {
@@ -43,5 +36,5 @@ const props = defineProps({
 </script>
 
 <style scoped lang="scss">
-@import "Text.scss";
+@import "./Text.scss";
 </style>

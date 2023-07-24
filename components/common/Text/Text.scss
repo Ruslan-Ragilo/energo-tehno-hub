@@ -1,48 +1,48 @@
-.onest {
-  font-family: Onest;
-}
-.gilroy {
-  font-family: Gilroy;
-}
+@import '@/assets/styles/variables.scss';
 .dark {
-  color: #333333
+  color: $dark;
 }
 .black {
-  color: #111111;
+  color: $black;
 }
 .gray {
-  color: #666666;
+  color: $gray;
 }
 .white {
-  color: #FAFAFA;
+  color: $white;
 }
 .light {
-  color: #CCCCCC;
+  color: $light;
 }
 .xs {
+  font-size: 12px;
+  line-height: 140%;
+}
+.s {
   font-size: 14px;
   line-height: 130%;
 }
-.s {
+.m {
   font-size: 16px;
   line-height: 130%;
 }
-.m {
+.l {
   font-size: 24px;
   line-height: 120%;
 }
-.l {
+.xl {
   font-size: 32px;
   line-height: 130%;
 }
-.xl {
+.xxl {
   font-size: 90px;
   line-height: 100%;
 }
-.xxl {
+.xxxl {
   font-size: 120px;
   line-height: 100%;
 }
+
 .thin {
   font-weight: 300;
 }

@@ -14,5 +14,5 @@
 </script>
 
 <style scoped lang="scss">
-@import "DigitalCommunity";
+@import "./DigitalCommunity";
 </style>

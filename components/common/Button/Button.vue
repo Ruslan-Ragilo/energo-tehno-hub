@@ -2,7 +2,10 @@
 const props = defineProps({
   type: {
     type: String,
-    default: 'link'
+    default: 'link',
+    validator (value) {
+      return ['link', 'button'].includes(value)
+    }
   },
   href: {
     type: String,
@@ -20,8 +23,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <a v-if="props.type === 'link'" class="wrpapper-btn" @click="onClick" :href="props.href">{{ props.text }}</a>
-  <div v-else class="wrpapper-btn">
+  <a v-if="props.type === 'link'" class="wrpapper-btn" :href="props.href">{{ props.text }}</a>
+  <div v-else class="wrpapper-btn" @click="onClick">
     {{ props.text }}
   </div>
 </template>
@@ -33,14 +36,13 @@ const props = defineProps({
     border-radius: 1000px;
     border: 1px solid #DCDCDC;
     position: relative;
-    font-family: Onest;
     font-size: 12px;
     text-decoration: none;
     color: #111;
 
     &::after {
       content: '';
-      background: url('@/assets/img/svg/arrowForBtn.svg') no-repeat;
+      background: url('@/assets/images/icons/linkArrow.svg') no-repeat;
       position: absolute;
       width: 20px;
       height: 20px;

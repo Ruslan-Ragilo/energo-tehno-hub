@@ -1,0 +1,18 @@
+.links-footer {
+  & > p {
+    color: #111;
+    font-size: 20px;
+  }
+
+  .wrapper-bottom-links {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    a {
+      color: #666;
+      font-size: 14px;
+    }
+  }
+}

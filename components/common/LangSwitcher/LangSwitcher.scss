@@ -1,0 +1,30 @@
+.wrapper-toggler {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-family: Onest;
+  font-size: 14px;
+
+  label {
+    cursor: pointer;
+    &.active {
+      color: red;
+    }
+    input {
+      visibility: hidden;
+      width: 0;
+    }
+  }
+
+  .symbol {
+    font-size: 20px;
+  }
+
+  .btn {
+    cursor: pointer;
+
+    &.active {
+      color: #C2C2C2;
+    }
+  }
+}
