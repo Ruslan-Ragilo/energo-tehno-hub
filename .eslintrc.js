@@ -3,20 +3,24 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    'vue/setup-compiler-macros': true
   },
   parserOptions: {
-    parser: '@babel/eslint-parser',
-    requireConfigFile: false
+    parser: '@typescript-eslint/parser',
   },
   extends: [
-    '@nuxtjs',
-    'plugin:nuxt/recommended'
+    'plugin:@typescript-eslint/recommended',
+    'plugin:vue/vue3-recommended',
+    'eslint:recommended',
   ],
   plugins: [
+    'vue',
+    '@typescript-eslint',
   ],
-  // add your custom rules here
   rules: {
-    'vue/multi-word-component-names': 0
-  }
-}
+    // Добавьте правила, если необходимо
+    "no-unused-vars": "error",
+    "object-curly-spacing": ["error", "always"],
+    "comma-dangle": ["error", "always-multiline"],
+    "vue/multi-word-component-names": ["off"],
+  },
+};

@@ -42,29 +42,41 @@
           :on-click="() => console.log('asdasd')"
           href="#"
           text="Электронная почта"
+          type="link"
         />
         <CommonButton
           :on-click="() => console.log('asdasd')"
           href="#"
           text="Сообщения ВКонтакте"
+          type="link"
         />
         <CommonButton
           :on-click="() => console.log('asdasd')"
           href="#"
           text="Чат-бот"
+          type="link"
         />
         <CommonButton
           :on-click="() => console.log('asdasd')"
           href="#"
           text="Сотрудничество"
+          type="link"          
         />
       </div>
     </div>
     <div class="footer-bottom">
-      <CommonText text="2023" size="s" theme="gray" />
-      <LangSwitcher />
+      <CommonText
+        text="2023"
+        size="s"
+        theme="gray"
+      />
+      <!-- <CommonLangSwitcher /> -->
       <a href="#">
-        <CommonText text="Политика конфиденциальности" size="s" theme="gray" />
+        <CommonText
+          text="Политика конфиденциальности"
+          size="s"
+          theme="gray"
+        />
       </a>
     </div>
   </footer>

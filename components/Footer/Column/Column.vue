@@ -1,14 +1,16 @@
-<script setup>
-const props = defineProps({
-  heading: {
-    type: String,
-    default: null
-  },
-  links: {
-    type: Array,
-    default: null
-  }
-})
+<script lang="ts" setup>
+
+interface Link {
+  href: string;
+  text: string
+}
+
+interface Props {
+  heading: string;
+  links: Link[]
+}
+
+const props = defineProps<Props>()
 </script>
 
 <template>

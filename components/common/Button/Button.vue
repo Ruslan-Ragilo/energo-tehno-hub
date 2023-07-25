@@ -1,25 +1,15 @@
-<script setup>
-const props = defineProps({
-  type: {
-    type: String,
-    default: 'link',
-    validator (value) {
-      return ['link', 'button'].includes(value)
-    }
-  },
-  href: {
-    type: String,
-    default: ''
-  },
-  text: {
-    type: String,
-    default: ''
-  },
-  onClick: {
-    type: Function,
-    default: null
-  }
-})
+<script lang="ts" setup>
+
+interface Props {
+  type: 'link' | 'button',
+  href?: string,
+  text: string,
+  onClick: () => void
+}
+
+
+const props = defineProps<Props>()
+
 </script>
 
 <template>
