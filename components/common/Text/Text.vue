@@ -7,7 +7,10 @@ interface Props {
   theme: 'dark' | 'black' | 'gray' | 'white' | 'light'
 }
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  text: 'm',
+  weight: 'regular',
+})
 </script>
 
 <template>
