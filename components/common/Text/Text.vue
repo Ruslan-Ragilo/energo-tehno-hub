@@ -10,6 +10,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   text: 'm',
   weight: 'regular',
+  theme: 'black',
 })
 </script>
 
