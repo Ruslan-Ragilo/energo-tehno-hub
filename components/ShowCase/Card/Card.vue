@@ -15,9 +15,11 @@ const props = defineProps<Props>()
       alt="image"
     >
     <div class="wrapper-text">
-      <p class="heading">
-        {{ props.heading }}
-      </p>
+      <CommonText
+        size="sm"
+        :text="props.heading"
+        theme="white"
+      />
       <CommonText
         size="m"
         :text="props.text"

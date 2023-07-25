@@ -2,7 +2,7 @@
 
 interface Props {
   text: string,
-  size: 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl',
+  size: 'xs' | 's' | 'm' | 'sm' | 'l' | 'xl' | 'xxl' | 'xxxl',
   weight?: 'thin' | 'regular' | 'semi-bold' | 'bold',
   theme: 'dark' | 'black' | 'gray' | 'white' | 'light'
 }
