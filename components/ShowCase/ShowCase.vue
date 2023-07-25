@@ -10,7 +10,7 @@
       <ShowCaseCard
         heading="Присадки для смазочных масел"
         text="Присадки, которые обеспечивают маслам противозадирные свойства"
-        url-image="/_nuxt/assets/images/backgrounds/showcase/hydrogen.png"
+        url-image="/_nuxt/assets/images/backgrounds/showcase/additives.png"
       />
       <ShowCaseCard
         heading="Водородная энергетика"
