@@ -1,16 +1,16 @@
-<script setup>
+<script lang="ts" setup>
 import { ref } from 'vue'
 
-const checkedValue = ref('ru')
+const checkedValue = ref<string>('ru')
 
-const switchLang = (e) => {
-  checkedValue.value = e.target.value
+const switchLang = (e: MouseEvent) => {
+  checkedValue.value = (e.target as HTMLInputElement).value
 }
 </script>
 
 <template>
   <div class="wrapper-toggler">
-    <label :class="{active: checkedValue === 'ru'}" for="radio-ru">
+    <label :class="{'active': checkedValue === 'ru'}" for="radio-ru">
       <input
         id="radio-ru"
         type="radio"
@@ -23,7 +23,7 @@ const switchLang = (e) => {
     <p class="symbol">
       /
     </p>
-    <label :class="{active: checkedValue === 'en'}" for="radio-en">
+    <label :class="{'active': checkedValue === 'en'}" for="radio-en">
       <input
         id="radio-en"
         type="radio"

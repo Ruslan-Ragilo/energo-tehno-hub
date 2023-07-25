@@ -4,35 +4,16 @@
   </div>
 </template>
 
-<script setup>
-const props = defineProps({
-  text: {
-    type: String,
-    required: true,
-    default: ''
-  },
-  theme: {
-    type: String,
-    default: 'dark',
-    validator (value) {
-      return ['dark', 'black', 'gray', 'white', 'light'].includes(value)
-    }
-  },
-  size: {
-    type: String,
-    default: 'm',
-    validator (value) {
-      return ['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl'].includes(value)
-    }
-  },
-  weight: {
-    type: String,
-    default: 'regular',
-    validator (value) {
-      return ['thin', 'regular', 'semi-bold', 'bold'].includes(value)
-    }
-  }
-})
+<script lang="ts" setup>
+
+interface Props {
+  text: string,
+  size: 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl',
+  weight?: 'thin' | 'regular' | 'semi-bold' | 'bold',
+  theme: 'dark' | 'black' | 'gray' | 'white' | 'light'
+}
+
+const props = defineProps<Props>()
 </script>
 
 <style scoped lang="scss">

@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --config-basedir",
+    "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -13,14 +13,14 @@
     "@nuxtjs/eslint-module": "^4.1.0",
     "@nuxtjs/stylelint-module": "^5.1.0",
     "@types/node": "^18.16.19",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
     "eslint": "^8.45.0",
-    "nuxt": "^3.6.5"
+    "eslint-plugin-vue": "^9.15.1",
+    "nuxt": "^3.6.5",
+    "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@babel/eslint-parser": "^7.22.9",
-    "@nuxtjs/eslint-config": "^12.0.0",
-    "eslint-plugin-nuxt": "^4.0.0",
-    "eslint-plugin-vue": "^9.15.1",
     "sass": "^1.64.0",
     "sass-loader": "^13.3.2",
     "vue": "^3.3.4"
