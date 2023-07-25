@@ -1,9 +1,3 @@
-<template>
-  <div :class="['text', props.theme, props.size, props.weight]">
-    {{ props.text }}
-  </div>
-</template>
-
 <script lang="ts" setup>
 
 interface Props {
@@ -15,6 +9,12 @@ interface Props {
 
 const props = defineProps<Props>()
 </script>
+
+<template>
+  <div :class="['text', props.theme, props.size, props.weight]">
+    {{ props.text }}
+  </div>
+</template>
 
 <style scoped lang="scss">
 @import "./Text.scss";
