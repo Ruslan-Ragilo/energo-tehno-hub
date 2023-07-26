@@ -1,21 +1,24 @@
 <script lang="ts" setup>
 
 interface Props {
-  text: string,
-  size: 'xs' | 's' | 'm' | 'sm' | 'l' | 'xl' | 'xxl' | 'xxxl',
-  weight?: 'thin' | 'regular' | 'semi-bold' | 'bold',
-  theme: 'dark' | 'black' | 'gray' | 'white' | 'light'
+  text: string
+  size?: 'xs' | 's' | 'm' | 'sm' | 'l' | 'xl' | 'xxl' | 'xxxl'
+  weight?: 'thin' | 'regular' | 'semi-bold' | 'bold'
+  theme?: 'dark' | 'black' | 'gray' | 'white' | 'light'
+  className?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  text: 'm',
+  text: '',
+  size: 'm',
   weight: 'regular',
   theme: 'black',
+  className: undefined,
 })
 </script>
 
 <template>
-  <div :class="['text', props.theme, props.size, props.weight]">
+  <div :class="[props.theme, props.size, props.weight, props.className]">
     {{ props.text }}
   </div>
 </template>
