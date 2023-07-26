@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <HeroBlock />
+    <EnergoTechnoHub />
     <ShowCase />
     <DigitalCommunity />
   </div>
