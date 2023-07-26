@@ -5,9 +5,11 @@
   font-size: 14px;
 
   label {
+    color: #c2c2c2;
+    transition: color 0.2s ease-in-out;
     cursor: pointer;
     &.active {
-      color: red;
+      color: $gray;
     }
     input {
       visibility: hidden;
@@ -23,7 +25,7 @@
     cursor: pointer;
 
     &.active {
-      color: #C2C2C2;
+      color: #c2c2c2;
     }
   }
 }
