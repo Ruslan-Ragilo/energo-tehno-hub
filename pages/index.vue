@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <ShowCase />
-  <!-- <DigitalCommunity /> -->
+    <DigitalCommunity />
   </div>
 </template>
 
