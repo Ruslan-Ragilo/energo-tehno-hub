@@ -1,14 +1,13 @@
 <template>
   <div class="container">
+    <HeroBlock />
     <ShowCase />
     <DigitalCommunity />
   </div>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
-  @import 'index.scss';
+@import 'index.scss';
 </style>

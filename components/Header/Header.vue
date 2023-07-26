@@ -17,7 +17,7 @@
         <nuxt-link
           class="nav-link"
           active-class="nav-link-active"
-          to="/Services"
+          to="/services"
           >Сервисы</nuxt-link
         >
         <nuxt-link
