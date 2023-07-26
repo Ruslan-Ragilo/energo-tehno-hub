@@ -2,16 +2,45 @@
   padding-top: 40px;
   border-top: 1px solid #dcdcdc;
 
+  margin-bottom: 140px;
+
   & .circle-button {
     align-self: flex-start;
     margin: 32px 0 70px;
   }
 
-  & .grid-table {
+  & .numbers-table {
     align-self: flex-start;
     width: 100%;
     max-width: 735px;
-    display: grid;
-    grid-template-columns: repeat(1fr 1fr);
+    display: flex;
+    justify-content: space-between;
+
+    &-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 70px;
+    }
+  }
+
+  & .slides {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    &-text {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      & svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
 }
