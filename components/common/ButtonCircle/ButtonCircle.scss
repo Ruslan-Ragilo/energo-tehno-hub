@@ -1,0 +1,33 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 14px;
+  font-weight: 400;
+  color: $black;
+
+  & .button-container {
+    font-size: inherit;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  & .arrow-container {
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #999999;
+    border-radius: 50%;
+    & img {
+      height: 20px;
+      width: 20px;
+    }
+  }
+}
