@@ -1,12 +1,14 @@
 header {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 20px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: #ffffff;
 
-  background-color: $white;
+  & .header-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   & .header-logo {
   }
