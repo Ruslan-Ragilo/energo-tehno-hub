@@ -1,9 +1,11 @@
 <template>
   <header>
     <div class="header-wrapper">
-      <div class="header-logo">
-        <img src="/_nuxt/assets/images/logo.svg" alt="logo" />
-      </div>
+      <nuxt-link to="/">
+        <div class="header-logo">
+          <img src="/_nuxt/assets/images/logo.svg" alt="logo" />
+        </div>
+      </nuxt-link>
 
       <nav class="header-nav">
         <nuxt-link
