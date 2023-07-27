@@ -22,6 +22,23 @@
       clear: both;
     }
   }
+
+  @include lg {
+    aspect-ratio: 3/5;
+    @supports not (aspect-ratio: 3 / 5) {
+      &::before {
+        float: left;
+        padding-top: calc((5 / 3) * 100%);
+        content: '';
+      }
+
+      &::after {
+        display: block;
+        content: '';
+        clear: both;
+      }
+    }
+  }
 }
 
 .cards-container {
@@ -42,6 +59,20 @@
 
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
+
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+
+    grid-gap: 14px;
+
+    grid-template-areas:
+      'news events events'
+      '. events events'
+      'digest contacts .'
+      'digest . community'
+      'chatBot telegram telegram';
+  }
 }
 
 .news {
