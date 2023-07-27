@@ -48,6 +48,11 @@
           font-size: 36px;
           line-height: 43px;
         }
+
+        @include md {
+          font-size: 30px;
+          line-height: 36px;
+        }
       }
     }
 
@@ -168,7 +173,7 @@
 
     @include md {
       height: 260px;
-      pad: 16px 16px 16px 18px;
+      padding: 16px 16px 16px 18px;
     }
     & .description {
       width: 100%;
@@ -181,6 +186,11 @@
         color: $white;
         min-width: 0;
         max-width: 451px;
+
+        @include md {
+          font-size: 14px;
+          line-height: 16.8px;
+        }
       }
 
       & .play-button {
