@@ -8,4 +8,50 @@
     align-self: flex-start;
     margin: 32px 0 70px;
   }
+
+  .wrapper-card-desctop {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: 20px;
+    transition: 2s;
+
+    &.wrapper-card-desctop0 {
+      z-index: 1;
+      opacity: 1;
+      height: 400px;
+    }
+    &.wrapper-card-desctop1 {
+      z-index: 2;
+      opacity: 0;
+      height: 0;
+    }
+    &.wrapper-card-desctop2 {
+      z-index: 3;
+      opacity: 0;
+      height: 0;
+    }
+  }
+
+  .card {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    border-radius: 20px;
+    border: 1px solid #DCDCDC;
+    width: 423px;
+    height: 380px;
+
+    .top-index {
+      font-size: 14px;
+      color: #999999;
+    }
+  }
+}
+.mySwiper {
+  width: 100%;
+  height: 400px;
+  // overflow: hidden;
 }
