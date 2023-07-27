@@ -21,6 +21,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "aos": "^3.0.0-beta.6",
     "sass": "^1.64.0",
     "sass-loader": "^13.3.2",
     "vue": "^3.3.4"

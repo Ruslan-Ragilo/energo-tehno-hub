@@ -47,6 +47,9 @@ const titleText = ref(
     </CommonSectionHeader>
     <div class="slides">
       <EnergoTechnoHubSlideCard
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="500"
         :titles="['Станьте фаундером']"
         image="/_nuxt/assets/images/backgrounds/tehcnoHub/hub1.jpg"
       >
@@ -96,6 +99,9 @@ const titleText = ref(
         </div>
       </EnergoTechnoHubSlideCard>
       <EnergoTechnoHubSlideCard
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="500"
         :titles="['Присоединяйтесь', 'с командой']"
         image="/_nuxt/assets/images/backgrounds/tehcnoHub/hub2.jpg"
         ><div class="slides-text">
@@ -143,6 +149,10 @@ const titleText = ref(
           </div></div
       ></EnergoTechnoHubSlideCard>
       <EnergoTechnoHubSlideCard
+        
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="500"
         :titles="['Познакомьтесь', 'с нашими фаундерами']"
         image="/_nuxt/assets/images/backgrounds/tehcnoHub/hub3.jpg"
         ><div class="slides-text">

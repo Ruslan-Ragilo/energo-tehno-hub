@@ -8,6 +8,8 @@
     <div class="cards-wrapper">
       <div class="cards-container">
         <DigitalCommunityCard
+          data-aos="fade-up"
+          data-aos-duration="1000"
           class="news"
           title="Новости"
           description="Читайте новости"
@@ -19,12 +21,17 @@
         />
 
         <DigitalCommunityCard
+          data-aos="fade-up"
+          data-aos-duration="1000"
           class="contacts"
           title="Контакты"
           description="Свяжитесь с нами по любым вопросам"
           :background="{ type: 'color', payload: '#666666' }"
         />
         <DigitalCommunityCard
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
           class="events"
           title="События"
           description="Встречи, состязания, стратегические сессии и другие мероприятия"
@@ -35,6 +42,8 @@
           }"
         />
         <DigitalCommunityCard
+          data-aos="fade-up"
+          data-aos-duration="1000"
           class="chatBot"
           title="Чат-бот"
           :theme="['dark', 'gray']"
@@ -43,6 +52,8 @@
           :background="{ type: 'color', payload: '#eeeeee' }"
         />
         <DigitalCommunityCard
+          data-aos="fade-up"
+          data-aos-duration="1000"
           class="telegram"
           title="Telegram-канал"
           description="Делимся актуальным и интересным из жизни экосистемы"
@@ -52,6 +63,9 @@
           }"
         />
         <DigitalCommunityCard
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
           class="community"
           title="Сообщество"
           description="Обсуждаем тренды, помогаем друг другу"
@@ -61,6 +75,9 @@
           }"
         />
         <DigitalCommunityCard
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
           class="digest"
           title="Дайджест"
           description="О самом главном за первую половину 2023 года"

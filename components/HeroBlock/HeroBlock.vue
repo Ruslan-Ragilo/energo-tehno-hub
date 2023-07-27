@@ -2,15 +2,27 @@
   <div class="hero-wrapper">
     <div class="hero-left">
       <div class="hero-left-top">
-        <h1 class="hero-title">
-          Создай свой<br />
-          бизнес в <br />энергетике
+        <h1
+          data-aos="fade-up" 
+          class="hero-title"
+        >
+          Создай свой<br>
+          бизнес в <br>энергетике
         </h1>
-        <CommonButtonCircle type="link" to="/" text="Рассказать о себе" />
+        <CommonButtonCircle
+          data-aos="fade-up"
+          data-aos-duration="1000" 
+          type="link"
+          to="/"
+          text="Рассказать о себе"
+        />
       </div>
       <div class="hero-left-bottom">
         <div class="card card-left">
-          <nuxt-link to="/" class="card-link">
+          <nuxt-link
+            to="/"
+            class="card-link"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -47,13 +59,25 @@
             </svg>
           </nuxt-link>
         </div>
-        <div class="card card-right">
-          <p class="large-text">50+</p>
-          <p class="small-text">
-            менторов <br />
+        <div
+          class="card card-right"
+        >
+          <p
+            data-aos="fade-up"
+            class="large-text"
+          >
+            50+
+          </p>
+          <p
+            data-aos="fade-up"
+            class="small-text"
+          >
+            менторов <br>
             и экспертов
           </p>
           <CommonButtonCircle
+            data-aos-duration="1000"
+            data-aos="fade-up"
             type="link"
             to="/"
             text="узнать больше"
@@ -69,7 +93,10 @@
           Петербург»
         </p>
         <button class="play-button">
-          <img src="/_nuxt/assets/images/icons/play.svg" alt="play" />
+          <img
+            src="/_nuxt/assets/images/icons/play.svg"
+            alt="play"
+          >
         </button>
       </div>
     </div>
