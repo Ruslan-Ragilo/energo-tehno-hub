@@ -1,0 +1,11 @@
+.section {
+  padding-top: 40px;
+  border-top: 1px solid #dcdcdc;
+
+  margin-bottom: 140px;
+
+  & .circle-button {
+    align-self: flex-start;
+    margin: 32px 0 70px;
+  }
+}

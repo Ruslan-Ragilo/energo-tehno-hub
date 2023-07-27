@@ -2,6 +2,7 @@
   <div class="container">
     <HeroBlock />
     <EnergoTechnoHub />
+    <EcoSystem />
     <ShowCase />
     <DigitalCommunity />
   </div>

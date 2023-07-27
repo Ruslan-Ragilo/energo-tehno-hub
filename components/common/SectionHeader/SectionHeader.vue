@@ -1,3 +1,12 @@
+<script lang="ts" setup>
+interface Props {
+  headingText: string;
+  titleText?: string;
+}
+
+const props = defineProps<Props>();
+</script>
+
 <template>
   <div class="section-wrapper">
     <div class="left">
@@ -20,15 +29,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-interface Props {
-  headingText: string;
-  titleText?: string;
-}
-
-const props = defineProps<Props>();
-</script>
 
 <style lang="scss" scoped>
 @import 'SectionHeader.scss';

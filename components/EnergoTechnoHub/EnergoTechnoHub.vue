@@ -1,4 +1,5 @@
 <script setup>
+// eslint-disable-next-line no-undef
 const titleText = ref(
   'Мы — точка притяжения для инженеров/nи предпринимателей, готовых запустить /ndeep-tech стартап в энергетической отрасли.',
 );
@@ -56,7 +57,7 @@ const titleText = ref(
             theme="light"
             :style="{ maxWidth: '294px', minWidth: '0' }"
           />
-          <div>
+          <div @click="() => {}">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -104,7 +105,7 @@ const titleText = ref(
             theme="light"
             :style="{ maxWidth: '294px', minWidth: '0' }"
           />
-          <div>
+          <div @click="() => {}">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -151,7 +152,7 @@ const titleText = ref(
             theme="light"
             :style="{ maxWidth: '294px', minWidth: '0' }"
           />
-          <div>
+          <div @click="() => {}">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"

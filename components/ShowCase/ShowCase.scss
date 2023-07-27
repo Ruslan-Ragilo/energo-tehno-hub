@@ -1,9 +1,21 @@
 .wrapper {
   margin-bottom: 140px;
-  .wrapper-card {
+  .wrapper-cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    gap: 20px;
     margin-top: 60px;
+  }
+}
+
+.section {
+  padding-top: 40px;
+  border-top: 1px solid #dcdcdc;
+
+  margin-bottom: 60px;
+
+  & .circle-button {
+    align-self: flex-start;
+    margin: 32px 0 0;
   }
 }
