@@ -12,6 +12,7 @@
   }
 
   @include md {
+    position: relative;
     padding: 16px 14px;
   }
 
@@ -22,6 +23,8 @@
 
     @include md {
       font-size: 14px;
+
+      display: contents;
     }
   }
 
@@ -35,4 +38,10 @@
 .descriptionLink {
   display: flex;
   align-items: flex-end;
+
+  @include md {
+    position: absolute;
+    top: 16px;
+    right: 14px;
+  }
 }
