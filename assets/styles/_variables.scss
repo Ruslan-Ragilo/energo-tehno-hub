@@ -1,5 +1,14 @@
 $dark: #333333;
 $black: #111111;
 $gray: #666666;
-$white: #FAFAFA;
-$light: #CCCCCC;
+$white: #fafafa;
+$light: #cccccc;
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm: 375px;
+
+// Small tablets (portrait view)
+$screen-md: 744px;
+
+// Tablets and small desktops
+$screen-lg: 1100px;

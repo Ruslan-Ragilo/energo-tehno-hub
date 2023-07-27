@@ -24,19 +24,44 @@
 .m {
   font-size: 16px;
   line-height: 130%;
+
+  @include lg {
+    font-size: 14px;
+  }
 }
 .sm {
   font-size: 20px;
   line-height: 120%;
+  @include lg {
+    font-size: 12px;
+  }
 }
 .l {
   font-size: 24px;
   line-height: 120%;
+
+  @include lg {
+    font-size: 20px;
+  }
 }
 .xl {
   font-size: 32px;
   line-height: 130%;
+
+  @include lg {
+    font-size: 20px;
+  }
 }
+
+.xxls {
+  font-size: 80px;
+  line-height: 100%;
+
+  @include lg {
+    font-size: 42px;
+  }
+}
+
 .xxl {
   font-size: 90px;
   line-height: 100%;

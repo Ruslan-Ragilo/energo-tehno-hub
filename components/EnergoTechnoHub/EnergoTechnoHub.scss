@@ -31,12 +31,20 @@
     align-items: center;
     gap: 20px;
 
+    @include lg {
+      flex-direction: column;
+    }
+
     &-text {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
 
+      @include lg {
+        flex-direction: column-reverse;
+        height: auto;
+      }
       & svg {
         width: 20px;
         height: 20px;
