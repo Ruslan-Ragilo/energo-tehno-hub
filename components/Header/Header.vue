@@ -32,7 +32,7 @@
       </nav>
 
       <div class="header-right">
-        <CommonLangSwitcher />
+        <!-- <CommonLangSwitcher /> -->
         <button class="header-right-button">
           Присоедениться
           <img
