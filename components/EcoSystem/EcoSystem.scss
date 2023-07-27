@@ -60,6 +60,11 @@
     width: 423px;
     height: 380px;
 
+    @include responsive (600) {
+      width: 374px;
+      height: 150px;
+    }
+
     .top-index {
       font-size: 14px;
       color: #999999;
@@ -69,5 +74,9 @@
 .mySwiper {
   width: 100%;
   height: 400px;
+  @include responsive (600) {
+    width: 374px;
+    height: 150px;
+  }
   // overflow: hidden;
 }

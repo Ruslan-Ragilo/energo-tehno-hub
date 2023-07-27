@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <!-- <HeroBlock />
+    <HeroBlock />
     <EnergoTechnoHub />
     <EcoSystem />
     <ShowCase />
-    <DigitalCommunity /> -->
+    <DigitalCommunity />
   </div>
 </template>
 
