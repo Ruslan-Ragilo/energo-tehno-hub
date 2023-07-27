@@ -48,6 +48,6 @@ interface Props {
 const props = defineProps<Props>();
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @import 'Card.scss';
 </style>
