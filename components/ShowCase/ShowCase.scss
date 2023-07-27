@@ -11,16 +11,36 @@
 
     margin-bottom: 90px;
   }
+
+  @include md {
+    margin-bottom: 70px;
+  }
 }
 
 .section {
   padding-top: 40px;
   border-top: 1px solid #dcdcdc;
 
-  margin-bottom: 60px;
+  margin-bottom: 140px;
+
+  @include lg {
+    margin-bottom: 90px;
+  }
+
+  @include md {
+    margin-bottom: 70px;
+  }
 
   & .circle-button {
     align-self: flex-start;
     margin: 32px 0 0;
+
+    @include lg {
+      margin: 24px 0 40px;
+    }
+
+    @include md {
+      margin: 24px 0 36px;
+    }
   }
 }

@@ -3,6 +3,14 @@
   border-top: 1px solid #dcdcdc;
 
   margin-bottom: 140px;
+
+  @include lg {
+    margin-bottom: 90px;
+  }
+
+  @include md {
+    margin-bottom: 70px;
+  }
 }
 
 .cards-wrapper {
@@ -29,6 +37,23 @@
       &::before {
         float: left;
         padding-top: calc((5 / 3) * 100%);
+        content: '';
+      }
+
+      &::after {
+        display: block;
+        content: '';
+        clear: both;
+      }
+    }
+  }
+
+  @include md {
+    aspect-ratio: 2/5.6;
+    @supports not (aspect-ratio: 2 / 5.6) {
+      &::before {
+        float: left;
+        padding-top: calc((5.6 / 2) * 100%);
         content: '';
       }
 
@@ -72,6 +97,30 @@
       'digest contacts .'
       'digest . community'
       'chatBot telegram telegram';
+  }
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    grid-gap: 12px;
+
+    grid-template-areas:
+      'news contacts'
+      'news contacts'
+      'news contacts'
+      'events events'
+      'events events'
+      'events events'
+      'events events'
+      'digest digest'
+      'digest digest'
+      'digest digest'
+      'chatBot community'
+      'chatBot community'
+      'chatBot community'
+      'telegram telegram'
+      'telegram telegram'
+      'telegram telegram';
   }
 }
 

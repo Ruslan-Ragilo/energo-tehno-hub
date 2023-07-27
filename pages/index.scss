@@ -7,4 +7,8 @@
   @include lg {
     padding: 0 32px;
   }
+
+  @include md {
+    padding: 0 16px;
+  }
 }

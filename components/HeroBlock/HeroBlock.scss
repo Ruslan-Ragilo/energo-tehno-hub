@@ -55,6 +55,10 @@
       display: flex;
       gap: 10px;
 
+      @include md {
+        flex-direction: column;
+      }
+
       & .card {
         border-radius: 20px;
         background-color: transparent;
@@ -101,6 +105,10 @@
 
           @include lg {
             padding: 40px 30px 38px;
+          }
+
+          @include md {
+            padding: 32px 18px 30px;
           }
 
           &-text {
@@ -157,10 +165,17 @@
     @include lg {
       height: 410px;
     }
+
+    @include md {
+      height: 260px;
+      pad: 16px 16px 16px 18px;
+    }
     & .description {
       width: 100%;
       display: flex;
       justify-content: space-between;
+      align-items: flex-end;
+      height: 100%;
 
       & .text {
         color: $white;
@@ -173,7 +188,38 @@
         outline: none;
         background-color: transparent;
 
+        width: 50px;
+        height: 50px;
+
         cursor: pointer;
+
+        @include lg {
+          width: 40px;
+          height: 40px;
+        }
+
+        @include md {
+          width: 26px;
+          height: 26px;
+        }
+
+        & img {
+          width: 100%;
+          @include lg {
+            width: 40px;
+            height: 40px;
+          }
+
+          @include md {
+            width: 26px;
+            height: 26px;
+          }
+          object-fit: contain;
+        }
+
+        @include md {
+          align-self: flex-start;
+        }
       }
     }
   }
