@@ -1,48 +1,53 @@
 <template>
   <div
     class="card"
-    :style="backgroundStyle"
+    :style="
+      props.background.type === 'image'
+        ? {
+            backgroundImage: `url(${props.background.payload})`,
+          }
+        : { backgroundColor: props.background.payload }
+    "
   >
     <CommonText
       :text="props.title"
-      theme="white"
+      :theme="props.theme && props.theme.length > 0 ? props.theme[0] : 'white'"
       size="xl"
     />
     <div class="description">
       <CommonText
         class-name="descriptionText"
         :text="props.description"
-        theme="white"
+        :theme="
+          props.theme && props.theme.length > 0
+            ? props.theme.length > 1
+              ? props.theme[1]
+              : props.theme[0]
+            : 'white'
+        "
       />
       <div class="descriptionLink">
-        <img
-          src="assets/images/icons/linkArrow.svg"
-          alt="link"
-        >
+        <CommonLinkArrow :color="props.linkColor ?? '#fafafa'" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-
 interface Props {
-  title: string
-  description: string
+  title: string;
+  description: string;
+  theme?: ('black' | 'dark' | 'gray' | 'white' | 'light')[];
+  linkColor?: string;
   background: {
-    type: 'image' | 'color',
-    payload: string
-  }
+    type: 'image' | 'color';
+    payload: string;
+  };
 }
 
-const props = defineProps<Props>()
-
-const backgroundStyle = computed(() => props.background.type === 'image'
-    ? { background: 'url(' + props.background.payload + ') no-repeat' }
-    : { background: props.background.payload })
+const props = defineProps<Props>();
 </script>
 
 <style scoped>
-@import "Card.scss";
+@import 'Card.scss';
 </style>

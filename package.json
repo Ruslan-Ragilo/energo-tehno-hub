@@ -4,6 +4,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "start": "nuxt start",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -21,8 +22,10 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "aos": "^3.0.0-beta.6",
     "sass": "^1.64.0",
     "sass-loader": "^13.3.2",
+    "swiper": "^10.0.4",
     "vue": "^3.3.4"
   }
 }

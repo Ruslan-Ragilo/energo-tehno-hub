@@ -1,0 +1,30 @@
+.card {
+  position: relative;
+  width: 100%;
+  height: 540px;
+
+  border-radius: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  &-title {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    max-width: 294px;
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}

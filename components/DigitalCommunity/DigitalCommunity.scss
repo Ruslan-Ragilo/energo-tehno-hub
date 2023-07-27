@@ -1,17 +1,67 @@
 .section {
   padding-top: 40px;
-  border-top: 1px solid #DCDCDC;
-}
-.sectionHeader {
-  display: flex;
-  margin-bottom: 60px;
-}
-.cardContainer {
+  border-top: 1px solid #dcdcdc;
 
+  margin-bottom: 140px;
 }
-.cell {
 
+.cards-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  @supports not (aspect-ratio: 1 / 1) {
+    &::before {
+      float: left;
+      padding-top: 56.25%;
+      content: '';
+    }
+
+    &::after {
+      display: block;
+      content: '';
+      clear: both;
+    }
+  }
 }
-.top-left {
 
+.cards-container {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    'news . events events'
+    '. contacts events events'
+    'chatBot . community digest'
+    'telegram telegram . digest';
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.news {
+  grid-area: news;
+}
+.contacts {
+  grid-area: contacts;
+}
+.events {
+  grid-area: events;
+}
+.chatBot {
+  grid-area: chatBot;
+}
+.community {
+  grid-area: community;
+}
+.digest {
+  grid-area: digest;
+}
+.telegram {
+  grid-area: telegram;
 }

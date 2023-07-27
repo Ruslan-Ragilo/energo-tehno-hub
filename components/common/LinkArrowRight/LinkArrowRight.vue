@@ -1,0 +1,52 @@
+<template>
+  <svg
+    :width="props.width ?? 20"
+    :height="props.height ?? 20"
+    :viewBox="`0 0 ${props.width ?? 20} ${props.height ?? 20}`"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clip-path="url(#clip0_674_735)">
+      <path
+        d="M4.16699 10H15.8337"
+        :stroke="props.color ?? '#111111'"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12.5 13.3333L15.8333 10"
+        :stroke="props.color ?? '#111111'"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12.5 6.6665L15.8333 9.99984"
+        :stroke="props.color ?? '#111111'"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_674_735">
+        <rect
+          :width="props.width ?? 20"
+          :height="props.height ?? 20"
+          fill="white"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+</template>
+
+<script lang="ts" setup>
+interface Props {
+  color?: string;
+  width?: number;
+  height?: number;
+}
+
+const props = defineProps<Props>();
+</script>

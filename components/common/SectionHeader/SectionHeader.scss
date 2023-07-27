@@ -1,0 +1,14 @@
+.section-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 3.7fr;
+
+  margin-bottom: 60px;
+
+  & .left {
+  }
+
+  & .right {
+    display: flex;
+    flex-direction: column;
+  }
+}

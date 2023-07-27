@@ -1,0 +1,132 @@
+.hero-wrapper {
+  display: flex;
+  gap: 10px;
+
+  margin-bottom: 100px;
+  & .hero-left {
+    width: 100%;
+    max-width: 630px;
+    flex: 1 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &-top {
+      padding: 60px 40px;
+
+      background-color: #fff;
+      border-radius: 20px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 32px;
+
+      box-shadow: 0px 0px 30px 0px #12141714;
+
+      & .hero-title {
+        font-size: 60px;
+        font-weight: 400;
+        line-height: 63px;
+        letter-spacing: -0.02em;
+        text-align: left;
+        color: $dark;
+      }
+    }
+
+    &-bottom {
+      display: flex;
+      gap: 10px;
+
+      & .card {
+        border-radius: 20px;
+        background-color: transparent;
+
+        height: 320px;
+        width: 310px;
+
+        box-shadow: 0px 0px 30px 0px #12141714;
+
+        &-left {
+          position: relative;
+
+          background-image: url('/images/backgrounds/hero/windmill.jpg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+
+          & .card-link {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+
+            z-index: 3;
+          }
+        }
+
+        &-right {
+          background-color: $gray;
+
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          padding: 50px 40px 24px;
+
+          color: $white;
+
+          font-weight: 400;
+          & .large-text {
+            font-size: 54px;
+            line-height: 54px;
+            letter-spacing: -0.02em;
+            text-align: left;
+            margin-bottom: 8px;
+          }
+
+          & .small-text {
+            font-size: 32px;
+            line-height: 42px;
+            letter-spacing: 0em;
+            text-align: left;
+            margin-bottom: 40px;
+          }
+        }
+      }
+    }
+  }
+
+  & .hero-right {
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    align-items: flex-end;
+
+    background-image: url('/images/backgrounds/hero/coffee.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border-radius: 20px;
+    & .description {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      & .text {
+        color: $white;
+        min-width: 0;
+        max-width: 451px;
+      }
+
+      & .play-button {
+        border: none;
+        outline: none;
+        background-color: transparent;
+
+        cursor: pointer;
+      }
+    }
+  }
+}
