@@ -98,12 +98,31 @@
           color: $white;
 
           font-weight: 400;
+
+          @include lg {
+            padding: 40px 30px 38px;
+          }
+
+          &-text {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 40px;
+
+            @include lg {
+              flex-direction: row;
+              gap: 24px;
+              align-items: center;
+              justify-content: center;
+
+              margin-bottom: 30px;
+            }
+          }
           & .large-text {
             font-size: 54px;
             line-height: 54px;
             letter-spacing: -0.02em;
             text-align: left;
-            margin-bottom: 8px;
           }
 
           & .small-text {
@@ -111,7 +130,6 @@
             line-height: 42px;
             letter-spacing: 0em;
             text-align: left;
-            margin-bottom: 40px;
 
             @include lg {
               font-size: 20px;
