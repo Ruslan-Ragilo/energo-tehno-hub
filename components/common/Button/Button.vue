@@ -32,7 +32,7 @@ const props = defineProps<Props>()
 
     &::after {
       content: '';
-      background: url('@/assets/images/icons/linkArrow.svg') no-repeat;
+      background: url('/images/icons/linkArrow.svg') no-repeat;
       position: absolute;
       width: 20px;
       height: 20px;

@@ -16,7 +16,7 @@
           :background="{
             type: 'image',
             payload:
-              '/_nuxt/assets/images/backgrounds/digitalCommunity/news.jpg',
+              '/images/backgrounds/digitalCommunity/news.jpg',
           }"
         />
 
@@ -38,7 +38,7 @@
           :background="{
             type: 'image',
             payload:
-              '/_nuxt/assets/images/backgrounds/digitalCommunity/events.jpg',
+              '/images/backgrounds/digitalCommunity/events.jpg',
           }"
         />
         <DigitalCommunityCard
@@ -59,7 +59,7 @@
           description="Делимся актуальным и интересным из жизни экосистемы"
           :background="{
             type: 'image',
-            payload: 'assets/images/backgrounds/digitalCommunity/telegram.png',
+            payload: 'images/backgrounds/digitalCommunity/telegram.png',
           }"
         />
         <DigitalCommunityCard
@@ -71,7 +71,7 @@
           description="Обсуждаем тренды, помогаем друг другу"
           :background="{
             type: 'image',
-            payload: 'assets/images/backgrounds/digitalCommunity/contacts.png',
+            payload: 'images/backgrounds/digitalCommunity/contacts.png',
           }"
         />
         <DigitalCommunityCard
@@ -83,7 +83,7 @@
           description="О самом главном за первую половину 2023 года"
           :background="{
             type: 'image',
-            payload: 'assets/images/backgrounds/digitalCommunity/digest.png',
+            payload: 'images/backgrounds/digitalCommunity/digest.png',
           }"
         />
       </div>

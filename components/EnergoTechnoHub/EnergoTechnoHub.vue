@@ -51,7 +51,7 @@ const titleText = ref(
         data-aos-duration="1000"
         data-aos-delay="500"
         :titles="['Станьте фаундером']"
-        image="/_nuxt/assets/images/backgrounds/tehcnoHub/hub1.jpg"
+        image="/images/backgrounds/tehcnoHub/hub1.jpg"
       >
         <div class="slides-text">
           <CommonText
@@ -103,7 +103,7 @@ const titleText = ref(
         data-aos-duration="1000"
         data-aos-delay="500"
         :titles="['Присоединяйтесь', 'с командой']"
-        image="/_nuxt/assets/images/backgrounds/tehcnoHub/hub2.jpg"
+        image="/images/backgrounds/tehcnoHub/hub2.jpg"
         ><div class="slides-text">
           <CommonText
             text="Уже есть команда, технология, прототип? Привлекайте инвестиции и выводите бизнес на рынок ТЭК с нашими сервисами поддержки. "
@@ -154,7 +154,7 @@ const titleText = ref(
         data-aos-duration="1000"
         data-aos-delay="500"
         :titles="['Познакомьтесь', 'с нашими фаундерами']"
-        image="/_nuxt/assets/images/backgrounds/tehcnoHub/hub3.jpg"
+        image="/images/backgrounds/tehcnoHub/hub3.jpg"
         ><div class="slides-text">
           <CommonText
             text="Узнайте больше об участниках «Энерготехнохаба Петербург» и технологиях, которые они создают. "

@@ -3,7 +3,7 @@
     <div class="header-wrapper">
       <nuxt-link to="/">
         <div class="header-logo">
-          <img src="/_nuxt/assets/images/logo.svg" alt="logo" />
+          <img src="/images/logo.svg" alt="logo" />
         </div>
       </nuxt-link>
 
@@ -36,7 +36,7 @@
         <button class="header-right-button">
           Присоедениться
           <img
-            src="/_nuxt/assets/images/icons/linkArrow.svg"
+            src="/images/icons/linkArrow.svg"
             alt="link"
             class="arrow"
             width="20"

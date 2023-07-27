@@ -94,7 +94,7 @@
         </p>
         <button class="play-button">
           <img
-            src="/_nuxt/assets/images/icons/play.svg"
+            src="/images/icons/play.svg"
             alt="play"
           >
         </button>
