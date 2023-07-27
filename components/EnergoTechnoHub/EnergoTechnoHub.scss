@@ -4,9 +4,24 @@
 
   margin-bottom: 140px;
 
+  @include lg {
+    margin-bottom: 90px;
+  }
+
+  @include md {
+    margin-bottom: 70px;
+  }
+
   & .circle-button {
     align-self: flex-start;
     margin: 32px 0 70px;
+    @include lg {
+      margin: 24px 0 40px;
+    }
+
+    @include md {
+      margin: 24px 0 36px;
+    }
   }
 
   & .numbers-table {
@@ -33,6 +48,11 @@
 
     @include lg {
       flex-direction: column;
+      gap: 14px;
+    }
+
+    @include md {
+      gap: 12px;
     }
 
     &-text {
@@ -45,9 +65,17 @@
         flex-direction: column-reverse;
         height: auto;
       }
-      & svg {
-        width: 20px;
-        height: 20px;
+
+      @include md {
+        align-items: flex-start;
+      }
+
+      & > .arrow {
+        cursor: pointer;
+
+        @include md {
+          align-self: flex-end;
+        }
       }
     }
   }

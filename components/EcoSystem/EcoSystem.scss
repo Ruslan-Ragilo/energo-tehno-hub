@@ -4,9 +4,25 @@
 
   margin-bottom: 140px;
 
+  @include lg {
+    margin-bottom: 90px;
+  }
+
+  @include md {
+    margin-bottom: 70px;
+  }
+
   & .circle-button {
     align-self: flex-start;
     margin: 32px 0 70px;
+
+    @include lg {
+      margin: 24px 0 40px;
+    }
+
+    @include md {
+      margin: 24px 0 36px;
+    }
   }
 
   .wrapper-card-desctop {
@@ -40,7 +56,7 @@
     height: 100%;
     justify-content: space-between;
     border-radius: 20px;
-    border: 1px solid #DCDCDC;
+    border: 1px solid #dcdcdc;
     width: 423px;
     height: 380px;
 

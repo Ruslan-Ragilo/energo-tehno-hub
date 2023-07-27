@@ -4,7 +4,18 @@
 
   margin-bottom: 60px;
 
+  @include lg {
+    margin-bottom: 40px;
+  }
+
+  @include md {
+    grid-template-columns: 1fr;
+  }
+
   & .left {
+    @include md {
+      margin-bottom: 28px;
+    }
   }
 
   & .right {
