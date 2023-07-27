@@ -11,7 +11,11 @@
           class="news"
           title="Новости"
           description="Читайте новости"
-          :background="{ type: 'color', payload: 'Blue' }"
+          :background="{
+            type: 'image',
+            payload:
+              '/_nuxt/assets/images/backgrounds/digitalCommunity/news.jpg',
+          }"
         />
 
         <DigitalCommunityCard
@@ -26,14 +30,17 @@
           description="Встречи, состязания, стратегические сессии и другие мероприятия"
           :background="{
             type: 'image',
-            payload: 'assets/images/backgrounds/digitalCommunity/events.png',
+            payload:
+              '/_nuxt/assets/images/backgrounds/digitalCommunity/events.jpg',
           }"
         />
         <DigitalCommunityCard
           class="chatBot"
           title="Чат-бот"
+          :theme="['dark', 'gray']"
+          linkColor="#666666"
           description="Создан юристами для предпринимателей"
-          :background="{ type: 'color', payload: '#FFFFFF' }"
+          :background="{ type: 'color', payload: '#eeeeee' }"
         />
         <DigitalCommunityCard
           class="telegram"

@@ -9,15 +9,25 @@
         : { backgroundColor: props.background.payload }
     "
   >
-    <CommonText :text="props.title" theme="white" size="xl" />
+    <CommonText
+      :text="props.title"
+      :theme="props.theme && props.theme.length > 0 ? props.theme[0] : 'white'"
+      size="xl"
+    />
     <div class="description">
       <CommonText
         class-name="descriptionText"
         :text="props.description"
-        theme="white"
+        :theme="
+          props.theme && props.theme.length > 0
+            ? props.theme.length > 1
+              ? props.theme[1]
+              : props.theme[0]
+            : 'white'
+        "
       />
       <div class="descriptionLink">
-        <img src="assets/images/icons/linkArrow.svg" alt="link" />
+        <CommonLinkArrow :color="props.linkColor ?? '#fafafa'" />
       </div>
     </div>
   </div>
@@ -27,6 +37,8 @@
 interface Props {
   title: string;
   description: string;
+  theme?: ('black' | 'dark' | 'gray' | 'white' | 'light')[];
+  linkColor?: string;
   background: {
     type: 'image' | 'color';
     payload: string;

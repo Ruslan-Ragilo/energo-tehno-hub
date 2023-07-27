@@ -9,12 +9,12 @@
 }
 .description {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 .descriptionText {
-  flex: 3;
 }
 .descriptionLink {
-  flex: 2;
-  text-align: right;
+  display: flex;
+  align-items: flex-end;
 }
