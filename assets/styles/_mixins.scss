@@ -18,3 +18,10 @@
     @content;
   }
 }
+
+// Custums mixin for rexponsive neadia screen
+@mixin responsive ($width) {
+  @media (max-width: #{$width}px) {
+    @content;
+  }
+}
