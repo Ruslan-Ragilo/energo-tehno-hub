@@ -4,9 +4,13 @@ footer {
     margin: 0 auto;
     padding: 0 50px;
     margin-bottom: 30px;
-  
+
     @include lg {
       padding: 0 32px;
+    }
+
+    @include md {
+      padding: 0 16px;
     }
   }
 
@@ -41,8 +45,7 @@ footer {
 
       @include responsive(700) {
         width: 100%;
-        grid-template-columns: 65% 35%;
-        
+        grid-template-columns: 60% 32%;
       }
     }
 

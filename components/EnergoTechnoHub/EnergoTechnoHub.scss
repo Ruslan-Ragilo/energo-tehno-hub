@@ -28,8 +28,20 @@
     align-self: flex-start;
     width: 100%;
     max-width: 735px;
+    min-width: 0;
     display: flex;
     justify-content: space-between;
+    @include lg {
+      max-width: 387px;
+    }
+
+    @include md {
+      max-width: 343px;
+    }
+    @include sm {
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
     &-block {
       display: flex;

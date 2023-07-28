@@ -33,6 +33,16 @@
       font-size: 18px;
     }
   }
+
+  & .m {
+    @include md {
+      font-size: 12px;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: auto;
+      white-space: normal;
+    }
+  }
 }
 
 .descriptionLink {

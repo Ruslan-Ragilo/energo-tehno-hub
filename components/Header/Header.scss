@@ -64,6 +64,10 @@ header {
 
       transition: 0.2s ease-in-out;
 
+      @include lg {
+        display: none;
+      }
+
       &:hover {
         border: 1px solid $black;
         color: $black;

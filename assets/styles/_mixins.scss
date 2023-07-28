@@ -1,3 +1,9 @@
+// Small devices
+@mixin sm {
+  @media (max-width: #{$screen-sm}) {
+    @content;
+  }
+}
 // Medium devices
 @mixin md {
   @media (max-width: #{$screen-md}) {
@@ -13,7 +19,7 @@
 }
 
 // Custums mixin for rexponsive neadia screen
-@mixin responsive ($width) {
+@mixin responsive($width) {
   @media (max-width: #{$width}px) {
     @content;
   }
