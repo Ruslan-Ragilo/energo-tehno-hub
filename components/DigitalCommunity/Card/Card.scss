@@ -6,15 +6,42 @@
 
   border-radius: 20px;
   background-size: cover;
+
+  @include lg {
+    padding: 20px !important;
+  }
+
+  @include md {
+    position: relative;
+    padding: 16px 14px;
+  }
+
+  & .description {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    @include md {
+      font-size: 14px;
+
+      display: contents;
+    }
+  }
+
+  & .xl {
+    @include md {
+      font-size: 18px;
+    }
+  }
 }
-.description {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-.descriptionText {
-}
+
 .descriptionLink {
   display: flex;
   align-items: flex-end;
+
+  @include md {
+    position: absolute;
+    top: 16px;
+    right: 14px;
+  }
 }

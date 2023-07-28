@@ -21,6 +21,10 @@ header {
     align-items: center;
     gap: 42px;
 
+    @include lg {
+      display: none;
+    }
+
     & .nav-link {
       font-size: 16px;
       color: $dark;

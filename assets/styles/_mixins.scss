@@ -1,0 +1,20 @@
+// Medium devices
+@mixin md {
+  @media (max-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (max-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+// Custums mixin for rexponsive neadia screen
+@mixin responsive ($width) {
+  @media (max-width: #{$width}px) {
+    @content;
+  }
+}

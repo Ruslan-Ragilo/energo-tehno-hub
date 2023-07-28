@@ -14,6 +14,14 @@
   justify-content: flex-end;
   align-items: flex-start;
 
+  @include lg {
+    height: 230px;
+    padding: 30px 20px 20px;
+
+    flex-direction: row;
+    align-items: stretch;
+  }
+
   &-title {
     position: absolute;
     top: 30px;
@@ -26,5 +34,9 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+
+    @include lg {
+      left: 20px;
+    }
   }
 }

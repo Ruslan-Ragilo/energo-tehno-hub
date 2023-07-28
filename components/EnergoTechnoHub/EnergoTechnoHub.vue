@@ -60,41 +60,8 @@ const titleText = ref(
             theme="light"
             :style="{ maxWidth: '294px', minWidth: '0' }"
           />
-          <div @click="() => {}">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-            >
-              <g clip-path="url(#clip0_808_226)">
-                <path
-                  d="M5.83301 14.1665L14.1663 5.83317"
-                  stroke="#FAFAFA"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M14.167 13.3335V5.8335H6.66699"
-                  stroke="#FAFAFA"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_808_226">
-                  <rect
-                    width="20"
-                    height="20"
-                    fill="white"
-                    transform="matrix(1 0 0 -1 0 20)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
+          <div class="arrow" @click="() => {}">
+            <CommonLinkArrow color="#fafafa" />
           </div>
         </div>
       </EnergoTechnoHubSlideCard>
@@ -111,45 +78,11 @@ const titleText = ref(
             theme="light"
             :style="{ maxWidth: '294px', minWidth: '0' }"
           />
-          <div @click="() => {}">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-            >
-              <g clip-path="url(#clip0_808_226)">
-                <path
-                  d="M5.83301 14.1665L14.1663 5.83317"
-                  stroke="#FAFAFA"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M14.167 13.3335V5.8335H6.66699"
-                  stroke="#FAFAFA"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_808_226">
-                  <rect
-                    width="20"
-                    height="20"
-                    fill="white"
-                    transform="matrix(1 0 0 -1 0 20)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
+          <div class="arrow" @click="() => {}">
+            <CommonLinkArrow color="#fafafa" />
           </div></div
       ></EnergoTechnoHubSlideCard>
       <EnergoTechnoHubSlideCard
-        
         data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-delay="500"
@@ -162,41 +95,8 @@ const titleText = ref(
             theme="light"
             :style="{ maxWidth: '294px', minWidth: '0' }"
           />
-          <div @click="() => {}">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-            >
-              <g clip-path="url(#clip0_808_226)">
-                <path
-                  d="M5.83301 14.1665L14.1663 5.83317"
-                  stroke="#FAFAFA"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M14.167 13.3335V5.8335H6.66699"
-                  stroke="#FAFAFA"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_808_226">
-                  <rect
-                    width="20"
-                    height="20"
-                    fill="white"
-                    transform="matrix(1 0 0 -1 0 20)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
+          <div class="arrow" @click="() => {}">
+            <CommonLinkArrow color="#fafafa" />
           </div></div
       ></EnergoTechnoHubSlideCard>
     </div>

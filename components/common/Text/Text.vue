@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 interface Props {
   text: string;
-  size?: 'xs' | 's' | 'm' | 'sm' | 'l' | 'xl' | 'xxl' | 'xxxl';
+  size?: 'xs' | 's' | 'm' | 'sm' | 'l' | 'xl' | 'xxls' | 'xxl' | 'xxxl';
   weight?: 'thin' | 'regular' | 'semi-bold' | 'bold';
   theme?: 'dark' | 'black' | 'gray' | 'white' | 'light';
   className?: string;

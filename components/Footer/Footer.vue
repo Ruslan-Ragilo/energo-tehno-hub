@@ -1,39 +1,32 @@
 <template>
-  <footer>
+  <footer class="container">
     <div class="footer-top">
       <div class="wrapper-left">
         <FooterColumn
           heading="Экосистема"
           :links="[
-            { text: 'Экосистема', href: '#' },
-            { text: 'Новости', href: '#' },
-            { text: 'События', href: '#' },
-            { text: 'Сообщество', href: '#' },
-            { text: 'Контакты', href: '#' }
+            { text: 'Фаундеры', href: '#' },
+            { text: 'Экспертное сообщество', href: '#' },
+            { text: 'Клуб бизнес-ангелов', href: '#' },
           ]"
         />
         <FooterColumn
-          heading="Люди"
-          :links="[
-            { text: 'Технологические вызовы', href: '#' },
-            { text: 'Технологические идеи', href: '#' }
-          ]"
+          heading="Сервисы"
+          :links="[]"
         />
         <FooterColumn
           heading="Технологии"
           :links="[
-            { text: 'Экосистема', href: '#' },
-            { text: 'Новости', href: '#' },
-            { text: 'События', href: '#' },
-            { text: 'Сообщество', href: '#' },
-            { text: 'Контакты', href: '#' }
+            { text: 'Технологические вызовы', href: '#' },
+            { text: 'Технологические компании ', href: '#' },
           ]"
         />
         <FooterColumn
-          heading="4 раздел"
+          heading="Еще"
           :links="[
-            { text: 'Подраздел 1', href: '#' },
-            { text: 'Подраздел 2', href: '#' }
+            { text: 'Новости', href: '#' },
+            { text: 'Мероприятия', href: '#' },
+            { text: 'Контакты', href: '#' },
           ]"
         />
       </div>

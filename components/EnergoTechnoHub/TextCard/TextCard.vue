@@ -9,11 +9,7 @@ const props = defineProps<Props>();
 
 <template>
   <div class="card">
-    <CommonText
-      :text="props.leftText"
-      theme="dark"
-      :style="{ fontSize: '80px', lineHeight: '80px' }"
-    />
+    <CommonText size="xxls" :text="props.leftText" theme="dark" />
     <CommonText
       :text="props.rightText"
       size="sm"
