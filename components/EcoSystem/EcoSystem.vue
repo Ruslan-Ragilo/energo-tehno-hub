@@ -1,6 +1,77 @@
 <!-- eslint-disable no-undef -->
-<!-- eslint-disable vue/no-use-v-if-with-v-for -->
+<script setup>
+  onMounted(() => {
+    const cards = document.querySelectorAll('.card-eco');
+    const wrapperSlider = document.querySelector('.wrapper-slider');
+    const heigthCard = cards[0].clientHeight + 2;
+    let translate = 0;
+    function isElementInViewport(el) {
+      const elInView = el.getBoundingClientRect()
+      return (
+          elInView.top >= 0 &&
+          // elInView.left >= 0 &&
+          elInView.bottom <= (window.innerHeight || document.documentElement.clientHeight) 
+          // && elInView.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
 
+    const debounceDelay = 200; // Измените это значение по своему усмотрению
+
+      let timerId;
+
+      function handleWheel(event) {
+        // Очищаем предыдущий таймер, если он существует
+        clearTimeout(timerId);
+        
+        // Устанавливаем новый таймер
+        timerId = setTimeout(() => {
+          // Вставьте ваш код обработки события колесика мыши здесь
+          // ...
+          if (isElementInViewport(wrapperSlider)) {  
+              // Дополнительные действия, когда скролл доходит до элемента...
+              // document.body.style.overflow = 'hidden'
+            if (event.deltaY < 0 && translate !== 0) {
+              document.body.style.overflowY = 'hidden'
+              if(cards[cards.length - 1].getBoundingClientRect().top !== wrapperSlider.getBoundingClientRect().top) {
+                document.body.style.overflowY = 'hidden'
+                translate = translate + heigthCard
+                for (let i = 0; i < cards.length; i++) {
+                  if(wrapperSlider.getBoundingClientRect().top !==  cards[i].getBoundingClientRect().top) {
+                    cards[i].style.bottom = `${translate}px`
+                  }
+                }
+              } else {
+                document.body.style.overflowY = 'scroll'
+              }
+              
+            } else if (event.deltaY > 0) {
+              document.body.style.overflowY = 'hidden'
+              if(cards[cards.length - 1].getBoundingClientRect().top !== wrapperSlider.getBoundingClientRect().top) {
+                document.body.style.overflowY = 'hidden'
+                translate = translate - heigthCard
+                
+                for (let i = 0; i < cards.length; i++) {
+                  console.log(wrapperSlider.getBoundingClientRect().top !== cards[i].getBoundingClientRect().top)
+                  if(wrapperSlider.getBoundingClientRect().top !==  cards[i].getBoundingClientRect().top) {
+                    cards[i].style.top = `${translate}px`
+                  }
+                }
+              } else {
+                document.body.style.overflowY = 'scroll'
+              }
+              
+            }
+          } 
+          // Очистка таймера, после того как событие было обработано
+          clearTimeout(timerId);
+        }, debounceDelay);
+      }
+
+    
+    window.addEventListener('wheel', (e) => handleWheel(e));
+  })
+  
+</script>
 
 <template>
   <section class="section">
@@ -17,92 +88,19 @@
       </div>
     </CommonSectionHeader>
     <div class="wrapper-slider">
-      <swiper
-        :direction="'vertical'"
-        :mousewheel="{
-          forceToAxis: true,
-          sensitivity: 4,
-          thresholdDelta: 4,
-          releaseOnEdges: true,
-        }"
-        
-        :slides-per-view="1"
-        :modules="modules"
-        :on-scrollbar-drag-end="true"
-        class="mySwiper"
+      <div
+        v-for="(_, index) in 6"
+        :key="index"
+        class="card-eco"
       >
-        <swiper-slide
-          v-for="(_, index) in 3"
-          v-if="widthSceen >= 600"
-          :key="index"
-        >
-          <div
-            :class="['wrapper-card-desctop', `wrapper-card-desctop${index}`]"
-          >
-            <div class="card">
-              <p class="top-index">
-                {{ `(0${index +=1})` }}
-              </p>
-              <CommonText text="Открывайте бизнес при поддержке юристов, маркетологов и бизнес-аналитиков" />
-            </div>
-            <div class="card">
-              <p class="top-index">
-                {{ `(0${index +=1})` }}
-              </p>
-              <CommonText text="Открывайте бизнес при поддержке юристов, маркетологов и бизнес-аналитиков" />
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide
-          v-for="(_, i) in 6"
-          v-else
-          :key="i"
-        >
-          <div class="card">
-            <p class="top-index">
-              {{ `(0${i +=1})` }}
-            </p>
-            <CommonText text="Открывайте бизнес при поддержке юристов, маркетологов и бизнес-аналитиков" />
-          </div>
-        </swiper-slide>
-      </swiper>
+        <p class="top-index">
+          {{ `(0${index +=1})` }}
+        </p>
+        <CommonText text="Открывайте бизнес при поддержке юристов, маркетологов и бизнес-аналитиков" />
+      </div>
     </div>
   </section>
 </template>
-
-<script>
-  // Import Swiper Vue.js components
-  import { Swiper, SwiperSlide } from 'swiper/vue';
-
-  // Import Swiper styles
-  import 'swiper/css';
-
-  import 'swiper/css/pagination';
-
-  // import required modules
-  import { Mousewheel, Pagination } from 'swiper/modules';
-
-  export default {
-    components: {
-      Swiper,
-      SwiperSlide,
-    },
-    setup() {
-      // eslint-disable-next-line no-undef
-      const widthSceen = ref(0);
-
-      // eslint-disable-next-line no-undef
-      onMounted(() => {
-        widthSceen.value = window.innerWidth
-      })
-
-      return {
-        modules: [Pagination, Mousewheel],
-        widthSceen,
-      };
-    },
-  };
-</script>
 
 <style lang="scss" scoped>
 @import 'EcoSystem.scss';
