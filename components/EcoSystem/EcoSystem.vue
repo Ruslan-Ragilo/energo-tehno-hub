@@ -30,32 +30,33 @@
           if (isElementInViewport(wrapperSlider)) {  
               // Дополнительные действия, когда скролл доходит до элемента...
               // document.body.style.overflow = 'hidden'
+              
             if (event.deltaY < 0 && translate !== 0) {
-              document.body.style.overflowY = 'hidden'
-              if(cards[cards.length - 1].getBoundingClientRect().top !== wrapperSlider.getBoundingClientRect().top) {
-                document.body.style.overflowY = 'hidden'
+              
+              if(cards[0].getBoundingClientRect().top !== wrapperSlider.getBoundingClientRect().top) {
+                
                 translate = translate + heigthCard
-                for (let i = 0; i < cards.length; i++) {
-                  if(wrapperSlider.getBoundingClientRect().top !==  cards[i].getBoundingClientRect().top) {
-                    cards[i].style.bottom = `${translate}px`
-                  }
-                }
+                // for (let i = 0; i < cards.length; i++) {
+                //   if(wrapperSlider.getBoundingClientRect().top !==  cards[i].getBoundingClientRect().top) {
+                //     cards[i].style.bottom = `${translate}px`
+                //   }
+                // }
               } else {
                 document.body.style.overflowY = 'scroll'
               }
               
             } else if (event.deltaY > 0) {
-              document.body.style.overflowY = 'hidden'
+              
               if(cards[cards.length - 1].getBoundingClientRect().top !== wrapperSlider.getBoundingClientRect().top) {
-                document.body.style.overflowY = 'hidden'
+                
                 translate = translate - heigthCard
                 
-                for (let i = 0; i < cards.length; i++) {
-                  console.log(wrapperSlider.getBoundingClientRect().top !== cards[i].getBoundingClientRect().top)
-                  if(wrapperSlider.getBoundingClientRect().top !==  cards[i].getBoundingClientRect().top) {
-                    cards[i].style.top = `${translate}px`
-                  }
-                }
+                // for (let i = 0; i < cards.length; i++) {
+                //   console.log(wrapperSlider.getBoundingClientRect().top !== cards[i].getBoundingClientRect().top)
+                //   if(wrapperSlider.getBoundingClientRect().top !==  cards[i].getBoundingClientRect().top) {
+                //     cards[i].style.top = `${translate}px`
+                //   }
+                // }
               } else {
                 document.body.style.overflowY = 'scroll'
               }
@@ -89,12 +90,12 @@
     </CommonSectionHeader>
     <div class="wrapper-slider">
       <div
-        v-for="(_, index) in 6"
+        v-for="(item, index) in 6"
         :key="index"
         class="card-eco"
       >
         <p class="top-index">
-          {{ `(0${index +=1})` }}
+          {{ `(0${item})` }}
         </p>
         <CommonText text="Открывайте бизнес при поддержке юристов, маркетологов и бизнес-аналитиков" />
       </div>
