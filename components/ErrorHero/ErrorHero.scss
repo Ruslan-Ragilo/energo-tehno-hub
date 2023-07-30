@@ -1,0 +1,65 @@
+.hero-wrapper {
+  height: 100%;
+  min-height: 80vh;
+  display: flex;
+  gap: 10px;
+
+  @include lg {
+    flex-direction: column;
+  }
+
+  & .hero-left {
+    flex-basis: 60%;
+    padding: 60px 40px;
+
+    background-color: #fff;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 32px;
+
+    box-shadow: 0px 0px 30px 0px #12141714;
+
+    @include lg {
+      & br {
+        display: none;
+      }
+    }
+    & .hero-title {
+      font-size: 60px;
+      font-weight: 400;
+      line-height: 63px;
+      letter-spacing: -0.02em;
+      text-align: left;
+      color: $dark;
+
+      @include lg {
+        font-size: 36px;
+        line-height: 43px;
+      }
+
+      @include md {
+        font-size: 30px;
+        line-height: 36px;
+      }
+    }
+  }
+
+  & .hero-right {
+    flex-basis: 40%;
+    flex: 1 0;
+    padding: 40px;
+    display: flex;
+    align-items: flex-end;
+
+    background-image: url('/images/backgrounds/notFound.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border-radius: 20px;
+  }
+}
