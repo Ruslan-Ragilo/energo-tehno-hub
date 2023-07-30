@@ -75,6 +75,7 @@
             type: 'image',
             payload: 'images/backgrounds/digitalCommunity/contacts.png',
           }"
+          withBlur
         />
         <DigitalCommunityCard
           data-aos="fade-up"

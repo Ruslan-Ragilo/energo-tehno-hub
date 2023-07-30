@@ -14,7 +14,8 @@
       class="card-image"
     />
     <div v-if="props.background.type === 'image'" class="card-gradient" />
-    <div v-if="props.background.type === 'color'" class="card-color"></div>
+    <div v-if="props.background.type === 'color'" class="card-color" />
+    <div v-if="props.withBlur" class="card-blur" />
     <CommonText
       :text="props.title"
       :theme="props.theme && props.theme.length > 0 ? props.theme[0] : 'white'"
@@ -52,6 +53,7 @@ interface Props {
     payload: string;
     hoverColor?: string;
   };
+  withBlur?: boolean;
 }
 
 const props = defineProps<Props>();
