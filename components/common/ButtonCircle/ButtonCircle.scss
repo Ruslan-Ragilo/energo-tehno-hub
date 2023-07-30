@@ -8,12 +8,13 @@
   font-weight: 400;
   color: $black;
 
+  cursor: pointer;
+
   & .button-container {
     font-size: inherit;
     border: none;
     outline: none;
     background-color: transparent;
-    cursor: pointer;
   }
 
   & .arrow-container {
@@ -25,5 +26,22 @@
 
     border: 1px solid #999999;
     border-radius: 50%;
+
+    transition: transform 0.2s ease-in-out;
+
+    & > svg {
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+
+  &:hover {
+    & .arrow-container {
+      position: relative;
+      transform: scale(1.05);
+      & > svg {
+        position: relative;
+        transform: scale(0.855);
+      }
+    }
   }
 }
