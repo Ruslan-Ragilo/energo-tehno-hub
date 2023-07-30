@@ -8,7 +8,8 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-  <div class="card" :style="{ backgroundImage: `url(${props.image})` }">
+  <div class="card">
+    <img :src="props.image" class="card-image" />
     <div class="card-title" v-if="!!props.titles && props.titles.length > 0">
       <CommonText
         v-for="title in props.titles"
