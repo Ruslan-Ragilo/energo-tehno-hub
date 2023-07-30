@@ -15,8 +15,7 @@
           description="Читайте новости"
           :background="{
             type: 'image',
-            payload:
-              '/images/backgrounds/digitalCommunity/news.jpg',
+            payload: '/images/backgrounds/digitalCommunity/news.jpg',
           }"
         />
 
@@ -26,7 +25,11 @@
           class="contacts"
           title="Контакты"
           description="Свяжитесь с нами по любым вопросам"
-          :background="{ type: 'color', payload: '#666666' }"
+          :background="{
+            type: 'color',
+            payload: '#666666',
+            hoverColor: '#5E5E5E',
+          }"
         />
         <DigitalCommunityCard
           data-aos="fade-up"
@@ -37,8 +40,7 @@
           description="Встречи, состязания, стратегические сессии и другие мероприятия"
           :background="{
             type: 'image',
-            payload:
-              '/images/backgrounds/digitalCommunity/events.jpg',
+            payload: '/images/backgrounds/digitalCommunity/events.jpg',
           }"
         />
         <DigitalCommunityCard

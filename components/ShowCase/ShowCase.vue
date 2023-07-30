@@ -11,6 +11,7 @@
       </CommonSectionHeader>
       <div class="wrapper-cards">
         <ShowCaseCard
+          @click="() => console.log(123)"
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-delay="500"
@@ -19,6 +20,7 @@
           url-image="/images/backgrounds/showcase/reagents.png"
         />
         <ShowCaseCard
+          @click="() => console.log(123)"
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-delay="500"
@@ -27,6 +29,7 @@
           url-image="/images/backgrounds/showcase/additives.png"
         />
         <ShowCaseCard
+          @click="() => console.log(123)"
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-delay="500"

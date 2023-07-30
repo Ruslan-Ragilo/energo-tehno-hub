@@ -47,6 +47,7 @@ const titleText = ref(
     </CommonSectionHeader>
     <div class="slides">
       <EnergoTechnoHubSlideCard
+        @click="() => console.log(123)"
         data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-delay="100"
@@ -66,6 +67,7 @@ const titleText = ref(
         </div>
       </EnergoTechnoHubSlideCard>
       <EnergoTechnoHubSlideCard
+        @click="() => console.log(123)"
         data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-delay="100"
@@ -83,6 +85,7 @@ const titleText = ref(
           </div></div
       ></EnergoTechnoHubSlideCard>
       <EnergoTechnoHubSlideCard
+        @click="() => console.log(123)"
         data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-delay="100"

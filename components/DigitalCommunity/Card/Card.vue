@@ -2,17 +2,24 @@
   <div
     class="card"
     :style="
-      props.background.type === 'image'
-        ? {
-            backgroundImage: `url(${props.background.payload})`,
-          }
-        : { backgroundColor: props.background.payload }
+      props.background.type === 'color'
+        ? { backgroundColor: props.background.payload }
+        : {}
     "
   >
+    <img
+      v-if="props.background.type === 'image'"
+      :src="props.background.payload"
+      alt="image"
+      class="card-image"
+    />
+    <div v-if="props.background.type === 'image'" class="card-gradient" />
+    <div v-if="props.background.type === 'color'" class="card-color"></div>
     <CommonText
       :text="props.title"
       :theme="props.theme && props.theme.length > 0 ? props.theme[0] : 'white'"
       size="xl"
+      :style="{ position: 'relative', zIndex: 11 }"
     />
     <div class="description">
       <CommonText
@@ -25,6 +32,7 @@
               : props.theme[0]
             : 'white'
         "
+        :style="{ position: 'relative', zIndex: 11 }"
       />
       <div class="descriptionLink">
         <CommonLinkArrow :color="props.linkColor ?? '#fafafa'" />
@@ -42,6 +50,7 @@ interface Props {
   background: {
     type: 'image' | 'color';
     payload: string;
+    hoverColor?: string;
   };
 }
 
