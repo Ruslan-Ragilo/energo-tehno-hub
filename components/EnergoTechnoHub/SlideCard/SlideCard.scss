@@ -20,6 +20,12 @@
 
     flex-direction: row;
     align-items: stretch;
+
+    border-radius: 16px;
+  }
+
+  @include md {
+    border-radius: 14px;
   }
 
   &::after {

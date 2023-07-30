@@ -7,6 +7,9 @@
   @include lg {
     margin-bottom: 40px;
   }
+  @include md {
+    margin-bottom: 20px;
+  }
 
   @include md {
     grid-template-columns: 1fr;

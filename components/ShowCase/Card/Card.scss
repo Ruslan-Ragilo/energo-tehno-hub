@@ -12,6 +12,14 @@
   overflow: hidden;
   cursor: pointer;
 
+  @include lg {
+    border-radius: 16px;
+  }
+
+  @include md {
+    border-radius: 14px;
+  }
+
   &::after {
     content: '';
     position: absolute;

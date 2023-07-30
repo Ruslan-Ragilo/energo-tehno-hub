@@ -12,11 +12,13 @@
 
   @include lg {
     padding: 20px;
+    border-radius: 16px;
   }
 
   @include md {
     position: relative;
     padding: 16px 14px;
+    border-radius: 14px;
   }
 
   &-blur {
