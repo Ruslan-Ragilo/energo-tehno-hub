@@ -1,18 +1,18 @@
 .card {
-  position: relative;
   width: 100%;
   height: 540px;
-
-  border-radius: 20px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
   padding: 30px;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
+
+  border-radius: 20px;
+
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 
   @include lg {
     height: 230px;
@@ -20,6 +20,49 @@
 
     flex-direction: row;
     align-items: stretch;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    border-radius: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    opacity: 0.6;
+
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  &:hover::after {
+    opacity: 0.7;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.05);
+    }
+
+    & svg {
+      position: relative;
+      transform: scale(1.2);
+    }
+  }
+
+  &-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: transform 0.2s ease-in-out;
   }
 
   &-title {
@@ -37,6 +80,31 @@
 
     @include lg {
       left: 20px;
+    }
+  }
+  & .slides-text {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @include lg {
+      flex-direction: column-reverse;
+      height: auto;
+    }
+
+    @include md {
+      align-items: flex-start;
+    }
+  }
+  & .arrow {
+    @include md {
+      align-self: flex-end;
+    }
+    & svg {
+      transition: transform 0.2s ease-in-out;
     }
   }
 }

@@ -5,4 +5,8 @@
   align-items: center;
   justify-content: flex-end;
   gap: 16px;
+
+  @include sm {
+    justify-content: flex-start;
+  }
 }
