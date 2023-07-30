@@ -2,6 +2,7 @@
 interface Props {
   image: string;
   titles?: string[];
+  text: string;
 }
 
 const props = defineProps<Props>();
@@ -19,7 +20,18 @@ const props = defineProps<Props>();
         theme="white"
       />
     </div>
-    <slot />
+
+    <div class="slides-text">
+      <CommonText
+        :text="props.text"
+        size="m"
+        theme="light"
+        :style="{ maxWidth: '294px', minWidth: '0' }"
+      />
+      <div class="arrow" @click="() => {}">
+        <CommonLinkArrow color="#fafafa" />
+      </div>
+    </div>
   </div>
 </template>
 

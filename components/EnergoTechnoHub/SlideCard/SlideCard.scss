@@ -48,6 +48,11 @@
     img {
       transform: scale(1.05);
     }
+
+    & svg {
+      position: relative;
+      transform: scale(1.2);
+    }
   }
 
   &-image {
@@ -75,6 +80,31 @@
 
     @include lg {
       left: 20px;
+    }
+  }
+  & .slides-text {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @include lg {
+      flex-direction: column-reverse;
+      height: auto;
+    }
+
+    @include md {
+      align-items: flex-start;
+    }
+  }
+  & .arrow {
+    @include md {
+      align-self: flex-end;
+    }
+    & svg {
+      transition: transform 0.2s ease-in-out;
     }
   }
 }

@@ -52,20 +52,10 @@ const titleText = ref(
         data-aos-duration="1000"
         data-aos-delay="100"
         :titles="['Станьте фаундером']"
+        text="Мы поможем выбрать актуальную идею, собрать команду и сделать первые шаги на пути к собственному технологическому бизнесу.  "
         image="/images/backgrounds/tehcnoHub/hub1.jpg"
-      >
-        <div class="slides-text">
-          <CommonText
-            text="Мы поможем выбрать актуальную идею, собрать команду и сделать первые шаги на пути к собственному технологическому бизнесу.  "
-            size="m"
-            theme="light"
-            :style="{ maxWidth: '294px', minWidth: '0' }"
-          />
-          <div class="arrow" @click="() => {}">
-            <CommonLinkArrow color="#fafafa" />
-          </div>
-        </div>
-      </EnergoTechnoHubSlideCard>
+      />
+
       <EnergoTechnoHubSlideCard
         @click="() => console.log(123)"
         data-aos="fade-up"
@@ -73,17 +63,8 @@ const titleText = ref(
         data-aos-delay="100"
         :titles="['Присоединяйтесь', 'с командой']"
         image="/images/backgrounds/tehcnoHub/hub2.jpg"
-        ><div class="slides-text">
-          <CommonText
-            text="Уже есть команда, технология, прототип? Привлекайте инвестиции и выводите бизнес на рынок ТЭК с нашими сервисами поддержки. "
-            size="m"
-            theme="light"
-            :style="{ maxWidth: '294px', minWidth: '0' }"
-          />
-          <div class="arrow" @click="() => {}">
-            <CommonLinkArrow color="#fafafa" />
-          </div></div
-      ></EnergoTechnoHubSlideCard>
+        text="Уже есть команда, технология, прототип? Привлекайте инвестиции и выводите бизнес на рынок ТЭК с нашими сервисами поддержки."
+      />
       <EnergoTechnoHubSlideCard
         @click="() => console.log(123)"
         data-aos="fade-up"
@@ -91,17 +72,8 @@ const titleText = ref(
         data-aos-delay="100"
         :titles="['Познакомьтесь', 'с нашими фаундерами']"
         image="/images/backgrounds/tehcnoHub/hub3.jpg"
-        ><div class="slides-text">
-          <CommonText
-            text="Узнайте больше об участниках «Энерготехнохаба Петербург» и технологиях, которые они создают. "
-            size="m"
-            theme="light"
-            :style="{ maxWidth: '294px', minWidth: '0' }"
-          />
-          <div class="arrow" @click="() => {}">
-            <CommonLinkArrow color="#fafafa" />
-          </div></div
-      ></EnergoTechnoHubSlideCard>
+        text="Узнайте больше об участниках «Энерготехнохаба Петербург» и технологиях, которые они создают."
+      />
     </div>
   </section>
 </template>

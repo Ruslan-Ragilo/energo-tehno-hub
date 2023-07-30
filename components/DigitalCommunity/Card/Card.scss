@@ -63,8 +63,8 @@
     }
     .descriptionLink {
       svg {
-        width: 24px;
-        height: 24px;
+        position: relative;
+        transform: scale(1.2);
       }
     }
   }
@@ -115,7 +115,7 @@
   align-items: flex-end;
 
   & svg {
-    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
   }
 
   @include md {
