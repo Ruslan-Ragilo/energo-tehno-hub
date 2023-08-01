@@ -1,6 +1,8 @@
 .wrapper-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 530px;
+  height: fit-content;
   gap: 20px;
   margin-bottom: 140px;
 
