@@ -16,8 +16,8 @@ const props = defineProps<Props>();
   <div class="links-footer">
     <p>{{ props.heading }}</p>
     <div class="wrapper-bottom-links">
-      <div v-for="(link, linkIndex) in props.links">
-        <nuxt-link :key="linkIndex" :href="link.href">{{
+      <div v-for="(link, linkIndex) in props.links" :key="linkIndex">
+        <nuxt-link class="footer-link" :to="link.href">{{
           link.text
         }}</nuxt-link>
       </div>

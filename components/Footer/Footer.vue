@@ -10,12 +10,7 @@
             { text: 'Клуб бизнес-ангелов', href: '/ecosystem' },
           ]"
         />
-        <Link to="/services">
-          <FooterColumn
-            heading="Сервисы"
-            :links="[]"
-          />
-        </Link>
+        <FooterColumn heading="Сервисы" :links="[]" />
         <FooterColumn
           heading="Технологии"
           :links="[
@@ -33,50 +28,58 @@
         />
       </div>
       <div class="wrapper-btn">
-        <CommonButton
-          :on-click="() => console.log('asdasd')"
+        <CommonEllipsisButton
           href="#"
           text="Электронная почта"
           type="link"
+          :style="{
+            padding: '10px 20px',
+            width: '100%',
+            justifyContent: 'space-between',
+          }"
         />
-        <CommonButton
-          :on-click="() => console.log('asdasd')"
+        <CommonEllipsisButton
           href="#"
           text="Сообщения ВКонтакте"
           type="link"
+          :style="{
+            padding: '10px 20px',
+            width: '100%',
+            justifyContent: 'space-between',
+          }"
         />
-        <CommonButton
-          :on-click="() => console.log('asdasd')"
+        <CommonEllipsisButton
           href="#"
           text="Чат-бот"
           type="link"
+          :style="{
+            padding: '10px 20px',
+            width: '100%',
+            justifyContent: 'space-between',
+          }"
         />
-        <CommonButton
-          :on-click="() => console.log('asdasd')"
+        <CommonEllipsisButton
           href="#"
           text="Сотрудничество"
-          type="link"          
+          type="link"
+          :style="{
+            padding: '10px 20px',
+            width: '100%',
+            justifyContent: 'space-between',
+          }"
         />
       </div>
     </div>
     <div class="footer-bottom">
-      <CommonText
-        text="2023"
-        size="s"
-        theme="gray"
-      />
+      <CommonText text="2023" size="s" theme="gray" />
       <!-- <CommonLangSwitcher /> -->
       <a href="#">
-        <CommonText
-          text="Политика конфиденциальности"
-          size="s"
-          theme="gray"
-        />
+        <CommonText text="Политика конфиденциальности" size="s" theme="gray" />
       </a>
     </div>
   </footer>
 </template>
 
 <style scoped lang="scss">
-  @import './Footer.scss'
+@import './Footer.scss';
 </style>

@@ -10,17 +10,20 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-  <Link v-if="props.type === 'link'" class="wrpapper-btn" :to="props.href">{{
-    props.text
-  }}</Link>
-  <div v-else class="wrpapper-btn" @click="onClick">
+  <nuxt-link
+    v-if="props.type === 'link'"
+    class="wrapper-btn"
+    :to="props.href"
+    >{{ props.text }}</nuxt-link
+  >
+  <div v-else class="wrapper-btn" @click="onClick">
     {{ props.text }}
   </div>
 </template>
 
 <style scoped lang="scss">
-.wrpapper-btn {
-  padding: 11px 20px;
+.wrapper-btn {
+  padding: 10px 20px;
   display: block;
   border-radius: 1000px;
   border: 1px solid #dcdcdc;
