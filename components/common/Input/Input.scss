@@ -8,15 +8,17 @@
   position: absolute;
   left: 0;
   top: 10px;
-  color: #9a9a9a;
+  color: black;
   font-size: 16px;
-  background-color: #fafafa;
   z-index: 10;
   transition: transform 150ms ease-out, font-size 150ms ease-out;
+  transition: 150ms;
 
   &.focused {
-    transform: translateY(-125%);
+    transform: translateY(-175%);
     font-size: 0.75em;
+    color: #909090;
+    padding-left: 10px;
   }
 }
 
@@ -24,16 +26,24 @@
   position: relative;
   padding: 14px;
   width: 100%;
-  outline: 0;
+  outline: 0; 
   border: 0;
-  box-shadow: 0 1px 0 0 #e5e5e5;
-  transition: box-shadow 150ms ease-out;
+  border-bottom: 1px solid #e5e5e5;
 
   font-size: 16px;
-  &:focus {
-    box-shadow: 0 2px 0 0 #9a9a9a;
-  }
-  &.filled {
-    box-shadow: 0 2px 0 0 lightgreen;
-  }
+  transition: 150ms;
+  z-index: 1111;
+  background-color: transparent;
+  // &:focus {
+  //   box-shadow: 0 2px 0 0 #9a9a9a;
+  // }
+  // &.filled {
+  //   box-shadow: 0 2px 0 0 lightgreen;
+  // }
 }
+
+.form-group:hover .form-input {
+  border-bottom: 1px solid transparent;
+}
+
+

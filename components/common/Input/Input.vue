@@ -1,3 +1,4 @@
+<!-- eslint-disable no-undef -->
 <script setup lang="ts">
 interface Props {
   type?: string;
@@ -13,20 +14,38 @@ const updateInputValue = (e) => {
 };
 
 const isFocused = ref(false);
+const labelEl = ref()
 
-const onFocus = () => {
+const onFocus = (e) => {
   isFocused.value = true;
+  e.target.style.backgroundColor = '#eeee';
+  e.target.style.borderRadius = 30 + 'px';
+  labelEl.value.style.marginLeft = 0 + 'px'
+  labelEl.value.style.backgroundColor = '#fff';
 };
 
-const onBlur = () => {
+const onBlur = (e) => {
   isFocused.value = false;
+  e.target.style.backgroundColor = 'transparent';
+  e.target.style.borderRadius = 0 + 'px';
+  labelEl.value.style.marginLeft = 0 + 'px'
+  labelEl.value.style.backgroundColor = 'transparent';
 };
+
+const mouseover = (e) => {
+  labelEl.value.style.marginLeft = 10 + 'px'
+}
+
+const mouseleave = (e) => {
+  labelEl.value.style.marginLeft = 0 + 'px'
+}
 </script>
 
 <template>
   <div class="form-group">
     <label
       :for="props.placeholder"
+      ref="labelEl"
       :class="isFocused || modelValue.length > 0 ? 'focused' : ''"
       class="form-label"
       >{{ props.placeholder }}</label
@@ -37,8 +56,10 @@ const onBlur = () => {
       :id="props.placeholder"
       class="form-input"
       :type="props.type ?? 'text'"
-      @focus="onFocus"
-      @blur="onBlur"
+      @focus="onFocus($event)"
+      @blur="onBlur($event)"
+      @mouseover="mouseover($event)"
+      @mouseleave="mouseleave($event)"
     />
   </div>
 </template>
