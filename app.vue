@@ -1,11 +1,11 @@
 <!-- eslint-disable no-undef -->
 <script setup>
-  import 'aos/dist/aos.css';
-  import AOS from 'aos';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
-  onMounted(() => {
-    AOS.init()
-  })
+onMounted(() => {
+  AOS.init();
+});
 </script>
 
 <template>
