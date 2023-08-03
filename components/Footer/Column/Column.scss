@@ -8,16 +8,33 @@
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     gap: 12px;
 
     a {
+      position: relative;
       color: #666;
       font-size: 14px;
 
       transition: color 0.2s ease-in-out;
 
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: $dark;
+
+        transition: width 0.2s ease-in-out;
+      }
+
       &:hover {
         color: $black;
+        &:after {
+          width: 100%;
+        }
       }
     }
   }
