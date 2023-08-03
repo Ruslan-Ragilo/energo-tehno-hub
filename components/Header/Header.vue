@@ -71,6 +71,7 @@ const sendPersonalData = () => {
               isModalOpen = true;
             }
           "
+          style="@media screen and (max-width: 1100px) {display: none}"
         />
       </div>
 

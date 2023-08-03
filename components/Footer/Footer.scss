@@ -49,8 +49,11 @@ footer {
 
       @include md {
         width: 100%;
-        grid-template-columns: 60% 32%;
         gap: 64px;
+      }
+
+      @include responsive(420) {
+        justify-items: end;
       }
     }
 

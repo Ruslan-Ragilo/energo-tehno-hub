@@ -1,3 +1,11 @@
+<script setup>
+const isPlaying = ref(false);
+
+const handlePlayerClick = () => {
+  isPlaying.value = !isPlaying.value;
+};
+</script>
+
 <template>
   <div class="hero-wrapper">
     <div class="hero-left">
@@ -45,9 +53,9 @@
           «Место, где верят в твои идеи» с резидентами «Энерготехнохаба
           Петербург»
         </p>
-        <button class="play-button">
-          <img src="/images/icons/play.svg" alt="play" />
-        </button>
+        <div class="play-button" @click="handlePlayerClick">
+          <CommonPlayButton :isPlaying="isPlaying" />
+        </div>
       </div>
     </div>
   </div>

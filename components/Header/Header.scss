@@ -109,6 +109,12 @@ header {
     justify-content: center;
     align-items: center;
     gap: 36px;
+
+    & button {
+      @include lg {
+        display: none;
+      }
+    }
   }
 }
 

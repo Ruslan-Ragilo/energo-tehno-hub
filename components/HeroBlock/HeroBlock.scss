@@ -65,14 +65,20 @@
       }
 
       & .card {
+        flex: 1 0;
+        flex-basis: 40%;
+
         border-radius: 20px;
         background-color: transparent;
 
         height: 310px;
-        width: 310px;
+        min-height: 310px;
+        width: 100%;
+        max-width: 310px;
 
         @include lg {
-          width: 100%;
+          max-width: 100%;
+          min-height: 226px;
           height: 226px;
 
           border-radius: 16px;
@@ -114,6 +120,10 @@
 
           font-weight: 400;
 
+          @include responsive(1300) {
+            padding: 34px 30px 24px;
+          }
+
           @include lg {
             padding: 40px 30px 38px;
           }
@@ -127,6 +137,10 @@
             flex-direction: column;
             gap: 8px;
             margin-bottom: 40px;
+
+            @include responsive(1300) {
+              margin-bottom: 10px;
+            }
 
             @include lg {
               flex-direction: row;
@@ -175,10 +189,12 @@
     border-radius: 20px;
 
     @include lg {
+      min-height: 410px;
       height: 410px;
     }
 
     @include md {
+      min-height: 260px;
       height: 260px;
       padding: 16px 16px 16px 18px;
     }
@@ -192,6 +208,7 @@
       & .text {
         color: $white;
         min-width: 0;
+        width: 100%;
         max-width: 451px;
 
         @include md {
