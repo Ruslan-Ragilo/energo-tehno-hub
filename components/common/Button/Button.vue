@@ -10,9 +10,9 @@ const props = defineProps<Props>();
 </script>
 
 <template>
-  <a v-if="props.type === 'link'" class="wrpapper-btn" :href="props.href">{{
+  <Link v-if="props.type === 'link'" class="wrpapper-btn" :to="props.href">{{
     props.text
-  }}</a>
+  }}</Link>
   <div v-else class="wrpapper-btn" @click="onClick">
     {{ props.text }}
   </div>

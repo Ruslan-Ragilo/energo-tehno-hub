@@ -5,28 +5,30 @@
         <FooterColumn
           heading="Экосистема"
           :links="[
-            { text: 'Фаундеры', href: '#' },
-            { text: 'Экспертное сообщество', href: '#' },
-            { text: 'Клуб бизнес-ангелов', href: '#' },
+            { text: 'Фаундеры', href: '/ecosystem' },
+            { text: 'Экспертное сообщество', href: '/ecosystem' },
+            { text: 'Клуб бизнес-ангелов', href: '/ecosystem' },
           ]"
         />
-        <FooterColumn
-          heading="Сервисы"
-          :links="[]"
-        />
+        <Link to="/services">
+          <FooterColumn
+            heading="Сервисы"
+            :links="[]"
+          />
+        </Link>
         <FooterColumn
           heading="Технологии"
           :links="[
-            { text: 'Технологические вызовы', href: '#' },
-            { text: 'Технологические компании ', href: '#' },
+            { text: 'Технологические вызовы', href: '/technologies' },
+            { text: 'Технологические компании ', href: '/technologies' },
           ]"
         />
         <FooterColumn
           heading="Еще"
           :links="[
-            { text: 'Новости', href: '#' },
-            { text: 'Мероприятия', href: '#' },
-            { text: 'Контакты', href: '#' },
+            { text: 'Новости', href: 'more' },
+            { text: 'Мероприятия', href: 'more' },
+            { text: 'Контакты', href: 'more' },
           ]"
         />
       </div>

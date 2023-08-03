@@ -12,6 +12,33 @@ header {
     align-items: center;
   }
 
+  .burger {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+
+    svg {
+      width: 50px;
+    }
+
+    @include lg {
+      display: block;
+    }
+  }
+
+  .close {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 101;
+    @include lg {
+      display: block;
+    }
+  }
+
   & .header-logo {
   }
 
@@ -22,7 +49,27 @@ header {
     gap: 42px;
 
     @include lg {
-      display: none;
+      flex-direction: column;
+      position: fixed;
+      gap: 12px;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      background-color: #fff;
+      max-width: 500px;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 10% 5%;
+      -webkit-box-shadow: -13px 11px 8px 1px rgba(34, 60, 80, 0.12);
+      -moz-box-shadow: -13px 11px 8px 1px rgba(34, 60, 80, 0.12);
+      box-shadow: -13px 11px 8px 1px rgba(34, 60, 80, 0.12);
+      z-index: 100;
+      transition: .8s;
+
+      &.active {
+        right: 0;
+      }
     }
 
     & .nav-link {
