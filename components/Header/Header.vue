@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const isOpenMobMenu = ref(false);
 const isModalOpen = ref(false);
 
 const name = ref('');
@@ -29,20 +30,12 @@ const sendPersonalData = () => {
     <div class="header-wrapper">
       <nuxt-link to="/">
         <div class="header-logo">
-          <img
-            src="/images/logo.svg"
-            alt="logo"
-          >
+          <img src="/images/logo.svg" alt="logo" />
         </div>
       </nuxt-link>
 
-      <nav :class="{['header-nav']: true, ['active']: isOpenMobMenu}">
-        <div
-          class="close"
-          @click="isOpenMobMenu = false"
-        >
-          X
-        </div>
+      <nav :class="{ ['header-nav']: true, ['active']: isOpenMobMenu }">
+        <div class="close" @click="isOpenMobMenu = false">X</div>
         <nuxt-link
           class="nav-link"
           active-class="nav-link-active"
@@ -64,34 +57,24 @@ const sendPersonalData = () => {
         >
           Технологии
         </nuxt-link>
-        <nuxt-link
-          class="nav-link"
-          active-class="nav-link-active"
-          to="/more"
-        >
+        <nuxt-link class="nav-link" active-class="nav-link-active" to="/more">
           Еще
         </nuxt-link>
       </nav>
 
       <div class="header-right">
         <!-- <CommonLangSwitcher /> -->
-        <button class="header-right-button" @click="isModalOpen = true">
-          Присоедениться
-
-          <img
-            src="/images/icons/linkArrow.svg"
-            alt="link"
-            class="arrow"
-            width="20"
-            height="20"
-          >
-        </button>
+        <CommonEllipsisButton
+          text="Присоедениться"
+          :onClick="
+            () => {
+              isModalOpen = true;
+            }
+          "
+        />
       </div>
 
-      <button
-        class="burger"
-        @click="isOpenMobMenu = true"
-      >
+      <button class="burger" @click="isOpenMobMenu = true">
         <svg
           width="66"
           height="46"
@@ -147,16 +130,10 @@ const sendPersonalData = () => {
           </div>
         </template>
         <template #footer>
-          <button class="submit-button" @click="sendPersonalData">
-            Отправить заявку
-            <img
-              src="/images/icons/linkArrow.svg"
-              alt="link"
-              class="arrow"
-              width="20"
-              height="20"
-            />
-          </button>
+          <CommonEllipsisButton
+            text="Отправить заявку"
+            :onClick="sendPersonalData"
+          />
         </template> </ModalWindow
     ></Teleport>
   </header>
