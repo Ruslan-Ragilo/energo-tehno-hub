@@ -20,21 +20,25 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
 
-    @include responsive(700) {
+    @include md {
       flex-direction: column;
-      gap: 40px;
+      gap: 44px;
     }
 
     .wrapper-left {
-      width: 90%;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      display: flex;
+      gap: 64px;
+      flex-wrap: wrap;
 
       @include responsive(1180) {
+        width: 60%;
+        display: grid;
+
         grid-template-columns: 1fr 1fr;
-        width: auto;
-        width: 90%;
-        gap: 20px;
+        // width: auto;
+        // width: 90%;
+        column-gap: 80px;
+        row-gap: 64px;
         .links-footer:nth-child(2) {
           order: 3;
         }
@@ -43,28 +47,28 @@ footer {
         }
       }
 
-      @include responsive(700) {
+      @include md {
         width: 100%;
-        grid-template-columns: 60% 32%;
+        gap: 64px;
+      }
+
+      @include responsive(420) {
+        justify-items: end;
       }
     }
 
     .wrapper-btn {
-      width: 36%;
+      width: fit-content;
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       gap: 20px;
 
-      @include responsive(1180) {
-        width: 60%;
-      }
-
-      @include responsive(990) {
+      @include responsive(1300) {
         grid-template-columns: 1fr;
-        width: 40%;
       }
 
-      @include responsive(700) {
+      @include md {
         width: 100%;
       }
     }

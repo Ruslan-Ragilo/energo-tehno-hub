@@ -1,23 +1,26 @@
 <script lang="ts" setup>
-
 interface Link {
   href: string;
-  text: string
+  text: string;
 }
 
 interface Props {
   heading: string;
-  links: Link[]
+  links: Link[];
 }
 
-const props = defineProps<Props>()
+const props = defineProps<Props>();
 </script>
 
 <template>
   <div class="links-footer">
     <p>{{ props.heading }}</p>
     <div class="wrapper-bottom-links">
-      <a v-for="(link, linkIndex) in props.links" :key="linkIndex" :href="link.href">{{ link.text }}</a>
+      <div v-for="(link, linkIndex) in props.links" :key="linkIndex">
+        <nuxt-link class="footer-link" :to="link.href">{{
+          link.text
+        }}</nuxt-link>
+      </div>
     </div>
   </div>
 </template>

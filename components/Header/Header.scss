@@ -73,13 +73,29 @@ header {
     }
 
     & .nav-link {
+      position: relative;
+
       font-size: 16px;
       color: $dark;
       transition: color 0.2s ease-in-out;
       text-underline-offset: 6px;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: $dark;
+
+        transition: width 0.2s ease-in-out;
+      }
       &:hover {
         color: $black;
-        text-decoration: underline;
+
+        &:after {
+          width: 100%;
+        }
       }
       &-active {
         color: $black;
@@ -93,6 +109,12 @@ header {
     justify-content: center;
     align-items: center;
     gap: 36px;
+
+    & button {
+      @include lg {
+        display: none;
+      }
+    }
   }
 }
 
