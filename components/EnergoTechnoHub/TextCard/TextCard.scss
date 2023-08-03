@@ -6,7 +6,17 @@
   justify-content: flex-end;
   gap: 16px;
 
+  @include lg {
+    border-radius: 16px;
+  }
+
+  @include md {
+    gap: 12px;
+    border-radius: 14px;
+  }
+
   @include sm {
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
   }
 }
