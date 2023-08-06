@@ -5,6 +5,15 @@
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Onest';
+  src: local('Onest'),
+    url('./assets/fonts/TTF/Onest-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
