@@ -73,6 +73,7 @@ header {
     }
 
     & .nav-link {
+      cursor: pointer;
       position: relative;
 
       font-size: 16px;
@@ -100,6 +101,43 @@ header {
       &-active {
         color: $black;
         text-decoration: underline;
+      }
+    }
+
+    .link-dropdown {
+      position: relative;
+
+      font-size: 16px;
+      color: $dark;
+
+      span {
+        cursor: pointer;
+      }
+    }
+
+    .wrapper-dropdown {
+      flex-direction: column;
+      padding: 20px;
+      gap: 20px;
+      background-color: #fff;
+      position: absolute;
+      left: -20px;
+      min-width: 350px;
+      width: 100%;
+      -webkit-box-shadow: 0px 44px 75px -28px rgba(34, 60, 80, 0.2);
+      -moz-box-shadow: 0px 44px 75px -28px rgba(34, 60, 80, 0.2);
+      box-shadow: 0px 44px 75px -28px rgba(34, 60, 80, 0.2);
+      border-radius: 0 0 20px 20px;
+      z-index: 111;
+      display: none;
+
+      &.active {
+        display: flex;
+      }
+
+      .nav-link {
+        width: fit-content;
+        cursor: pointer;
       }
     }
   }

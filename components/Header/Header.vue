@@ -1,7 +1,29 @@
 <script setup lang="ts">
 const isOpenMobMenu = ref(false);
+const textForDropdown = ref('')
+
+const handleDropdown = (text) => {
+  textForDropdown.value = text
+}
 
 const store = useModalStore();
+
+const dataLinkDropdown = {
+  ecosystem: [
+    { text: 'Фаундеры', to: '/ecosystem' },
+    { text: 'Экспертное сообщество', to: '/ecosystem' },
+    { text: 'Клуб бизнес-ангелов', to: '/ecosystem' },
+  ],
+  technology: [
+    { text: 'Технологические вызовы', to: '/technology' },
+    { text: 'Технологические компании ', to: '/technology' },
+  ],
+  more: [
+    { text: 'Новости', to: '/more' },
+    { text: 'Мероприятия', to: '/more' },
+    { text: 'Контакты', to: '/more' },
+  ],
+}
 </script>
 
 <template>
@@ -9,19 +31,37 @@ const store = useModalStore();
     <div class="header-wrapper">
       <nuxt-link to="/">
         <div class="header-logo">
-          <img src="/images/logo.svg" alt="logo" />
+          <img
+            src="/images/logo.svg"
+            alt="logo"
+          >
         </div>
       </nuxt-link>
-
       <nav :class="{ ['header-nav']: true, ['active']: isOpenMobMenu }">
-        <div class="close" @click="isOpenMobMenu = false">X</div>
-        <nuxt-link
-          class="nav-link"
-          active-class="nav-link-active"
-          to="/ecosystem"
+        <div
+          class="close"
+          @click="isOpenMobMenu = false"
         >
-          Экосистема
-        </nuxt-link>
+          X
+        </div>
+        <div
+          class="link-dropdown"
+          @mouseover="handleDropdown('Экосистема')"
+          @mouseleave="handleDropdown('')"
+        >
+          <span>Экосистема</span>
+          <div :class="{'wrapper-dropdown': true, 'active': textForDropdown === 'Экосистема'}">
+            <nuxt-link
+              v-for="link in dataLinkDropdown.ecosystem"
+              :key="link.text"
+              :to="link.to"
+              class="nav-link"
+              active-class="nav-link-active"
+            >
+              {{ link.text }}
+            </nuxt-link>
+          </div>
+        </div>
         <nuxt-link
           class="nav-link"
           active-class="nav-link-active"
@@ -29,28 +69,57 @@ const store = useModalStore();
         >
           Сервисы
         </nuxt-link>
-        <nuxt-link
-          class="nav-link"
-          active-class="nav-link-active"
-          to="/technologies"
+        <div
+          class="link-dropdown"
+          @mouseover="handleDropdown('Технологии')"
+          @mouseleave="handleDropdown('')"
         >
-          Технологии
-        </nuxt-link>
-        <nuxt-link class="nav-link" active-class="nav-link-active" to="/more">
-          Еще
-        </nuxt-link>
+          <span>Технологии</span>
+          <div :class="{'wrapper-dropdown': true, active: textForDropdown === 'Технологии'}">
+            <nuxt-link
+              v-for="link in dataLinkDropdown.technology"
+              :key="link.text"
+              :to="link.to"
+              class="nav-link"
+              active-class="nav-link-active"
+            >
+              {{ link.text }}
+            </nuxt-link>
+          </div>
+        </div>
+        <div
+          class="link-dropdown"
+          @mouseover="handleDropdown('Еще')"
+          @mouseleave="handleDropdown('')"
+        >
+          <span>Еще</span>
+          <div :class="{'wrapper-dropdown': true, active: textForDropdown === 'Еще'}">
+            <nuxt-link
+              v-for="link in dataLinkDropdown.more"
+              :key="link.text"
+              :to="link.to"
+              class="nav-link"
+              active-class="nav-link-active"
+            >
+              {{ link.text }}
+            </nuxt-link>
+          </div>
+        </div>
       </nav>
 
       <div class="header-right">
         <!-- <CommonLangSwitcher /> -->
         <CommonEllipsisButton
           text="Присоедениться"
-          :onClick="openStartupModal"
+          :on-click="openStartupModal"
           style="@media screen and (max-width: 1100px) {display: none}"
         />
       </div>
 
-      <button class="burger" @click="isOpenMobMenu = true">
+      <button
+        class="burger"
+        @click="isOpenMobMenu = true"
+      >
         <svg
           width="66"
           height="46"
