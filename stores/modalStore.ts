@@ -41,6 +41,8 @@ export const useModalStore = defineStore('modal-store', () => {
     console.log(obj);
 
     closeModal();
+
+    return obj;
   }
 
   return {

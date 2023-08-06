@@ -29,6 +29,15 @@ export default defineNuxtConfig({
         autoImports: ['defineStore', 'acceptHMRUpdate'],
       },
     ],
+    ['nuxt-mail', {
+      message: {
+        to: 'ruslanragilo7@gmail.com',
+      },
+      smtp: {
+        host: "http://localhost",
+        port: 3000,
+      },
+    }],
   ],
   imports: {
     dirs: ['stores', 'utils'],

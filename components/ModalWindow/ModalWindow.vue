@@ -1,21 +1,7 @@
-<script setup lang="ts">
-import { useModalStore } from '@/stores/modalStore';
+<script setup>
 
-const store = useModalStore();
 
-const handleEscapePress = (e) => {
-  if (e.key === 'Escape' && store.isModalOpen) {
-    store.closeModal();
-  }
-};
 
-onMounted(() => {
-  window.addEventListener('keydown', handleEscapePress);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener('keydown', handleEscapePress);
-});
 </script>
 
 <template>
@@ -66,13 +52,49 @@ onBeforeUnmount(() => {
           <CommonEllipsisButton
             :disabled="!store.isSubmitActive"
             text="Отправить заявку"
-            :onClick="store.submitModal"
+            :onClick="sendData"
           />
         </div>
       </div>
     </div>
   </transition>
 </template>
+
+<script>
+  import { useModalStore } from '@/stores/modalStore';
+  export default {
+    setup() {
+      
+
+      const store = useModalStore();
+
+      const handleEscapePress = (e) => {
+        if (e.key === 'Escape' && store.isModalOpen) {
+          store.closeModal();
+        }
+      };
+
+      onMounted(() => {
+        window.addEventListener('keydown', handleEscapePress);
+      });
+
+      onBeforeUnmount(() => {
+        window.removeEventListener('keydown', handleEscapePress);
+      });
+
+      return {
+        store,
+        handleEscapePress,
+      }
+    },
+    methods: {
+      sendData() {
+        console.log(this.store.submitModal());
+        // this.$mail.send(this.store.submitModal())
+      },
+    },
+  }
+</script>
 
 <style lang="scss" scoped>
 @import 'ModalWindow.scss';
