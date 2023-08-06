@@ -37,4 +37,10 @@
   &:hover p {
     transform: translateX(-4px);
   }
+
+  &:disabled {
+    pointer-events: none;
+    user-select: none;
+    filter: opacity(0.5);
+  }
 }

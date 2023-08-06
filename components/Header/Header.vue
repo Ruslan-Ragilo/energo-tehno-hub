@@ -23,6 +23,8 @@ const sendPersonalData = () => {
   checked.value = false;
   isModalOpen.value = false;
 };
+
+watch(checked, () => console.log(checked.value));
 </script>
 
 <template>
@@ -118,20 +120,24 @@ const sendPersonalData = () => {
             />
           </div>
           <CommonInput
-            type="text-area"
+            tagType="textarea"
             placeholder="Комментарий"
             v-model="comment"
           />
           <div class="modal-policy">
             <CommonCheckBox v-model="checked" />
-            <p class="modal-policy-textx">
+            <p class="modal-policy-text">
               Нажимая на кнопку «Отправить заявку», я подтверждаю свое согласие
-              на обработку персональных данных
+              на
+              <nuxt-link to="/" class="link"
+                >обработку персональных данных</nuxt-link
+              >
             </p>
           </div>
         </template>
         <template #footer>
           <CommonEllipsisButton
+            :disabled="!checked"
             text="Отправить заявку"
             :onClick="sendPersonalData"
           />
