@@ -80,7 +80,11 @@ onMounted(() => {
       title-text="Станьте участником «Энерготехнохаба Петербург» и получи доступ к сервисам поддержки своего стартапа"
     >
       <div class="circle-button">
-        <CommonButtonCircle type="link" to="/" text="Присоединиться" />
+        <CommonButtonCircle
+          type="button"
+          :onClick="openStartupModal"
+          text="Присоединиться"
+        />
       </div>
     </CommonSectionHeader>
     <div class="slider-box">

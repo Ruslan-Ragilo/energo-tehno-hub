@@ -17,8 +17,8 @@ const handlePlayerClick = () => {
         <CommonButtonCircle
           data-aos="fade-up"
           data-aos-duration="1000"
-          type="link"
-          to="/"
+          type="button"
+          :onClick="openExperienceModal"
           text="Рассказать о себе"
         />
       </div>
