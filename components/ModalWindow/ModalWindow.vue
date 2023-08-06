@@ -1,29 +1,73 @@
 <script setup lang="ts">
-interface Props {
-  show: boolean;
-}
+import { useModalStore } from '@/stores/modalStore';
 
-defineEmits(['close']);
+const store = useModalStore();
 
-const props = defineProps<Props>();
+const handleEscapePress = (e) => {
+  if (e.key === 'Escape' && store.isModalOpen) {
+    store.closeModal();
+  }
+};
+
+onMounted(() => {
+  window.addEventListener('keydown', handleEscapePress);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('keydown', handleEscapePress);
+});
 </script>
 
 <template>
   <transition name="modal">
-    <div v-if="show" class="modal-mask" @click="$emit('close')">
+    <div
+      v-if="store.isModalOpen"
+      class="modal-mask"
+      @click="store.closeModal"
+      @keydown="handleEscapePress"
+    >
       <div class="modal-container" @click.stop>
         <div class="modal-header">
-          <slot name="header"></slot>
+          <CommonXCross class="modal-xcross" @click="store.closeModal" />
+          <CommonText
+            text="Добро пожаловать в Энерготехнохаб Петербург"
+            size="xl"
+          />
         </div>
 
         <div class="modal-body">
-          <slot name="body"></slot>
+          <div class="modal-inputs">
+            <CommonInput type="text" label="Имя" v-model="store.nameField" />
+            <CommonInput
+              type="text"
+              label="Номер  или Email"
+              v-model="store.phoneField"
+            />
+          </div>
+          <CommonInput
+            tagType="textarea"
+            label="Комментарий"
+            :placeholder="store.commentPlaceholder"
+            v-model="store.commentField"
+          />
+          <div class="modal-policy">
+            <CommonCheckBox v-model="store.isPolicyChecked" />
+            <p class="modal-policy-text">
+              Нажимая на кнопку «Отправить заявку», я подтверждаю свое согласие
+              на
+              <nuxt-link to="/" class="link"
+                >обработку персональных данных</nuxt-link
+              >
+            </p>
+          </div>
         </div>
 
         <div class="modal-footer">
-          <slot name="footer">
-            <button @click="$emit('close')">OK</button>
-          </slot>
+          <CommonEllipsisButton
+            :disabled="!store.isSubmitActive"
+            text="Отправить заявку"
+            :onClick="store.submitModal"
+          />
         </div>
       </div>
     </div>
@@ -33,3 +77,4 @@ const props = defineProps<Props>();
 <style lang="scss" scoped>
 @import 'ModalWindow.scss';
 </style>
+stores/modalStore

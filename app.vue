@@ -14,6 +14,7 @@ onMounted(() => {
     <NuxtPage />
   </main>
   <Footer />
+  <Teleport to="body"><ModalWindow /></Teleport>
 </template>
 
 <style lang="scss">

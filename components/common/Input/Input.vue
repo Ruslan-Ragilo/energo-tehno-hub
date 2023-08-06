@@ -3,7 +3,8 @@
 interface Props {
   type?: string;
   modelValue: string;
-  placeholder: string;
+  label: string;
+  placeholder?: string;
   tagType?: 'input' | 'textarea';
 }
 const props = defineProps<Props>();
@@ -19,16 +20,12 @@ const labelEl = ref();
 
 const onFocus = (e) => {
   isFocused.value = true;
-  e.target.style.backgroundColor = '#eeee';
-  e.target.style.borderRadius = 30 + 'px';
   labelEl.value.style.marginLeft = 0 + 'px';
   labelEl.value.style.backgroundColor = '#fff';
 };
 
 const onBlur = (e) => {
   isFocused.value = false;
-  e.target.style.backgroundColor = 'transparent';
-  e.target.style.borderRadius = 0 + 'px';
   labelEl.value.style.marginLeft = 0 + 'px';
   labelEl.value.style.backgroundColor = 'transparent';
 };
@@ -45,20 +42,19 @@ const mouseleave = (e) => {
 <template>
   <div v-if="props.tagType === 'textarea'" class="form-group">
     <label
-      :for="props.placeholder"
+      :for="props.label"
       ref="labelEl"
       :class="isFocused || modelValue.length > 0 ? 'focused' : ''"
-      class="form-label"
-      >{{ props.placeholder }}</label
+      class="form-label textarea"
+      >{{ props.label }}</label
     >
     <textarea
-      :id="props.placeholder"
+      :id="props.label"
       rows="5"
       class="form-textarea"
+      :placeholder="props.placeholder"
       :value="(modelValue as string)"
       @input="updateInputValue"
-      @focus="onFocus($event)"
-      @blur="onBlur($event)"
       @mouseover="mouseover($event)"
       @mouseleave="mouseleave($event)"
     />
@@ -66,15 +62,16 @@ const mouseleave = (e) => {
   <div v-else class="form-group">
     <label
       ref="labelEl"
-      :for="props.placeholder"
+      :for="props.label"
       :class="isFocused || modelValue.length > 0 ? 'focused' : ''"
       class="form-label"
-      >{{ props.placeholder }}</label
+      >{{ props.label }}</label
     >
     <input
-      :id="props.placeholder"
+      :id="props.label"
       :type="props.type ?? 'text'"
       class="form-input"
+      :placeholder="props.placeholder"
       :value="modelValue"
       @input="updateInputValue"
       @focus="onFocus($event)"

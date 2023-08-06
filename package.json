@@ -22,7 +22,9 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.4.11",
     "aos": "^3.0.0-beta.6",
+    "pinia": "^2.1.6",
     "sass": "^1.64.0",
     "sass-loader": "^13.3.2",
     "swiper": "^10.0.4",
