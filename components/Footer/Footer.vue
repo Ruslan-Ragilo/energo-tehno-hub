@@ -72,7 +72,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <CommonText text="2023" size="s" theme="gray" />
+      <CommonText text="Энерготехнохаб 2023" size="s" theme="gray" />
       <!-- <CommonLangSwitcher /> -->
       <a href="#">
         <CommonText text="Политика конфиденциальности" size="s" theme="gray" />
