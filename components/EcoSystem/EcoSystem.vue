@@ -90,7 +90,7 @@ onMounted(() => {
     <div class="slider-box">
       <div class="empty"></div>
       <div class="wrapper-slider">
-        <div v-for="(item, index) in 6" :key="index" class="card-eco">
+        <div v-for="(item, index) in 6" :key="index" :class="`card-eco card-eco${item}`">
           <p class="top-index">
             {{ `(0${item})` }}
           </p>

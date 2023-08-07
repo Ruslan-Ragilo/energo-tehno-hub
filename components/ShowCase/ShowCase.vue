@@ -6,7 +6,7 @@
         titleText="Узнайте, какие технологии интересны отрасли"
       >
         <div class="circle-button">
-          <CommonButtonCircle type="link" to="/" text="Смотреть все задачи" />
+          <CommonButtonCircle type="link" to="/services" text="Смотреть все задачи" />
         </div>
       </CommonSectionHeader>
       <div class="wrapper-cards">

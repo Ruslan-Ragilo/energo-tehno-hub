@@ -29,7 +29,7 @@
       </div>
       <div class="wrapper-btn">
         <CommonEllipsisButton
-          href="#"
+          href="mailto:info@techhubspb.ru"
           text="Электронная почта"
           type="link"
           :style="{
@@ -39,7 +39,8 @@
           }"
         />
         <CommonEllipsisButton
-          href="#"
+          href="https://vk.com/techhubspb?ysclid=ll1112b1m1886596150"
+          :blank="true"
           text="Сообщения ВКонтакте"
           type="link"
           :style="{
@@ -59,7 +60,7 @@
           }"
         />
         <CommonEllipsisButton
-          href="#"
+          href="mailto:info@techhubspb.ru"
           text="Сотрудничество"
           type="link"
           :style="{

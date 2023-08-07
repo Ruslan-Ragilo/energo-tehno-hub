@@ -26,3 +26,12 @@ body {
 a {
   text-decoration: none;
 }
+
+textarea::placeholder {
+  font-family: 'Onest';
+  color: #B6B6B6;
+}
+textarea {
+  font-family: 'Onest';
+  color: #B6B6B6;
+}

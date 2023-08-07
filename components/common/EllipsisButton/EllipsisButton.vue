@@ -4,6 +4,7 @@ interface Props {
   onClick?: () => void;
   text: string;
   href?: string;
+  blank?: boolean
 }
 
 const props = defineProps<Props>();
@@ -11,6 +12,7 @@ const props = defineProps<Props>();
 
 <template>
   <nuxt-link
+    :target="blank ? '_blank' : ''"
     v-if="props.type === 'link'"
     class="ellipsis-button"
     :to="props.href"

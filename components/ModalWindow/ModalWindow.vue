@@ -1,9 +1,3 @@
-<script setup>
-
-
-
-</script>
-
 <template>
   <transition name="modal">
     <div
@@ -99,4 +93,3 @@
 <style lang="scss" scoped>
 @import 'ModalWindow.scss';
 </style>
-stores/modalStore

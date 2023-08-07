@@ -1,10 +1,9 @@
 <template>
   <section class="section">
     <CommonSectionHeader
-      headingText="Цифровое сообщество"
-      titleText="Присоединяйтесь к сообществу «Энерготехнохаба Петербург» "
-    >
-    </CommonSectionHeader>
+      heading-text="Цифровое сообщество"
+      title-text="Присоединяйтесь к сообществу «Энерготехнохаба Петербург» "
+    />
     <div class="cards-wrapper">
       <div class="cards-container">
         <DigitalCommunityCard
@@ -49,34 +48,49 @@
           class="chatBot"
           title="Чат-бот"
           :theme="['dark', 'gray']"
-          linkColor="#666666"
+          link-color="#666666"
           description="Создан юристами для предпринимателей"
           :background="{ type: 'color', payload: '#eeeeee' }"
         />
-        <DigitalCommunityCard
-          data-aos="fade-up"
-          data-aos-duration="1000"
+        <a
           class="telegram"
-          title="Telegram-канал"
-          description="Делимся актуальным и интересным из жизни экосистемы"
-          :background="{
-            type: 'image',
-            payload: 'images/backgrounds/digitalCommunity/telegram.png',
-          }"
-        />
-        <DigitalCommunityCard
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-delay="200"
+          style="display: block; height: 100%;"
+          target="_blank"
+          href="https://t.me/techhubspb"
+        >
+          <DigitalCommunityCard
+            style="height: 100%;"
+            title="Telegram-канал"
+            description="Делимся актуальным и интересным из жизни экосистемы"
+            :background="{
+              type: 'image',
+              payload: 'images/backgrounds/digitalCommunity/telegram.png',
+            }"
+          />
+        </a>
+        <a
           class="community"
-          title="Сообщество"
-          description="Обсуждаем тренды, помогаем друг другу"
-          :background="{
-            type: 'image',
-            payload: 'images/backgrounds/digitalCommunity/contacts.png',
-          }"
-          withBlur
-        />
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+          style="display: block; height: 100%;"
+          target="_blank"
+          href="https://vk.com/techhubspb?ysclid=ll1112b1m1886596150"
+        >
+          <DigitalCommunityCard
+            title="Сообщество"
+            style="height: 100%;"
+            description="Обсуждаем тренды, помогаем друг другу"
+            :background="{
+              type: 'image',
+              payload: 'images/backgrounds/digitalCommunity/contacts.png',
+            }"
+            with-blur
+          />
+        </a>
         <DigitalCommunityCard
           data-aos="fade-up"
           data-aos-duration="1000"

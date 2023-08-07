@@ -40,7 +40,7 @@ const handlePlayerClick = () => {
             data-aos-duration="1000"
             data-aos="fade-up"
             type="link"
-            to="/"
+            to="/services"
             text="узнать больше"
             color="#fafafa"
           />

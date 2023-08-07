@@ -60,13 +60,14 @@
   }
 
   & .slides {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     gap: 20px;
 
     @include lg {
-      flex-direction: column;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
       gap: 14px;
     }
 

@@ -19,7 +19,7 @@ const titleText = ref(
         size="xl"
       />
       <div class="circle-button">
-        <CommonButtonCircle type="link" to="/" text="Узнать о нас больше" />
+        <CommonButtonCircle type="link" to="/services " text="Узнать о нас больше" />
       </div>
 
       <div class="numbers-table">
@@ -65,15 +65,16 @@ const titleText = ref(
         image="/images/backgrounds/tehcnoHub/hub2.jpg"
         text="Уже есть команда, технология, прототип? Привлекайте инвестиции и выводите бизнес на рынок ТЭК с нашими сервисами поддержки."
       />
-      <EnergoTechnoHubSlideCard
-        @click="() => console.log(123)"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-delay="100"
-        :titles="['Познакомьтесь', 'с нашими фаундерами']"
-        image="/images/backgrounds/tehcnoHub/hub3.jpg"
-        text="Узнайте больше об участниках «Энерготехнохаба Петербург» и технологиях, которые они создают."
-      />
+      <NuxtLink to="/services">
+        <EnergoTechnoHubSlideCard
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="100"
+          :titles="['Познакомьтесь', 'с нашими фаундерами']"
+          image="/images/backgrounds/tehcnoHub/hub3.jpg"
+          text="Узнайте больше об участниках «Энерготехнохаба Петербург» и технологиях, которые они создают."
+        />
+      </NuxtLink>
     </div>
   </section>
 </template>
