@@ -31,11 +31,15 @@ export default defineNuxtConfig({
     ],
     ['nuxt-mail', {
       message: {
-        to: 'ruslanragilo7@gmail.com',
+        to: 'dev@sloy.design',
       },
       smtp: {
-        host: "http://localhost",
-        port: 3000,
+        host: "smtp.yandex.ru",
+        port: 465,
+        auth: {
+          user: 'dev@sloy.design',
+          pass: 'QPalzm321',
+        }
       },
     }],
   ],

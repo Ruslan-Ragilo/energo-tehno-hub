@@ -4,6 +4,8 @@ export const useModalStore = defineStore('modal-store', () => {
   const isModalOpen = ref(false);
   const nameField = ref('');
   const phoneField = ref('');
+  const emailField = ref('');
+  const linksField = ref('');
   const commentField = ref('');
 
   const isPolicyChecked = ref(false);
@@ -25,6 +27,8 @@ export const useModalStore = defineStore('modal-store', () => {
   function closeModal() {
     nameField.value = '';
     phoneField.value = '';
+    emailField.value = '';
+    linksField.value = '';
     commentField.value = '';
     isPolicyChecked.value = false;
 
@@ -35,6 +39,8 @@ export const useModalStore = defineStore('modal-store', () => {
     const obj = {
       name: nameField.value,
       phone: phoneField.value,
+      email: emailField.value,
+      links: linksField.value,
       comment: commentField.value,
     };
 
@@ -50,7 +56,9 @@ export const useModalStore = defineStore('modal-store', () => {
     isModalOpen,
     nameField,
     phoneField,
+    emailField,
     commentField,
+    linksField,
     isPolicyChecked,
     isSubmitActive,
     openModal,

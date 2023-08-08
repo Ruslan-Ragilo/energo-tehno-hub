@@ -20,8 +20,18 @@
             <CommonInput type="text" label="Имя" v-model="store.nameField" />
             <CommonInput
               type="text"
-              label="Номер  или Email"
+              label="Телефон"
               v-model="store.phoneField"
+            />
+            <CommonInput
+              type="text"
+              label="Email"
+              v-model="store.emailField"
+            />
+            <CommonInput
+              type="text"
+              label="Возможные ссылки"
+              v-model="store.linksField"
             />
           </div>
           <CommonInput
@@ -61,12 +71,24 @@
       
 
       const store = useModalStore();
+      const mail = useMail()
 
       const handleEscapePress = (e) => {
         if (e.key === 'Escape' && store.isModalOpen) {
           store.closeModal();
         }
       };
+
+      const sendData = () => {
+        console.log(store.submitModal());
+        mail.send(
+          {
+            from: 'ETX',
+            subject: 'Incredible',
+            text: JSON.stringify(store.submitModal()),
+          },
+        )
+      }
 
       onMounted(() => {
         window.addEventListener('keydown', handleEscapePress);
@@ -79,13 +101,8 @@
       return {
         store,
         handleEscapePress,
+        sendData,
       }
-    },
-    methods: {
-      sendData() {
-        console.log(this.store.submitModal());
-        // this.$mail.send(this.store.submitModal())
-      },
     },
   }
 </script>

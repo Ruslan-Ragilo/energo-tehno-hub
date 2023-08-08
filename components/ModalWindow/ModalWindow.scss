@@ -77,13 +77,12 @@
   margin-bottom: 64px;
   width: 100%;
 
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
 
   @include responsive(680) {
-    flex-direction: column;
-    gap: 36px;
+    grid-template-columns: 1fr;
   }
 }
 
