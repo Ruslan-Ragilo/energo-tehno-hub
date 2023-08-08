@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 export const useModalStore = defineStore('modal-store', () => {
   const commentPlaceholder = ref('');
 
@@ -45,6 +46,15 @@ export const useModalStore = defineStore('modal-store', () => {
     };
 
     console.log(obj);
+    const mail = useMail()
+
+    mail.send(
+      {
+        from: 'dev@sloy.design',
+        subject: 'Contact form message',
+        text: `name: ${obj.name} phone: ${obj.phone} email: ${obj.email} comment: ${obj.comment} links: ${obj.links}`,
+      },
+    )
 
     closeModal();
 

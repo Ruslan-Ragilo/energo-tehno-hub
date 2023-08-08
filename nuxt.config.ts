@@ -39,7 +39,7 @@ export default defineNuxtConfig({
         auth: {
           user: 'dev@sloy.design',
           pass: 'QPalzm321',
-        }
+        },
       },
     }],
   ],

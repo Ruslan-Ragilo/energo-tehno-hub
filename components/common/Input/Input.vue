@@ -1,11 +1,12 @@
 <!-- eslint-disable no-undef -->
 <script setup lang="ts">
+import { IMaskComponent } from 'vue-imask';
 interface Props {
   type?: string;
   modelValue: string;
   label: string;
   placeholder?: string;
-  tagType?: 'input' | 'textarea';
+  tagType?: 'input' | 'textarea' | 'phoneMask';
 }
 const props = defineProps<Props>();
 
@@ -40,14 +41,16 @@ const mouseleave = (e) => {
 </script>
 
 <template>
-  <div v-if="props.tagType === 'textarea'" class="form-group">
+  <div
+    v-if="props.tagType === 'textarea'"
+    class="form-group"
+  >
     <label
-      :for="props.label"
       ref="labelEl"
+      :for="props.label"
       :class="isFocused || modelValue.length > 0 ? 'focused' : ''"
       class="form-label textarea"
-      >{{ props.label }}</label
-    >
+    >{{ props.label }}</label>
     <textarea
       :id="props.label"
       rows="5"
@@ -59,14 +62,16 @@ const mouseleave = (e) => {
       @mouseleave="mouseleave($event)"
     />
   </div>
-  <div v-else class="form-group">
+  <div
+    v-else-if="props.tagType === 'input'"
+    class="form-group"
+  >
     <label
       ref="labelEl"
       :for="props.label"
       :class="isFocused || modelValue.length > 0 ? 'focused' : ''"
       class="form-label"
-      >{{ props.label }}</label
-    >
+    >{{ props.label }}</label>
     <input
       :id="props.label"
       :type="props.type ?? 'text'"
@@ -78,6 +83,34 @@ const mouseleave = (e) => {
       @blur="onBlur($event)"
       @mouseover="mouseover($event)"
       @mouseleave="mouseleave($event)"
+    >
+  </div>
+  <div
+    v-else
+    class="form-group"
+  >
+    <label
+      ref="labelEl"
+      :for="props.label"
+      :class="isFocused || modelValue.length > 0 ? 'focused' : ''"
+      class="form-label"
+    >{{ props.label }}</label>
+    <IMaskComponent
+      :id="props.label"
+      :type="props.type ?? 'text'"
+      class="form-input"
+      :placeholder="props.placeholder"
+      :value="modelValue"
+      :mask="'+{7}(000)000-00-00'"
+      placeholder-char="#"  
+      radix="."
+      :unmask="true"
+      @input="updateInputValue"
+      @focus="onFocus($event)"
+      @blur="onBlur($event)"
+      @mouseover="mouseover($event)"
+      @mouseleave="mouseleave($event)"
+      @accept="onAccept"
     />
   </div>
 </template>
