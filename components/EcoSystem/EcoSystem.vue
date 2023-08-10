@@ -1,5 +1,6 @@
 <!-- eslint-disable no-undef -->
 <script setup>
+const dataCard = ['Привлекайте инвестиции от финансовых партнеров «Энерготехнохаба Петербург»', 'Получайте экспертизу от ведущих технических специалистов отрасли', 'Советуйтесь с руководством крупнейших энергетических корпораций России', 'Запускайте бизнес вместе с профессиональными трекерами', 'Выходите на опытно-промышленные испытания с отраслевыми корпорациями', 'Открывайте бизнес при поддержке юристов, маркетологов и бизнес-аналитиков']
 onMounted(() => {
   const cards = document.querySelectorAll('.card-eco');
   const wrapperSlider = document.querySelector('.wrapper-slider');
@@ -90,12 +91,12 @@ onMounted(() => {
     <div class="slider-box">
       <div class="empty"></div>
       <div class="wrapper-slider">
-        <div v-for="(item, index) in 6" :key="index" :class="`card-eco card-eco${item}`">
+        <div v-for="(item, index) in dataCard" :key="index" :class="`card-eco card-eco${item}`">
           <p class="top-index">
-            {{ `(0${item})` }}
+            {{ `(0${index+=1})` }}
           </p>
           <CommonText
-            text="Открывайте бизнес при поддержке юристов, маркетологов и бизнес-аналитиков"
+            :text="item"
           />
         </div>
       </div>
