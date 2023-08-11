@@ -1,9 +1,11 @@
 <script setup>
-const isPlaying = ref(false);
+import { useModalYoutubeStore } from "@/stores/modalYoutubeStore";
 
-const handlePlayerClick = () => {
-  isPlaying.value = !isPlaying.value;
-};
+const store = useModalYoutubeStore();
+
+// const handlePlayerClick = () => {
+//   isPlaying.value = !isPlaying.value;
+// };
 </script>
 
 <template>
@@ -53,8 +55,8 @@ const handlePlayerClick = () => {
           «Место, где верят в твои идеи» с резидентами «Энерготехнохаба
           Петербург»
         </p>
-        <div class="play-button" @click="handlePlayerClick">
-          <CommonPlayButton :isPlaying="isPlaying" />
+        <div class="play-button" @click="store.openModal">
+          <CommonPlayButton :isPlaying="store.isModalOpen" />
         </div>
       </div>
     </div>
@@ -62,5 +64,5 @@ const handlePlayerClick = () => {
 </template>
 
 <style lang="scss" scoped>
-@import 'HeroBlock.scss';
+@import "HeroBlock.scss";
 </style>

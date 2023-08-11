@@ -1,20 +1,21 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable no-undef */
 /* eslint-disable prefer-const */
+
 export const useModalStore = defineStore("modal-store", () => {
-  const commentPlaceholder = ref("");
+  const commentPlaceholder = ref<string>("");
 
-  const startValidation = ref(false);
+  const startValidation = ref<boolean>(false);
 
-  const isModalOpen = ref(false);
-  const nameField = ref("");
-  const phoneField = ref("");
-  const emailField = ref("");
-  const linksField = ref("");
-  const commentField = ref("");
-  const isPolicyChecked = ref(false);
+  const isModalOpen = ref<boolean>(false);
+  const nameField = ref<string>("");
+  const phoneField = ref<string>("");
+  const emailField = ref<string>("");
+  const linksField = ref<string>("");
+  const commentField = ref<string>("");
+  const isPolicyChecked = ref<boolean>(false);
 
-  const hiddenInputField = ref("");
+  const hiddenInputField = ref<string>("");
 
   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 

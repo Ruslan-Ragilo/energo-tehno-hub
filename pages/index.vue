@@ -5,6 +5,7 @@
     <EcoSystem />
     <ShowCase />
     <DigitalCommunity />
+    <Teleport to="body"><ModalYoutube /></Teleport>
   </div>
 </template>
 
