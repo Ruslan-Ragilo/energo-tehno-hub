@@ -1,29 +1,29 @@
 <script setup lang="ts">
 const isOpenMobMenu = ref(false);
-const textForDropdown = ref('')
+const textForDropdown = ref("");
 
 const handleDropdown = (text) => {
-  textForDropdown.value = text
-}
+  textForDropdown.value = text;
+};
 
 const store = useModalStore();
 
 const dataLinkDropdown = {
   ecosystem: [
-    { text: 'Фаундеры', to: '/ecosystem' },
-    { text: 'Экспертное сообщество', to: '/ecosystem' },
-    { text: 'Клуб бизнес-ангелов', to: '/ecosystem' },
+    { text: "Фаундеры", to: "/ecosystem" },
+    { text: "Экспертное сообщество", to: "/ecosystem" },
+    { text: "Клуб бизнес-ангелов", to: "/ecosystem" },
   ],
   technology: [
-    { text: 'Технологические вызовы', to: '/technology' },
-    { text: 'Технологические компании ', to: '/technology' },
+    { text: "Технологические вызовы", to: "/technology" },
+    { text: "Технологические компании ", to: "/technology" },
   ],
   more: [
-    { text: 'Новости', to: '/more' },
-    { text: 'Мероприятия', to: '/more' },
-    { text: 'Контакты', to: '/more' },
+    { text: "Новости", to: "/more" },
+    { text: "Мероприятия", to: "/more" },
+    { text: "Контакты", to: "/more" },
   ],
-}
+};
 </script>
 
 <template>
@@ -31,26 +31,23 @@ const dataLinkDropdown = {
     <div class="header-wrapper">
       <nuxt-link to="/">
         <div class="header-logo">
-          <img
-            src="/images/logo.svg"
-            alt="logo"
-          >
+          <img src="/images/logo.svg" alt="logo" />
         </div>
       </nuxt-link>
       <nav :class="{ ['header-nav']: true, ['active']: isOpenMobMenu }">
-        <div
-          class="close"
-          @click="isOpenMobMenu = false"
-        >
-          X
-        </div>
+        <div class="close" @click="isOpenMobMenu = false">X</div>
         <div
           class="link-dropdown"
           @mouseover="handleDropdown('Экосистема')"
           @mouseleave="handleDropdown('')"
         >
           <span>Экосистема</span>
-          <div :class="{'wrapper-dropdown': true, 'active': textForDropdown === 'Экосистема'}">
+          <div
+            :class="{
+              'wrapper-dropdown': true,
+              active: textForDropdown === 'Экосистема',
+            }"
+          >
             <nuxt-link
               v-for="link in dataLinkDropdown.ecosystem"
               :key="link.text"
@@ -75,7 +72,12 @@ const dataLinkDropdown = {
           @mouseleave="handleDropdown('')"
         >
           <span>Технологии</span>
-          <div :class="{'wrapper-dropdown': true, active: textForDropdown === 'Технологии'}">
+          <div
+            :class="{
+              'wrapper-dropdown': true,
+              active: textForDropdown === 'Технологии',
+            }"
+          >
             <nuxt-link
               v-for="link in dataLinkDropdown.technology"
               :key="link.text"
@@ -93,7 +95,12 @@ const dataLinkDropdown = {
           @mouseleave="handleDropdown('')"
         >
           <span>Еще</span>
-          <div :class="{'wrapper-dropdown': true, active: textForDropdown === 'Еще'}">
+          <div
+            :class="{
+              'wrapper-dropdown': true,
+              active: textForDropdown === 'Еще',
+            }"
+          >
             <nuxt-link
               v-for="link in dataLinkDropdown.more"
               :key="link.text"
@@ -110,16 +117,13 @@ const dataLinkDropdown = {
       <div class="header-right">
         <!-- <CommonLangSwitcher /> -->
         <CommonEllipsisButton
-          text="Присоедениться"
+          text="Присоединиться"
           :on-click="openStartupModal"
           style="@media screen and (max-width: 1100px) {display: none}"
         />
       </div>
 
-      <button
-        class="burger"
-        @click="isOpenMobMenu = true"
-      >
+      <button class="burger" @click="isOpenMobMenu = true">
         <svg
           width="66"
           height="46"
@@ -148,5 +152,5 @@ const dataLinkDropdown = {
 </template>
 
 <style lang="scss" scoped>
-@import 'Header.scss';
+@import "Header.scss";
 </style>

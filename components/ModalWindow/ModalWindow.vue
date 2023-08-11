@@ -19,7 +19,7 @@
           <div class="modal-inputs">
             <CommonInput
               type="text"
-              label="Имя"
+              label="Имя *"
               tag-type="input"
               v-model="store.nameField"
               :error-message="store.isNameValid ? '' : 'Минимум 2 символа'"
@@ -27,13 +27,13 @@
             <CommonInput
               type="tel"
               class="tel"
-              label="Телефон"
+              label="Телефон *"
               v-model="store.phoneField"
               :error-message="store.isPhoneValid ? '' : 'Неверный формат'"
             />
             <CommonInput
               type="email"
-              label="Email"
+              label="Email *"
               tag-type="input"
               v-model="store.emailField"
               :error-message="store.isEmailVaild ? '' : 'Неверный формат'"
