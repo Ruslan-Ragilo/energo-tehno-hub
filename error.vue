@@ -6,5 +6,8 @@
 </template>
 
 <script setup>
-import './error.scss';
+import "./error.scss";
+useHead({
+  title: "Страница не найдена",
+});
 </script>

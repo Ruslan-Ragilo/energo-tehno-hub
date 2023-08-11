@@ -17,19 +17,24 @@
             payload: '/images/backgrounds/digitalCommunity/news.jpg',
           }"
         />
-
-        <DigitalCommunityCard
+        <a
+          class="contacts"
           data-aos="fade-up"
           data-aos-duration="1000"
-          class="contacts"
-          title="Контакты"
-          description="Свяжитесь с нами по любым вопросам"
-          :background="{
-            type: 'color',
-            payload: '#666666',
-            hoverColor: '#5E5E5E',
-          }"
-        />
+          style="display: block; height: 100%"
+          target="_blank"
+          href="https://t.me/techhubspb"
+        >
+          <DigitalCommunityCard
+            style="height: 100%"
+            title="Контакты"
+            description="Свяжитесь с нами по любым вопросам"
+            :background="{
+              type: 'color',
+              payload: '#666666',
+              hoverColor: '#5E5E5E',
+            }"
+        /></a>
         <DigitalCommunityCard
           data-aos="fade-up"
           data-aos-duration="1000"
@@ -57,12 +62,12 @@
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-delay="200"
-          style="display: block; height: 100%;"
+          style="display: block; height: 100%"
           target="_blank"
           href="https://t.me/techhubspb"
         >
           <DigitalCommunityCard
-            style="height: 100%;"
+            style="height: 100%"
             title="Telegram-канал"
             description="Делимся актуальным и интересным из жизни экосистемы"
             :background="{
@@ -76,13 +81,13 @@
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-delay="200"
-          style="display: block; height: 100%;"
+          style="display: block; height: 100%"
           target="_blank"
           href="https://vk.com/techhubspb?ysclid=ll1112b1m1886596150"
         >
           <DigitalCommunityCard
             title="Сообщество"
-            style="height: 100%;"
+            style="height: 100%"
             description="Обсуждаем тренды, помогаем друг другу"
             :background="{
               type: 'image',
@@ -91,18 +96,24 @@
             with-blur
           />
         </a>
-        <DigitalCommunityCard
+        <a
+          class="digest"
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-delay="200"
-          class="digest"
-          title="Дайджест"
-          description="О самом главном за первую половину 2023 года"
-          :background="{
-            type: 'image',
-            payload: 'images/backgrounds/digitalCommunity/digest.png',
-          }"
-        />
+          style="display: block; height: 100%"
+          target="_blank"
+          href="https://telegra.ph/Dajdzhest-yanvar--iyun-2023-07-07"
+        >
+          <DigitalCommunityCard
+            title="Дайджест"
+            style="height: 100%"
+            description="О самом главном за первую половину 2023 года"
+            :background="{
+              type: 'image',
+              payload: 'images/backgrounds/digitalCommunity/digest.png',
+            }"
+        /></a>
       </div>
     </div>
   </section>
@@ -111,5 +122,5 @@
 <script setup></script>
 
 <style scoped lang="scss">
-@import './DigitalCommunity';
+@import "./DigitalCommunity";
 </style>

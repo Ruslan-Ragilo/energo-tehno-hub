@@ -8,8 +8,19 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+useHead({
+  title: "Энерготехнохаб Петербур",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Энерготехнохаб Петербург. Мы — точка притяжения для инженеров. и предпринимателей, готовых запустить. deep-tech стартап в энергетической отрасли.",
+    },
+  ],
+});
+</script>
 
 <style lang="scss" scoped>
-@import 'index.scss';
+@import "index.scss";
 </style>

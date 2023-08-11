@@ -1,64 +1,115 @@
+/* eslint-disable no-useless-escape */
+/* eslint-disable no-undef */
 /* eslint-disable prefer-const */
-export const useModalStore = defineStore('modal-store', () => {
-  const commentPlaceholder = ref('');
+export const useModalStore = defineStore("modal-store", () => {
+  const commentPlaceholder = ref("");
+
+  const startValidation = ref(false);
 
   const isModalOpen = ref(false);
-  const nameField = ref('');
-  const phoneField = ref('');
-  const emailField = ref('');
-  const linksField = ref('');
-  const commentField = ref('');
-
+  const nameField = ref("");
+  const phoneField = ref("");
+  const emailField = ref("");
+  const linksField = ref("");
+  const commentField = ref("");
   const isPolicyChecked = ref(false);
+
+  const hiddenInputField = ref("");
+
+  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  // isValid computeds
+  const isNameValid = computed(() => {
+    if (startValidation.value) {
+      return nameField.value.length > 1;
+    }
+    return true;
+  });
+  const isPhoneValid = computed(() => {
+    if (startValidation.value) {
+      return phoneField.value.length === 16;
+    }
+    return true;
+  });
+  const isEmailVaild = computed(() => {
+    if (startValidation.value) {
+      return emailRegex.test(emailField.value);
+    }
+    return true;
+  });
+
+  const isCommentValid = computed(() => {
+    if (startValidation.value) {
+      return commentField.value.length < 350;
+    }
+    return true;
+  });
+
+  const commentFieldMax = computed(() => commentField.value.length);
 
   const isSubmitActive = computed(() => {
     return (
+      isPolicyChecked.value &&
       nameField.value.length > 0 &&
       phoneField.value.length > 0 &&
-      commentField.value.length > 0 &&
-      isPolicyChecked
+      emailField.value.length > 0
     );
   });
 
   function openModal(comment: string) {
+    resetFrom();
     commentPlaceholder.value = comment;
     isModalOpen.value = true;
   }
 
   function closeModal() {
-    nameField.value = '';
-    phoneField.value = '';
-    emailField.value = '';
-    linksField.value = '';
-    commentField.value = '';
-    isPolicyChecked.value = false;
+    resetFrom();
 
     isModalOpen.value = false;
   }
 
   function submitModal() {
-    const obj = {
-      name: nameField.value,
-      phone: phoneField.value,
-      email: emailField.value,
-      links: linksField.value,
-      comment: commentField.value,
-    };
+    startValidation.value = true;
+    hiddenInputField.value = "555";
 
-    console.log(obj);
-    const mail = useMail()
+    if (
+      isEmailVaild.value &&
+      isNameValid.value &&
+      isPhoneValid.value &&
+      isPolicyChecked.value &&
+      hiddenInputField.value === "555"
+    ) {
+      const obj = {
+        name: nameField.value,
+        phone: phoneField.value,
+        email: emailField.value,
+        links: linksField.value,
+        comment: commentField.value,
+      };
 
-    mail.send(
-      {
-        from: 'dev@sloy.design',
-        subject: 'Contact form message',
-        text: `name: ${obj.name} phone: ${obj.phone} email: ${obj.email} comment: ${obj.comment} links: ${obj.links}`,
-      },
-    )
+      console.log(obj);
+      // const mail = useMail();
 
-    closeModal();
+      // mail.send({
+      //   from: "dev@sloy.design",
+      //   subject: "Contact form message",
+      //   text: `name: ${obj.name} phone: ${obj.phone} email: ${obj.email} comment: ${obj.comment} links: ${obj.links}`,
+      // });
 
-    return obj;
+      closeModal();
+      return obj;
+    }
+  }
+
+  function resetFrom() {
+    nameField.value = "";
+    phoneField.value = "";
+    emailField.value = "";
+    linksField.value = "";
+    commentField.value = "";
+    isPolicyChecked.value = false;
+    startValidation.value = false;
+    hiddenInputField.value = "";
   }
 
   return {
@@ -70,10 +121,16 @@ export const useModalStore = defineStore('modal-store', () => {
     commentField,
     linksField,
     isPolicyChecked,
+    hiddenInputField,
     isSubmitActive,
     openModal,
     closeModal,
     submitModal,
+    isEmailVaild,
+    isPhoneValid,
+    isNameValid,
+    isCommentValid,
+    commentFieldMax,
   };
 });
 

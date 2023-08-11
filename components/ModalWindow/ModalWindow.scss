@@ -36,7 +36,7 @@
     height: 100%;
     min-height: 100vh;
 
-    padding: 14px;
+    padding: 54px 14px 14px;
 
     border-radius: 0;
   }
@@ -104,7 +104,7 @@
       position: relative;
       &::after {
         position: absolute;
-        content: '';
+        content: "";
         bottom: 2px;
         left: 0;
         width: 100%;
