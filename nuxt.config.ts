@@ -6,7 +6,8 @@ export default defineNuxtConfig({
   app: {
     head: {
       charset: "utf-8",
-      viewport: "width=device-width, initial-scale=1",
+      viewport:
+        "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no",
       link: [
         { href: "https://unpkg.com/aos@2.3.1/dist/aos.css", rel: "stylesheet" },
         { rel: "icon", type: "image/png", href: "/favicon.ico" },

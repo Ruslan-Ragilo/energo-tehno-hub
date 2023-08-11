@@ -27,7 +27,7 @@ export const useModalStore = defineStore("modal-store", () => {
   });
   const isPhoneValid = computed(() => {
     if (startValidation.value) {
-      return phoneField.value.length === 16;
+      return phoneField.value.substring(0, 16).length === 16;
     }
     return true;
   });
@@ -60,12 +60,14 @@ export const useModalStore = defineStore("modal-store", () => {
     resetFrom();
     commentPlaceholder.value = comment;
     isModalOpen.value = true;
+    document.body.classList.add("modal-open");
   }
 
   function closeModal() {
     resetFrom();
 
     isModalOpen.value = false;
+    document.body.classList.remove("modal-open");
   }
 
   function submitModal() {
@@ -81,7 +83,7 @@ export const useModalStore = defineStore("modal-store", () => {
     ) {
       const obj = {
         name: nameField.value,
-        phone: phoneField.value,
+        phone: phoneField.value.substring(0, 16),
         email: emailField.value,
         links: linksField.value,
         comment: commentField.value,
