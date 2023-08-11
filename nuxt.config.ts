@@ -5,12 +5,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-      charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1',
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
       link: [
-        { href: 'https://unpkg.com/aos@2.3.1/dist/aos.css', rel: 'stylesheet' },
+        { href: "https://unpkg.com/aos@2.3.1/dist/aos.css", rel: "stylesheet" },
+        { rel: "icon", type: "image/png", href: "/favicon.ico" },
       ],
-      script: [{ src: 'https://unpkg.com/aos@2.3.1/dist/aos.js', body: true }],
+      script: [{ src: "https://unpkg.com/aos@2.3.1/dist/aos.js", body: true }],
     },
   },
   vite: {
@@ -24,26 +25,29 @@ export default defineNuxtConfig({
   },
   modules: [
     [
-      '@pinia/nuxt',
+      "@pinia/nuxt",
       {
-        autoImports: ['defineStore', 'acceptHMRUpdate'],
+        autoImports: ["defineStore", "acceptHMRUpdate"],
       },
     ],
-    ['nuxt-mail', {
-      message: {
-        to: 'dev@sloy.design',
-      },
-      smtp: {
-        host: "smtp.yandex.ru",
-        port: 465,
-        auth: {
-          user: 'dev@sloy.design',
-          pass: 'QPalzm321',
+    [
+      "nuxt-mail",
+      {
+        message: {
+          to: "dev@sloy.design",
+        },
+        smtp: {
+          host: "smtp.yandex.ru",
+          port: 465,
+          auth: {
+            user: "dev@sloy.design",
+            pass: "QPalzm321",
+          },
         },
       },
-    }],
+    ],
   ],
   imports: {
-    dirs: ['stores', 'utils'],
+    dirs: ["stores", "utils"],
   },
 });
