@@ -15,20 +15,28 @@
           />
         </div>
 
-        <div class="modal-body">
+        <form class="modal-body" @submit.prevent>
           <div class="modal-inputs">
-            <CommonInput type="text" label="Имя" tag-type="input" v-model="store.nameField" />
             <CommonInput
               type="text"
+              label="Имя"
+              tag-type="input"
+              v-model="store.nameField"
+              :error-message="store.isNameValid ? '' : 'Минимум 2 символа'"
+            />
+            <CommonInput
+              type="tel"
               class="tel"
               label="Телефон"
               v-model="store.phoneField"
+              :error-message="store.isPhoneValid ? '' : 'Неверный формат'"
             />
             <CommonInput
-              type="text"
+              type="email"
               label="Email"
               tag-type="input"
               v-model="store.emailField"
+              :error-message="store.isEmailVaild ? '' : 'Неверный формат'"
             />
             <CommonInput
               type="text"
@@ -42,6 +50,13 @@
             label="Комментарий"
             :placeholder="store.commentPlaceholder"
             v-model="store.commentField"
+            :error-message="store.isCommentValid ? '' : 'Максимум 350 символов'"
+          />
+          <input
+            type="text"
+            disabled
+            v-model="store.hiddenInputField"
+            :style="{ display: 'none' }"
           />
           <div class="modal-policy">
             <CommonCheckBox v-model="store.isPolicyChecked" />
@@ -53,7 +68,7 @@
               >
             </p>
           </div>
-        </div>
+        </form>
 
         <div class="modal-footer">
           <CommonEllipsisButton
@@ -67,41 +82,30 @@
   </transition>
 </template>
 
-<script>
-  import { useModalStore } from '@/stores/modalStore';
-  export default {
-    setup() {
-      
+<script setup>
+import { useModalStore } from "@/stores/modalStore";
 
-      const store = useModalStore();
+const store = useModalStore();
 
-      const handleEscapePress = (e) => {
-        if (e.key === 'Escape' && store.isModalOpen) {
-          store.closeModal();
-        }
-      };
-
-      const sendData = () => {
-        store.submitModal()
-      }
-
-      onMounted(() => {
-        window.addEventListener('keydown', handleEscapePress);
-      });
-
-      onBeforeUnmount(() => {
-        window.removeEventListener('keydown', handleEscapePress);
-      });
-
-      return {
-        store,
-        handleEscapePress,
-        sendData,
-      }
-    },
+const handleEscapePress = (e) => {
+  if (e.key === "Escape" && store.isModalOpen) {
+    store.closeModal();
   }
+};
+
+const sendData = () => {
+  store.submitModal();
+};
+
+onMounted(() => {
+  window.addEventListener("keydown", handleEscapePress);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("keydown", handleEscapePress);
+});
 </script>
 
 <style lang="scss" scoped>
-@import 'ModalWindow.scss';
+@import "ModalWindow.scss";
 </style>
