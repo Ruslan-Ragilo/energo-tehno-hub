@@ -10,7 +10,7 @@
 
 <script setup>
 useHead({
-  title: "Энерготехнохаб Петербур",
+  title: "Энерготехнохаб Петербург",
   meta: [
     {
       name: "description",
