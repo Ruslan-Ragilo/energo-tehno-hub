@@ -60,12 +60,14 @@ export const useModalStore = defineStore("modal-store", () => {
     resetFrom();
     commentPlaceholder.value = comment;
     isModalOpen.value = true;
+    document.body.classList.add("modal-open");
   }
 
   function closeModal() {
     resetFrom();
 
     isModalOpen.value = false;
+    document.body.classList.remove("modal-open");
   }
 
   function submitModal() {
