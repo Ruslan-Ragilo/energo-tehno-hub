@@ -27,11 +27,11 @@
 
   position: relative;
   width: 100%;
-  max-width: 1440px;
+  // max-width: 1340px;
 
   height: auto;
   max-height: 80%;
-  aspect-ratio: 16/9;
+  // aspect-ratio: 16/9;
   overflow: hidden;
   border-radius: 20px;
   @media all and (orientation: landscape) {
@@ -39,11 +39,12 @@
     width: calc(70vh / 9 * 16);
   }
   @media all and (orientation: portrait) {
-    width: 100%;
-    max-width: 1440px;
+    width: 90vw;
+    height: calc(90vw / 16 * 9);
+    // max-width: 1340px;
 
-    height: auto;
-    max-height: 80%;
+    // height: auto;
+    // max-height: 80%;
   }
   // @supports not (aspect-ratio: 16 / 9) {
   //   &::before {
