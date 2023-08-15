@@ -82,7 +82,7 @@ export const useModalStore = defineStore("modal-store", () => {
       isPolicyChecked.value &&
       hiddenInputField.value === "555"
     ) {
-      const obj = {
+      const formData = {
         name: nameField.value,
         phone: phoneField.value.substring(0, 16),
         email: emailField.value,
@@ -90,17 +90,16 @@ export const useModalStore = defineStore("modal-store", () => {
         comment: commentField.value,
       };
 
-      console.log(obj);
-      // const mail = useMail();
+      const mail = useMail();
 
-      // mail.send({
-      //   from: "dev@sloy.design",
-      //   subject: "Contact form message",
-      //   text: `name: ${obj.name} phone: ${obj.phone} email: ${obj.email} comment: ${obj.comment} links: ${obj.links}`,
-      // });
+      mail.send({
+        from: "dev@sloy.design",
+        subject: "Contact form message",
+        text: `name: ${formData.name} phone: ${formData.phone} email: ${formData.email} comment: ${formData.comment} links: ${formData.links}`,
+      });
 
       closeModal();
-      return obj;
+      return formData;
     }
   }
 
