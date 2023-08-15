@@ -29,6 +29,12 @@
   position: relative;
   width: 100%;
   max-width: 1440px;
+  @media screen and (orientation: landscape) {
+    max-width: 80%;
+  }
+
+  height: auto;
+  max-height: 80%;
   aspect-ratio: 16/9;
   overflow: hidden;
   border-radius: 20px;
