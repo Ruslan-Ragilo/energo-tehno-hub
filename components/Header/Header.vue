@@ -6,7 +6,7 @@ const handleDropdown = (text) => {
   textForDropdown.value = text;
 };
 
-const store = useModalStore();
+// const store = useModalStore();
 
 const dataLinkDropdown = {
   ecosystem: [
@@ -34,8 +34,7 @@ const dataLinkDropdown = {
           <img src="/images/logo.svg" alt="logo" />
         </div>
       </nuxt-link>
-      <nav :class="{ ['header-nav']: true, ['active']: isOpenMobMenu }">
-        <div class="close" @click="isOpenMobMenu = false">X</div>
+      <nav :class="{ ['header-nav']: true}">
         <div
           class="link-dropdown"
           @mouseover="handleDropdown('Экосистема')"
@@ -114,6 +113,33 @@ const dataLinkDropdown = {
         </div>
       </nav>
 
+      <div :class="['mob-nav', {['active']: isOpenMobMenu}]">
+        <FooterColumn
+          heading="Экосистема"
+          :links="[
+            { text: 'Фаундеры', href: '/ecosystem' },
+            { text: 'Экспертное сообщество', href: '/ecosystem' },
+            { text: 'Клуб бизнес-ангелов', href: '/ecosystem' },
+          ]"
+        />
+        <FooterColumn heading="Сервисы" :links="[]" />
+        <FooterColumn
+          heading="Технологии"
+          :links="[
+            { text: 'Технологические вызовы', href: '/technologies' },
+            { text: 'Технологические компании ', href: '/technologies' },
+          ]"
+        />
+        <FooterColumn
+          heading="Еще"
+          :links="[
+            { text: 'Новости', href: 'more' },
+            { text: 'Мероприятия', href: 'more' },
+            { text: 'Контакты', href: 'more' },
+          ]"
+        />
+      </div> 
+
       <div class="header-right">
         <!-- <CommonLangSwitcher /> -->
         <CommonEllipsisButton
@@ -123,28 +149,19 @@ const dataLinkDropdown = {
         />
       </div>
 
-      <button class="burger" @click="isOpenMobMenu = true">
-        <svg
-          width="66"
-          height="46"
-          viewBox="0 0 66 46"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M21 16H45M21 23H45M21 30H45"
-            stroke="#333333"
-            stroke-width="1.5"
-            stroke-linecap="round"
-          />
-          <rect
-            x="0.5"
-            y="0.5"
-            width="65"
-            height="45"
-            rx="9.5"
-            stroke="#333333"
-          />
+      <button class="burger" @click="isOpenMobMenu = !isOpenMobMenu">
+        <svg class="hb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" stroke="#333" stroke-width=".6" fill="rgba(0,0,0,0)" stroke-linecap="round" style="cursor: pointer">
+          <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
+            <animate dur="0.2s" attributeName="d" values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7" fill="freeze" begin="start.begin" />
+            <animate dur="0.2s" attributeName="d" values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" fill="freeze" begin="reverse.begin" />
+          </path>
+          <rect width="8" height="8" stroke="none">
+            <animate dur="2s" id="reverse" attributeName="width" begin="click" />
+          </rect>
+          <rect width="8" height="8" stroke="none">
+            <animate dur="0.001s" id="start" attributeName="width" values="10;0" fill="freeze" begin="click" />
+            <animate dur="0.001s" attributeName="width" values="0;10" fill="freeze" begin="reverse.begin" />
+          </rect>
         </svg>
       </button>
     </div>
