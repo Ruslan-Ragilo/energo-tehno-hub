@@ -1,9 +1,16 @@
 <!-- eslint-disable no-undef -->
 <script setup>
-const dataCard = ['Привлекайте инвестиции от финансовых партнеров «Энерготехнохаба Петербург»', 'Получайте экспертизу от ведущих технических специалистов отрасли', 'Советуйтесь с руководством крупнейших энергетических корпораций России', 'Запускайте бизнес вместе с профессиональными трекерами', 'Выходите на опытно-промышленные испытания с отраслевыми корпорациями', 'Открывайте бизнес при поддержке юристов, маркетологов и бизнес-аналитиков']
+const dataCard = [
+  "Привлекайте инвестиции от финансовых партнеров «Энерготехнохаба Петербург»",
+  "Получайте экспертизу от ведущих технических специалистов отрасли",
+  "Советуйтесь с руководством крупнейших энергетических корпораций России",
+  "Запускайте бизнес вместе с профессиональными трекерами",
+  "Выходите на опытно-промышленные испытания с отраслевыми корпорациями",
+  "Открывайте бизнес при поддержке юристов, маркетологов и бизнес-аналитиков",
+];
 onMounted(() => {
-  const cards = document.querySelectorAll('.card-eco');
-  const wrapperSlider = document.querySelector('.wrapper-slider');
+  const cards = document.querySelectorAll(".card-eco");
+  const wrapperSlider = document.querySelector(".wrapper-slider");
   const heigthCard = cards[0].clientHeight + 2;
   let translate = 0;
   function isElementInViewport(el) {
@@ -45,7 +52,7 @@ onMounted(() => {
             //   }
             // }
           } else {
-            document.body.style.overflowY = 'scroll';
+            document.body.style.overflowY = "scroll";
           }
         } else if (event.deltaY > 0) {
           if (
@@ -61,7 +68,7 @@ onMounted(() => {
             //   }
             // }
           } else {
-            document.body.style.overflowY = 'scroll';
+            document.body.style.overflowY = "scroll";
           }
         }
       }
@@ -70,7 +77,7 @@ onMounted(() => {
     }, debounceDelay);
   }
 
-  window.addEventListener('wheel', (e) => handleWheel(e));
+  window.addEventListener("wheel", (e) => handleWheel(e));
 });
 </script>
 
@@ -78,7 +85,7 @@ onMounted(() => {
   <section class="section">
     <CommonSectionHeader
       heading-text="Экосистема возможностей"
-      title-text="Станьте участником «Энерготехнохаба Петербург» и получи доступ к сервисам поддержки своего стартапа"
+      title-text="Станьте участником «Энерготехнохаба Петербург» и получите доступ к сервисам поддержки своего стартапа"
     >
       <div class="circle-button">
         <CommonButtonCircle
@@ -91,13 +98,15 @@ onMounted(() => {
     <div class="slider-box">
       <div class="empty"></div>
       <div class="wrapper-slider">
-        <div v-for="(item, index) in dataCard" :key="index" :class="`card-eco card-eco${item}`">
+        <div
+          v-for="(item, index) in dataCard"
+          :key="index"
+          :class="`card-eco card-eco${item}`"
+        >
           <p class="top-index">
-            {{ `(0${index+=1})` }}
+            {{ `(0${(index += 1)})` }}
           </p>
-          <CommonText
-            :text="item"
-          />
+          <CommonText :text="item" />
         </div>
       </div>
     </div>
@@ -105,5 +114,5 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-@import 'EcoSystem.scss';
+@import "EcoSystem.scss";
 </style>
