@@ -24,22 +24,25 @@ header {
     display: none;
     border-radius: 10px;
     border: 1px solid #333;
-    width: 76px;
+    width: 66px;
     z-index: 1111;
+    padding: 2px 0;
 
     svg {
-      width: 50px;
+      width: 40px;
     }
 
     @include lg {
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
   .mob-nav {
     display: none;
     @include lg {
       display: block;
-      border-top: 1px solid #F3F3F3;
+      border-top: 1px solid #f3f3f3;
       flex-direction: column;
       position: absolute;
       display: grid;
@@ -75,14 +78,12 @@ header {
         // opacity: 1;
         height: 400px;
         visibility: visible;
-        
+
         @include responsive(500) {
           height: 100vh;
         }
       }
     }
-
-    
   }
 
   & .header-nav {
@@ -104,7 +105,7 @@ header {
       transition: color 0.2s ease-in-out;
       text-underline-offset: 6px;
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -3px;
         left: 0;
