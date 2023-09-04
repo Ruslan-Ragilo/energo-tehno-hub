@@ -3,7 +3,7 @@
 
 export default defineNuxtConfig({
   axios: {
-    baseURL: 'https://etechhubspb.ru/',
+    baseURL: 'https://etechhubspb.ru',
   },
   devtools: { enabled: true },
   app: {
