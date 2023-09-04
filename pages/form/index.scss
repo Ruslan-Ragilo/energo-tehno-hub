@@ -56,12 +56,22 @@
 
 .policy-block {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
 }
 
 .modal-footer {
   margin-left: auto;
+  @include responsive(1280) {
+    margin: 0 auto;
+  }
+  @include responsive(480) {
+    width: 100%;
+    & button {
+      width: 100%;
+    }
+    margin: 0 auto;
+  }
 }
 
 /*

@@ -51,10 +51,7 @@
         />
         <div class="modal-policy">
           <div class="policy-block">
-            <CommonCheckBox
-              v-model="store.isPolicyChecked"
-              :style="{ top: '-9px' }"
-            />
+            <CommonCheckBox v-model="store.isPolicyChecked" />
             <p class="modal-policy-text">
               Нажимая на кнопку «Отправить заявку», я подтверждаю свое согласие
               на
