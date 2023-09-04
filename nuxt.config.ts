@@ -2,10 +2,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
-  runtimeConfig: {
-    public: {
-      baseURL: process.env.BASE_URL || 'https://etechhubspb.ru/',
-    },
+  axios: {
+    baseURL: 'https://etechhubspb.ru/',
   },
   devtools: { enabled: true },
   app: {
