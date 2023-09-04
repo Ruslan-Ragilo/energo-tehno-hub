@@ -64,8 +64,8 @@ export default defineNuxtConfig({
           host: "smtp.yandex.ru",
           port: 465,
           auth: {
-            user: "khukhryanskaya@techhubspb.ru",
-            pass: "essocxzudkqnjryt",
+            user: "dev@sloy.design",
+            pass: "eacirmtepfvsnkye",
           },
         },
       },
