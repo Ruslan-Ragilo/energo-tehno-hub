@@ -50,23 +50,28 @@
           :style="{ display: 'none' }"
         />
         <div class="modal-policy">
-          <CommonCheckBox v-model="store.isPolicyChecked" />
-          <p class="modal-policy-text">
-            Нажимая на кнопку «Отправить заявку», я подтверждаю свое согласие на
-            <nuxt-link to="/" class="link"
-              >обработку персональных данных</nuxt-link
-            >
-          </p>
+          <div class="policy-block">
+            <CommonCheckBox
+              v-model="store.isPolicyChecked"
+              :style="{ top: '-9px' }"
+            />
+            <p class="modal-policy-text">
+              Нажимая на кнопку «Отправить заявку», я подтверждаю свое согласие
+              на
+              <nuxt-link to="/" class="link"
+                >обработку персональных данных</nuxt-link
+              >
+            </p>
+          </div>
+          <div class="modal-footer">
+            <CommonEllipsisButton
+              :disabled="!store.isSubmitActive"
+              text="Отправить заявку"
+              :onClick="sendData"
+            />
+          </div>
         </div>
       </form>
-
-      <div class="modal-footer">
-        <CommonEllipsisButton
-          :disabled="!store.isSubmitActive"
-          text="Отправить заявку"
-          :onClick="sendData"
-        />
-      </div>
     </div>
   </div>
 </template>
