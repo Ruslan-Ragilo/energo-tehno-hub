@@ -6,7 +6,6 @@ export const useModalStore = defineStore("modal-store", () => {
   const commentPlaceholder = ref<string>("");
 
   const startValidation = ref<boolean>(false);
-
   const isModalOpen = ref<boolean>(false);
   const nameField = ref<string>("");
   const phoneField = ref<string>("");
