@@ -58,14 +58,14 @@ export default defineNuxtConfig({
       "nuxt-mail",
       {
         message: {
-          to: "dev@sloy.design",
+          to: "khukhryanskaya@techhubspb.ru",
         },
         smtp: {
           host: "smtp.yandex.ru",
           port: 465,
           auth: {
-            user: "dev@sloy.design",
-            pass: "QPalzm321",
+            user: "khukhryanskaya@techhubspb.ru",
+            pass: "essocxzudkqnjryt",
           },
         },
       },
