@@ -78,7 +78,7 @@ export const useFormPageStore = defineStore("form-page-store", () => {
 
       const mail = useMail();
       mail.send({
-        from: "dev@sloy.design",
+        from: "khukhryanskaya@techhubspb.ru",
         subject: "Form page message",
         text: `name: ${formData.name} phone: ${formData.phone} email: ${formData.email} comment: ${formData.comment} links: ${formData.links}`,
       });
