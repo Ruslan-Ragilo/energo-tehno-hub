@@ -18,6 +18,9 @@ export const useModalStore = defineStore("modal-store", () => {
 
   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
+  const isError = ref<boolean>(false);
+  const isSuccess = ref<boolean>(false);
+
   // isValid computeds
   const isNameValid = computed(() => {
     if (startValidation.value) {
@@ -56,21 +59,25 @@ export const useModalStore = defineStore("modal-store", () => {
     );
   });
 
+  const showConfirmation = computed(() => {
+    return isError.value || isSuccess.value;
+  });
+
   function openModal(comment: string) {
-    resetFrom();
+    resetForm();
     commentPlaceholder.value = comment;
     isModalOpen.value = true;
     document.body.classList.add("modal-open");
   }
 
   function closeModal() {
-    resetFrom();
+    resetForm();
 
     isModalOpen.value = false;
     document.body.classList.remove("modal-open");
   }
 
-  function submitModal() {
+  async function submitModal() {
     startValidation.value = true;
     hiddenInputField.value = "555";
 
@@ -91,18 +98,29 @@ export const useModalStore = defineStore("modal-store", () => {
 
       const mail = useMail();
 
-      mail.send({
-        from: "dev@sloy.design",
-        subject: "Contact form message",
-        text: `name: ${formData.name} phone: ${formData.phone} email: ${formData.email} comment: ${formData.comment} links: ${formData.links}`,
-      });
+      try {
+        await mail.send({
+          from: "dev@sloy.design",
+          subject: "Form page message",
+          text: `name: ${formData.name} phone: ${formData.phone} email: ${formData.email} comment: ${formData.comment} links: ${formData.links}`,
+        });
 
-      closeModal();
+        resetForm();
+        isSuccess.value = true;
+      } catch (error) {
+        console.log(error);
+        isError.value = true;
+      } finally {
+        setTimeout(() => {
+          closeModal();
+        }, 5000);
+      }
+
       return formData;
     }
   }
 
-  function resetFrom() {
+  function resetForm() {
     nameField.value = "";
     phoneField.value = "";
     emailField.value = "";
@@ -111,6 +129,8 @@ export const useModalStore = defineStore("modal-store", () => {
     isPolicyChecked.value = false;
     startValidation.value = false;
     hiddenInputField.value = "";
+    isError.value = false;
+    isSuccess.value = false;
   }
 
   return {
@@ -132,6 +152,9 @@ export const useModalStore = defineStore("modal-store", () => {
     isNameValid,
     isCommentValid,
     commentFieldMax,
+    isError,
+    isSuccess,
+    showConfirmation,
   };
 });
 

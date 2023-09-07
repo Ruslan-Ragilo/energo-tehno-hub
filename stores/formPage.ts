@@ -4,7 +4,6 @@
 
 export const useFormPageStore = defineStore("form-page-store", () => {
   const commentPlaceholder = ref<string>("");
-  const { $mail } = useNuxtApp()
 
   const startValidation = ref<boolean>(false);
 
@@ -18,6 +17,9 @@ export const useFormPageStore = defineStore("form-page-store", () => {
   const hiddenInputField = ref<string>("");
 
   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  const isError = ref<boolean>(false);
+  const isSuccess = ref<boolean>(false);
 
   // isValid computeds
   const isNameValid = computed(() => {
@@ -57,7 +59,11 @@ export const useFormPageStore = defineStore("form-page-store", () => {
     );
   });
 
-  function submitModal() {
+  const showConfirmation = computed(() => {
+    return isError.value || isSuccess.value;
+  });
+
+  async function submitModal() {
     startValidation.value = true;
     hiddenInputField.value = "555";
 
@@ -77,12 +83,20 @@ export const useFormPageStore = defineStore("form-page-store", () => {
       };
 
       const mail = useMail();
-      mail.send({
-        from: "dev@sloy.design",
-        subject: "Form page message",
-        text: `name: ${formData.name} phone: ${formData.phone} email: ${formData.email} comment: ${formData.comment} links: ${formData.links}`,
-      });
-      resetForm();
+
+      try {
+        await mail.send({
+          from: "dev@sloy.design",
+          subject: "Form page message",
+          text: `name: ${formData.name} phone: ${formData.phone} email: ${formData.email} comment: ${formData.comment} links: ${formData.links}`,
+        });
+
+        resetForm();
+        isSuccess.value = true;
+      } catch (error) {
+        console.log(error);
+        isError.value = true;
+      }
       return formData;
     }
   }
@@ -96,6 +110,8 @@ export const useFormPageStore = defineStore("form-page-store", () => {
     isPolicyChecked.value = false;
     startValidation.value = false;
     hiddenInputField.value = "";
+    isError.value = false;
+    isSuccess.value = false;
   }
 
   return {
@@ -114,6 +130,10 @@ export const useFormPageStore = defineStore("form-page-store", () => {
     isNameValid,
     isCommentValid,
     commentFieldMax,
+    resetForm,
+    isError,
+    isSuccess,
+    showConfirmation,
   };
 });
 
