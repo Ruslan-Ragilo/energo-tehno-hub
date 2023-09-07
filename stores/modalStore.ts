@@ -92,7 +92,7 @@ export const useModalStore = defineStore("modal-store", () => {
       const mail = useMail();
 
       mail.send({
-        from: "khukhryanskaya@techhubspb.ru",
+        from: "dev@sloy.design",
         subject: "Contact form message",
         text: `name: ${formData.name} phone: ${formData.phone} email: ${formData.email} comment: ${formData.comment} links: ${formData.links}`,
       });
