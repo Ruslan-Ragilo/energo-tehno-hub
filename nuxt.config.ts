@@ -61,7 +61,7 @@ export default defineNuxtConfig({
       "nuxt-mail",
       {
         message: {
-          to: "khukhryanskaya@techhubspb.ru",
+          to: "kxxari@yandex.ru",
         },
         smtp: {
           host: "smtp.yandex.ru",
