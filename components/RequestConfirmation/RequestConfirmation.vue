@@ -14,17 +14,14 @@ defineProps<Props>();
         <img src="/images/icons/logo-icon.svg" alt="logo" />
       </div>
       <h2 class="text-container__heading">Спасибо!</h2>
-      <common-text
-        size="sm"
-        text="Мы свяжемся с вами в течение 24 часов."
-      ></common-text>
+      <p class="text-container__text">Мы свяжемся с вами в течение 24 часов.</p>
     </div>
     <div v-if="isError" class="error">
       <div class="text-container__logo">
         <img src="/images/icons/logo-icon.svg" alt="logo" />
       </div>
       <h2 class="text-container__heading">Упс!</h2>
-      <common-text size="sm" text="Ошибка сервера..."></common-text>
+      <p class="text-container__text">Ошибка сервера...</p>
     </div>
   </div>
 </template>

@@ -16,10 +16,44 @@
 
   &__logo {
     margin-bottom: 30px;
+    & img {
+      @include responsive(1180) {
+        width: 30px;
+        height: 30px;
+      }
+
+      @include sm {
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 
   &__heading {
     margin-bottom: 16px;
+
+    font-size: 54px;
+    line-height: 60px;
     font-weight: 400;
+
+    @include responsive(1180) {
+      font-size: 36px;
+    }
+
+    @include sm {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+
+    color: $dark;
+
+    @include responsive(1180) {
+      font-size: 16px;
+    }
   }
 }
