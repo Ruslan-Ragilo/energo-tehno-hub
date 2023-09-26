@@ -14,12 +14,12 @@ const handleDropdown = (text) => {
 
 const dataLinkDropdown = {
   ecosystem: [
-    { text: "Фаундеры", to: "/ecosystem" },
+    { text: "Фаундеры", to: "/founders" },
     { text: "Экспертное сообщество", to: "/ecosystem" },
     { text: "Клуб бизнес-ангелов", to: "/ecosystem" },
   ],
   technology: [
-    { text: "Технологические вызовы", to: "/technology" },
+    { text: "Технологические вызовы", to: "/tecchallenges" },
     { text: "Технологические компании ", to: "/technology" },
   ],
   more: [

@@ -1,11 +1,6 @@
 <template>
   <transition name="modal">
-    <div
-      v-if="store.isModalOpen"
-      class="modal-mask"
-      @click="store.closeModal"
-      @keydown="handleEscapePress"
-    >
+    <div v-if="store.isModalOpen" class="modal-mask" @click="store.closeModal">
       <div class="modal-container" @click.stop>
         <iframe
           src="https://www.youtube.com/embed/zuNSxr2azNE"

@@ -1,0 +1,37 @@
+.challenges-wrapper {
+  padding: 50px 40px;
+
+  display: flex;
+
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 30px #12141714;
+}
+
+.challenges-title {
+  flex-basis: 50%;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 63px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: $dark;
+
+  @include lg {
+    font-size: 36px;
+    line-height: 43px;
+  }
+
+  @include md {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+
+.challenges-description {
+  flex-basis: 50%;
+  width: 100%;
+  & .right-text {
+    max-width: 323px;
+  }
+}
