@@ -1,0 +1,51 @@
+.text-wrapper {
+  padding: 50px 40px 40px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.founders-title {
+  font-size: 54px;
+  font-weight: 400;
+  line-height: 63px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: $dark;
+
+  @include lg {
+    font-size: 36px;
+    line-height: 43px;
+  }
+
+  @include md {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+
+.right-block {
+  padding-top: 16px;
+
+  width: 100%;
+  max-width: 370px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 32px;
+
+  @include lg {
+    display: contents;
+  }
+}
+
+.right-text {
+  max-width: 300px;
+
+  @include lg {
+    max-width: 100%;
+  }
+}
