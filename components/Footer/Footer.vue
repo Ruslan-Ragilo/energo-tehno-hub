@@ -1,31 +1,19 @@
+<script setup lang="ts">
+const router = useRouter();
+</script>
+
 <template>
   <footer class="container">
     <div class="footer-top">
       <div class="wrapper-left">
+        <FooterColumn heading="Экосистема" :links="getRoutes().ecosystem" />
         <FooterColumn
-          heading="Экосистема"
-          :links="[
-            { text: 'Фаундеры', href: '/ecosystem' },
-            { text: 'Экспертное сообщество', href: '/ecosystem' },
-            { text: 'Клуб бизнес-ангелов', href: '/ecosystem' },
-          ]"
+          heading="Сервисы"
+          :links="[]"
+          @click="() => router.push('/services')"
         />
-        <FooterColumn heading="Сервисы" :links="[]" />
-        <FooterColumn
-          heading="Технологии"
-          :links="[
-            { text: 'Технологические вызовы', href: '/technologies' },
-            { text: 'Технологические компании ', href: '/technologies' },
-          ]"
-        />
-        <FooterColumn
-          heading="Еще"
-          :links="[
-            { text: 'Новости', href: 'more' },
-            { text: 'Мероприятия', href: 'more' },
-            { text: 'Контакты', href: 'more' },
-          ]"
-        />
+        <FooterColumn heading="Технологии" :links="getRoutes().technology" />
+        <FooterColumn heading="Еще" :links="getRoutes().more" />
       </div>
       <div class="wrapper-btn">
         <CommonEllipsisButton
@@ -82,5 +70,5 @@
 </template>
 
 <style scoped lang="scss">
-@import './Footer.scss';
+@import "./Footer.scss";
 </style>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const router = useRouter();
 const isOpenMobMenu = ref(false);
 const textForDropdown = ref("");
 
@@ -8,25 +9,6 @@ const toggleIsOpenMobMenu = () => {
 
 const handleDropdown = (text) => {
   textForDropdown.value = text;
-};
-
-// const store = useModalStore();
-
-const dataLinkDropdown = {
-  ecosystem: [
-    { text: "Фаундеры", to: "/founders" },
-    { text: "Экспертное сообщество", to: "/ecosystem" },
-    { text: "Клуб бизнес-ангелов", to: "/ecosystem" },
-  ],
-  technology: [
-    { text: "Технологические вызовы", to: "/tecchallenges" },
-    { text: "Технологические компании ", to: "/technology" },
-  ],
-  more: [
-    { text: "Новости", to: "/more" },
-    { text: "Мероприятия", to: "/more" },
-    { text: "Контакты", to: "/more" },
-  ],
 };
 </script>
 
@@ -52,7 +34,7 @@ const dataLinkDropdown = {
             }"
           >
             <nuxt-link
-              v-for="link in dataLinkDropdown.ecosystem"
+              v-for="link in getRoutes().ecosystem"
               :key="link.text"
               :to="link.to"
               class="nav-link"
@@ -82,7 +64,7 @@ const dataLinkDropdown = {
             }"
           >
             <nuxt-link
-              v-for="link in dataLinkDropdown.technology"
+              v-for="link in getRoutes().technology"
               :key="link.text"
               :to="link.to"
               class="nav-link"
@@ -105,7 +87,7 @@ const dataLinkDropdown = {
             }"
           >
             <nuxt-link
-              v-for="link in dataLinkDropdown.more"
+              v-for="link in getRoutes().more"
               :key="link.text"
               :to="link.to"
               class="nav-link"
@@ -118,30 +100,14 @@ const dataLinkDropdown = {
       </nav>
 
       <div :class="['mob-nav', { ['active']: isOpenMobMenu }]">
+        <FooterColumn heading="Экосистема" :links="getRoutes().ecosystem" />
         <FooterColumn
-          heading="Экосистема"
-          :links="[
-            { text: 'Фаундеры', href: '/ecosystem' },
-            { text: 'Экспертное сообщество', href: '/ecosystem' },
-            { text: 'Клуб бизнес-ангелов', href: '/ecosystem' },
-          ]"
+          heading="Сервисы"
+          :links="[]"
+          @click="() => router.push('/services')"
         />
-        <FooterColumn heading="Сервисы" :links="[]" />
-        <FooterColumn
-          heading="Технологии"
-          :links="[
-            { text: 'Технологические вызовы', href: '/technologies' },
-            { text: 'Технологические компании ', href: '/technologies' },
-          ]"
-        />
-        <FooterColumn
-          heading="Еще"
-          :links="[
-            { text: 'Новости', href: 'more' },
-            { text: 'Мероприятия', href: 'more' },
-            { text: 'Контакты', href: 'more' },
-          ]"
-        />
+        <FooterColumn heading="Технологии" :links="getRoutes().technology" />
+        <FooterColumn heading="Еще" :links="getRoutes().more" />
       </div>
 
       <div class="header-right">
