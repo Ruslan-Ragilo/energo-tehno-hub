@@ -1,7 +1,18 @@
 <template>
   <div class="container">
-    <ChallengesHero />
+    <SharedHero
+      title="Технологические вызовы"
+      text="Актуальные отраслевые задачи, решение которых — потенциальный бизнес"
+      class="challenges-hero"
+    />
     <ChallengesSearch />
+    <CommonText
+      :text="`${mockData.length} вызовов`"
+      size="xl"
+      theme="dark"
+      weight="normal"
+      class="challenges-count"
+    />
     <div class="card-list">
       <ChallengesCard
         v-for="card in mockData"
@@ -15,12 +26,12 @@
   </div>
   <Teleport to="body">
     <ModalWithSlot>
-      <div @click.stop>{{ selectedCard.title }}</div>
+      <div @click.stop>{{ selectedCard?.title }}</div>
     </ModalWithSlot>
   </Teleport>
 </template>
 
-<script setup lang="ts">
+<script setup>
 useHead({
   title: "Технологические вызовы",
   meta: [
@@ -92,4 +103,24 @@ const mockData = [
 
 <style lang="scss" scoped>
 @import "./index.scss";
+
+.challenges-hero {
+  margin-bottom: 20px;
+
+  @include lg {
+    margin-bottom: 16px;
+  }
+
+  @include md {
+    margin-bottom: 14px;
+  }
+}
+
+.challenges-count {
+  margin-bottom: 20px;
+
+  @include lg {
+    margin-bottom: 16px;
+  }
+}
 </style>

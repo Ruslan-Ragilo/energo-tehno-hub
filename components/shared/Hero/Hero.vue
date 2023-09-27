@@ -1,11 +1,19 @@
+<script setup lang="ts">
+interface Props {
+  title: string;
+  text: string;
+}
+
+defineProps<Props>();
+</script>
+
 <template>
   <div class="challenges-wrapper">
-    <h1 class="challenges-title">Технологические вызовы</h1>
+    <h1 class="challenges-title">{{ title }}</h1>
     <p class="challenges-description">
       <CommonText
-        text="Актуальные отраслевые задачи, решение которых — потенциальный
-        бизнес"
-        size="sm"
+        :text="text"
+        size="m"
         theme="gray"
         weight="regular"
         className="right-text"

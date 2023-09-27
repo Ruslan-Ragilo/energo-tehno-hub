@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div class="search-wrapper"></div>
 </template>
 
 <script setup></script>

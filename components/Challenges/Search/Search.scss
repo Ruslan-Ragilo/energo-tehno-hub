@@ -1,0 +1,11 @@
+.search-wrapper {
+  margin-bottom: 80px;
+
+  @include lg {
+    margin-bottom: 60px;
+  }
+
+  @include md {
+    margin-bottom: 50px;
+  }
+}

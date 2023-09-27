@@ -6,4 +6,12 @@
   grid-auto-rows: 1fr;
 
   grid-gap: 20px;
+
+  @include lg {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+  }
+  @include md {
+    grid-template-columns: 1fr;
+  }
 }

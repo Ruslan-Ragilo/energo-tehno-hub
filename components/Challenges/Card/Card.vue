@@ -3,7 +3,7 @@
     <div class="challenges-card__top">
       <CommonText
         :text="props.title"
-        size="sm"
+        size="ml"
         theme="dark"
         weight="regular"
         className="card-title"

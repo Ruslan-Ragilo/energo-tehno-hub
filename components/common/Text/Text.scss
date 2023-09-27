@@ -36,6 +36,15 @@
     font-size: 12px;
   }
 }
+
+.ml {
+  font-size: 20px;
+  line-height: 120%;
+  @include lg {
+    font-size: 18px;
+  }
+}
+
 .l {
   font-size: 24px;
   line-height: 120%;

@@ -1,17 +1,17 @@
 <script lang="ts" setup>
 interface Props {
   text: string;
-  size?: 'xs' | 's' | 'm' | 'sm' | 'l' | 'xl' | 'xxls' | 'xxl' | 'xxxl';
-  weight?: 'thin' | 'regular' | 'semi-bold' | 'bold';
-  theme?: 'dark' | 'black' | 'gray' | 'white' | 'light';
+  size?: "xs" | "s" | "m" | "sm" | "ml" | "l" | "xl" | "xxls" | "xxl" | "xxxl";
+  weight?: "thin" | "regular" | "semi-bold" | "bold";
+  theme?: "dark" | "black" | "gray" | "white" | "light";
   className?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  text: '',
-  size: 'm',
-  weight: 'regular',
-  theme: 'black',
+  text: "",
+  size: "m",
+  weight: "regular",
+  theme: "black",
   className: undefined,
 });
 </script>
@@ -23,5 +23,5 @@ const props = withDefaults(defineProps<Props>(), {
 </template>
 
 <style scoped lang="scss">
-@import './Text.scss';
+@import "./Text.scss";
 </style>
