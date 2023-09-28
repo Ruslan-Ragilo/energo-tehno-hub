@@ -1,0 +1,95 @@
+.card-container {
+  position: relative;
+
+  overflow: hidden;
+  &.first {
+    padding-right: 2px;
+    padding-bottom: 2px;
+    border-bottom-right-radius: 20px;
+  }
+
+  &.last {
+    padding-left: 2px;
+    padding-top: 2px;
+    border-top-left-radius: 20px;
+  }
+}
+
+.blob {
+  position: absolute;
+  z-index: 1;
+
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background-color: #bcbcbc;
+  opacity: 1;
+  filter: blur(120px);
+
+  &.first {
+    top: 80%;
+    left: 50%;
+  }
+
+  &.last {
+    right: 50%;
+    bottom: 80%;
+  }
+}
+
+.card-wrapper {
+  position: relative;
+  height: 100%;
+
+  padding: 100px 140px;
+
+  @include lg {
+    padding: 90px 60px;
+  }
+  @include md {
+    padding: 80px 20px;
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $white;
+  overflow: hidden;
+  z-index: 2;
+
+  &.first {
+    border-bottom-right-radius: 18px;
+  }
+
+  &.last {
+    border-top-left-radius: 18px;
+  }
+}
+
+.card-number {
+  position: absolute;
+
+  top: 30px;
+  left: 30px;
+
+  font-size: 14px;
+  color: $gray;
+
+  @include lg {
+    font-size: 12px;
+    top: 20px;
+    left: 20px;
+  }
+}
+
+.card-text {
+  text-align: center;
+  font-size: 20px;
+  @include lg {
+    font-size: 14px;
+  }
+  @include md {
+    font-size: 12px;
+  }
+}

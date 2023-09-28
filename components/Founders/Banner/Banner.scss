@@ -1,0 +1,79 @@
+.banner-wrapper {
+  padding: 60px 70px 80px;
+
+  border-radius: 30px;
+  // background-image: url("./images/backgrounds/founders/banner.jpg");
+  background-color: $gray;
+
+  display: flex;
+  flex-direction: column;
+  gap: 260px;
+  justify-content: space-between;
+
+  @include lg {
+    padding: 40px 32px 42px;
+    border-radius: 16px;
+    gap: 190px;
+  }
+  @include md {
+    gap: 140px;
+    padding: 24px 18px 32px;
+    border-radius: 14px;
+  }
+
+  color: $white;
+}
+
+.banner-title {
+  max-width: 75%;
+  font-size: 54px;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -2%;
+  text-align: left;
+
+  @include lg {
+    max-width: 100%;
+    font-size: 36px;
+  }
+
+  @include md {
+    font-size: 24px;
+  }
+}
+
+.step-list {
+  list-style: none;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  @include lg {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 46px;
+  }
+
+  @include md {
+    gap: 42px;
+  }
+
+  &__item {
+    flex-basis: 29%;
+
+    text-align: left;
+    border-bottom: 1px solid $white;
+
+    font-size: 20px;
+    line-height: 26px;
+    padding-bottom: 10px;
+    @include lg {
+      width: 100%;
+      font-size: 14px;
+      line-height: 18.2px;
+      padding-bottom: 6px;
+    }
+  }
+}

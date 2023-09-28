@@ -4,6 +4,19 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+
+  gap: 16px;
+
+  box-shadow: none;
+  @include lg {
+    flex-direction: column;
+  }
+
+  @include md {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px 0px #12141714;
+  }
 }
 
 .founders-title {

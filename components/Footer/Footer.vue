@@ -11,6 +11,7 @@ const router = useRouter();
           heading="Сервисы"
           :links="[]"
           @click="() => router.push('/services')"
+          :style="{ cursor: 'pointer' }"
         />
         <FooterColumn heading="Технологии" :links="getRoutes().technology" />
         <FooterColumn heading="Еще" :links="getRoutes().more" />
