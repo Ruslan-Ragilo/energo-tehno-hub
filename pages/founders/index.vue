@@ -37,6 +37,22 @@ const mockCards = [
     <section class="section-margin">
       <FoundersBanner />
     </section>
+    <section class="section-border section-margin">
+      <CommonSectionHeader headingText="Наши фаундеры" />
+      <!-- <FoundersSlider /> -->
+    </section>
+    <section class="section-border section-margin">
+      <CommonSectionHeader
+        headingText="Как стать фаундером «Энерготехнохаба Петербург»?"
+      />
+      <!-- <FoundersBreakPoints /> -->
+    </section>
+    <section class="section-margin">
+      <SharedSubmitForm
+        title1="Станьте фаундером в"
+        title2="«Энерготехнохабе Петербург»"
+      />
+    </section>
   </div>
 </template>
 
