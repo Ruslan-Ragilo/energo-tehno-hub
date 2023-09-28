@@ -102,8 +102,6 @@ const mockData = [
 </script>
 
 <style lang="scss" scoped>
-@import "./index.scss";
-
 .challenges-hero {
   margin-bottom: 20px;
 
@@ -121,6 +119,24 @@ const mockData = [
 
   @include lg {
     margin-bottom: 16px;
+  }
+}
+
+.card-list {
+  margin-bottom: 140px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+
+  grid-gap: 20px;
+
+  @include lg {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+  }
+  @include md {
+    grid-template-columns: 1fr;
   }
 }
 </style>

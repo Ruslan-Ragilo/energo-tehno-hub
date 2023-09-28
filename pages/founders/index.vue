@@ -57,5 +57,47 @@ const mockCards = [
 </template>
 
 <style scoped lang="scss">
-@import "./index.scss";
+.hero-wrapper {
+  margin-bottom: 100px;
+
+  background-color: #fff;
+  border-radius: 20px;
+
+  box-shadow: 0px 0px 30px 0px #12141714;
+
+  @include lg {
+    margin-bottom: 80px;
+  }
+  @include md {
+    margin-bottom: 70px;
+
+    background-color: transparent;
+    border-radius: 0;
+
+    box-shadow: none;
+  }
+}
+
+.section-border {
+  padding-top: 40px;
+  border-top: 1px solid #dcdcdc;
+}
+
+.section-margin {
+  margin-bottom: 140px;
+
+  @include lg {
+    margin-bottom: 80px;
+  }
+
+  @include md {
+    margin-bottom: 70px;
+  }
+}
+
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
+}
 </style>
