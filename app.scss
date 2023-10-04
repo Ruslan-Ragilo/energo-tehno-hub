@@ -22,7 +22,8 @@
 body {
   font-family: "Onest";
   background-color: #fafafa;
-  overflow: visible;
+  max-width: 100vw;
+  overflow-x: hidden;
   &.modal-open {
     overflow: hidden;
   }
