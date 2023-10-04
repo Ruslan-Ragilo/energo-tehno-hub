@@ -13,6 +13,68 @@ const mockCards = [
     text: "Привлекают государственные и частные инвестиции на первых стадиях развития стартапа",
   },
 ];
+
+const mockFounders = [
+  {
+    id: 1,
+    name: "Полина Морозова",
+    img: "/images/foundersMock/guy.jpg",
+    link: "asda",
+    position:
+      "Технология Предприниматель, основатель компании К-ПЛЮС, аспирантка Сколтеха",
+    title: "Стартап",
+    text: "Производство калий-ионных аккумуляторов",
+    experts: [
+      "/images/foundersMock/guy.jpg",
+      "/images/foundersMock/guy.jpg",
+      "/images/foundersMock/guy.jpg",
+    ],
+  },
+  {
+    id: 2,
+    name: "Матвей Морозов",
+    img: "/images/foundersMock/guy.jpg",
+    link: "asda",
+    position:
+      "Технология Предприниматель, основатель компании К-ПЛЮС, аспирантка Сколтеха",
+    title: "Стартап",
+    text: "Производство калий-ионных аккумуляторов",
+    experts: ["/images/foundersMock/guy.jpg", "/images/foundersMock/guy.jpg"],
+  },
+  {
+    id: 3,
+    name: "Вера Бурцева",
+    img: "/images/foundersMock/guy.jpg",
+    link: "asda",
+    position:
+      "Технология Предприниматель, основатель компании К-ПЛЮС, аспирантка Сколтеха",
+    title: "Стартап",
+    text: "Производство калий-ионных аккумуляторов",
+    experts: [
+      "/images/foundersMock/guy.jpg",
+      "/images/foundersMock/guy.jpg",
+      "/images/foundersMock/guy.jpg",
+      "/images/foundersMock/guy.jpg",
+      "/images/foundersMock/guy.jpg",
+    ],
+  },
+  {
+    id: 4,
+    name: "Dff ad adf",
+    img: "/images/foundersMock/guy.jpg",
+    link: "asda",
+    position:
+      "Технология Предприниматель, основатель компании К-ПЛЮС, аспирантка Сколтеха",
+    title: "Стартап",
+    text: "Производство калий-ионных аккумуляторов",
+    experts: [
+      "/images/foundersMock/guy.jpg",
+      "/images/foundersMock/guy.jpg",
+      "/images/foundersMock/guy.jpg",
+      "/images/foundersMock/guy.jpg",
+    ],
+  },
+];
 </script>
 
 <template>
@@ -39,7 +101,7 @@ const mockCards = [
     </section>
     <section class="section-border section-margin">
       <CommonSectionHeader headingText="Наши фаундеры" />
-      <!-- <FoundersSlider /> -->
+      <FoundersSlider :founders="mockFounders" />
     </section>
     <section class="section-border section-margin">
       <CommonSectionHeader

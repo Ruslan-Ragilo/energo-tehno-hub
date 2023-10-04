@@ -1,0 +1,48 @@
+.wrapper-btn {
+  position: absolute;
+  top: -36px;
+  right: 6px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100px;
+  height: 44px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 44px;
+  height: 44px;
+  background: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: static;
+  border: 1px solid $gray;
+  &::after {
+    display: none;
+  }
+
+  &:hover .chevron,
+  :active:not(:focus) .chevron {
+    position: relative;
+    inset: unset;
+    transform: scale(1.5);
+  }
+}
+
+.swiper-button-prev {
+}
+.swiper-button-next {
+  transform: rotate(180deg);
+}
+
+.chevron {
+  width: 5px;
+  height: 10px;
+
+  transition: transform 0.3s ease-in-out;
+}
