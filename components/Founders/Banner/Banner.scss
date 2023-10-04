@@ -2,8 +2,10 @@
   padding: 60px 70px 80px;
 
   border-radius: 30px;
-  // background-image: url("./images/backgrounds/founders/banner.jpg");
   background-color: $gray;
+
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+    url("./images/backgrounds/founders/banner.jpg");
 
   display: flex;
   flex-direction: column;
