@@ -18,18 +18,16 @@ defineProps<Founders>();
 </script>
 
 <template>
-  <div class="slider-wrapper">
-    <Swiper class="swiper" :slides-per-view="'auto'" :space-between="20">
-      <FoundersSliderControls />
-      <SwiperSlide
-        v-for="founder in founders"
-        :key="founder.id"
-        class="swiper-slide"
-      >
-        <FoundersSliderCard :founder="founder" />
-      </SwiperSlide>
-    </Swiper>
-  </div>
+  <Swiper class="swiper" :slides-per-view="'auto'" :space-between="20">
+    <FoundersSliderControls />
+    <SwiperSlide
+      v-for="founder in founders"
+      :key="founder.id"
+      class="swiper-slide"
+    >
+      <FoundersSliderCard :founder="founder" />
+    </SwiperSlide>
+  </Swiper>
 </template>
 
 <style lang="scss">

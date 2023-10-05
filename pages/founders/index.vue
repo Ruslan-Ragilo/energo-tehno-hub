@@ -109,8 +109,10 @@ const mockFounders = [
     <div class="container">
       <CommonSectionHeader headingText="Наши фаундеры" />
     </div>
-    <div class="container slider-container">
-      <FoundersSlider :founders="mockFounders" />
+    <div class="slider-wrapper">
+      <div class="container slider-container">
+        <FoundersSlider :founders="mockFounders" />
+      </div>
     </div>
   </section>
   <section class="section-border section-margin">
@@ -132,6 +134,9 @@ const mockFounders = [
 </template>
 
 <style scoped lang="scss">
+.slider-wrapper {
+  overflow-x: hidden;
+}
 .container.slider-container {
   background: red;
   overflow-y: visible;
