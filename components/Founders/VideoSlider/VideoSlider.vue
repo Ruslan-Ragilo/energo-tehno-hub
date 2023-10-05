@@ -12,7 +12,7 @@ const hoverId = ref<number | string>(1);
 </script>
 
 <template>
-  <Swiper class="swiper-video" :slides-per-view="'auto'" :space-between="20">
+  <Swiper class="swiper-video" :slides-per-view="'auto'">
     <SwiperSlide
       v-for="slide in slides"
       :key="slide.id"
@@ -25,7 +25,12 @@ const hoverId = ref<number | string>(1);
       @mouseover="hoverId = slide.id"
       @mouseleave="hoverId = 1"
     >
-      <FoundersVideoSliderCard :slide="slide" />
+      <FoundersVideoSliderCard
+        :slide="slide"
+        :class="{
+          active: String(slide.id) === String(hoverId),
+        }"
+      />
     </SwiperSlide>
   </Swiper>
 </template>

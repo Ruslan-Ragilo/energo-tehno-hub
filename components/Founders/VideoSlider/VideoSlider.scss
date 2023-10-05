@@ -2,27 +2,35 @@
   padding: 0 40px;
   height: 316px;
 
-  @include responsive(744) {
-    padding: 0 32px;
-  }
-  @include responsive(375) {
-    padding: 0 16px;
+  @include md {
+    padding: 0;
   }
 }
 
 .swiper-slide-video {
+  margin-right: 20px;
   width: 100%;
   max-width: 130px;
   height: 316px;
 
   transition: all 0.3s ease-in-out;
-
+  filter: grayscale(1);
   border-radius: 20px;
-
   overflow: hidden;
+
+  transition: all 0.3s ease-in-out;
+
+  @include responsive(744) {
+    margin-right: 16px;
+  }
+  @include responsive(375) {
+    margin-right: 14px;
+  }
+
   &:hover,
   :active:not(:focus) {
     max-width: 510px;
+    filter: grayscale(0);
 
     @include responsive(744) {
       max-width: 366px;
@@ -34,7 +42,7 @@
 
   &.active {
     max-width: 510px;
-
+    filter: grayscale(0);
     @include responsive(744) {
       max-width: 366px;
     }

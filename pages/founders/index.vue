@@ -87,37 +87,37 @@ const mockVideos = [
     id: 2,
     img: "images/foundersMock/zavod.jpg",
     title: "Маруся Нижняя",
-    link: "https://www.youtube.com/watch?v=FOLxhT74Vxg",
+    link: "https://www.youtube.com/embed/l-OqVTkmPKU?si=rnXlVJp4josyTT1D",
   },
   {
     id: 3,
     img: "images/foundersMock/zavod.jpg",
     title: "Ротая Сафиру",
-    link: "https://www.youtube.com/watch?v=g8Qav3vIv9s",
+    link: "https://www.youtube.com/embed/VpaGrVlrLNk?si=QZI7gag7oHXygIFC",
   },
   {
     id: 4,
     img: "images/foundersMock/zavod.jpg",
     title: "Вася Пупкин",
-    link: "https://www.youtube.com/watch?v=8AK_iiXD9jA",
+    link: "https://www.youtube.com/embed/-iiuZsG8HRc?si=d70huSegRWl-iiiv",
   },
   {
     id: 5,
     img: "images/foundersMock/zavod.jpg",
     title: "Бандитский Петербург",
-    link: "https://www.youtube.com/watch?v=XucJoMOkrvQ",
+    link: "https://www.youtube.com/embed/XucJoMOkrvQ?si=4Zg1XJfh21oTp-1v",
   },
   {
     id: 6,
     img: "images/foundersMock/zavod.jpg",
     title: "Космос Витальевич",
-    link: "https://www.youtube.com/watch?v=VpaGrVlrLNk",
+    link: "https://www.youtube.com/embed/8AK_iiXD9jA?si=CwD7T6T-EPZ83msD",
   },
   // {
   // id: 7,
   //   img: "images/foundersMock/zavod.jpg",
   //   title: "Саша Белый",
-  //   link: "https://www.youtube.com/watch?v=l-OqVTkmPKU",
+  //   link: "https://www.youtube.com/embed/FOLxhT74Vxg?si=fuu9tiDqXL__cPkr",
   // },
 ];
 </script>
@@ -127,8 +127,10 @@ const mockVideos = [
     <div class="container">
       <FoundersHero />
     </div>
-    <div class="container">
-      <FoundersVideoSlider :slides="mockVideos" />
+    <div class="slider-wrapper">
+      <div class="container slider-container">
+        <FoundersVideoSlider :slides="mockVideos" />
+      </div>
     </div>
   </section>
   <section class="section-border section-margin">
@@ -175,6 +177,7 @@ const mockVideos = [
       />
     </div>
   </section>
+  <Teleport to="body"><ModalYoutube /></Teleport>
 </template>
 
 <style scoped lang="scss">

@@ -1,6 +1,4 @@
 <script setup>
-import { useModalYoutubeStore } from "@/stores/modalYoutubeStore";
-
 const store = useModalYoutubeStore();
 
 const videoLink = "https://www.youtube.com/embed/zuNSxr2azNE";

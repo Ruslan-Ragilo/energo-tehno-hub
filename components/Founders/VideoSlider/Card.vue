@@ -6,6 +6,8 @@ interface Slide {
 }
 
 defineProps<{ slide: Slide }>();
+
+const store = useModalYoutubeStore();
 </script>
 
 <template>
@@ -14,7 +16,19 @@ defineProps<{ slide: Slide }>();
     :style="{
       backgroundImage: `url(${slide.img})`,
     }"
-  ></div>
+  >
+    <div class="description">
+      <CommonText
+        size="ml"
+        theme="white"
+        :text="slide.title"
+        className="desciption-text"
+      />
+      <div class="play-button" @click="store.openModal(slide.link)">
+        <CommonPlayButton :isPlaying="store.isModalOpen" />
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
