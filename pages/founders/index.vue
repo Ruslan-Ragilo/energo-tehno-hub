@@ -106,10 +106,10 @@ const mockFounders = [
     </div>
   </section>
   <section class="section-border section-margin">
-    <div class="container">
-      <CommonSectionHeader headingText="Наши фаундеры" />
-    </div>
     <div class="slider-wrapper">
+      <div class="container">
+        <CommonSectionHeader headingText="Наши фаундеры" />
+      </div>
       <div class="container slider-container">
         <FoundersSlider :founders="mockFounders" />
       </div>
