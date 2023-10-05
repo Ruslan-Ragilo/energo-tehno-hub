@@ -137,7 +137,6 @@ const mockFounders = [
   overflow-y: visible;
 }
 .container.slider-container {
-  background: greenyellow;
   overflow-x: hidden;
   overflow-y: visible;
   @include lg {
