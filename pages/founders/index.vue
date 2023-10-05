@@ -78,12 +78,15 @@ const mockFounders = [
 </script>
 
 <template>
-  <div class="container">
-    <section class="hero-wrapper">
+  <section class="hero-wrapper">
+    <div class="container">
       <FoundersHero />
-      <!-- <FoundersVideoSlider /> -->
-    </section>
-    <section class="section-border section-margin">
+    </div>
+
+    <!-- <FoundersVideoSlider /> -->
+  </section>
+  <section class="section-border section-margin">
+    <div class="container">
       <CommonSectionHeader headingText="Фаундеры «Энерготехнохаба Петербург»" />
       <div class="cards-wrapper">
         <FoundersCard
@@ -95,30 +98,48 @@ const mockFounders = [
           :isLast="index + 1 === mockCards.length && (index + 1) % 2 === 0"
         />
       </div>
-    </section>
-    <section class="section-margin">
+    </div>
+  </section>
+  <section class="section-margin">
+    <div class="container">
       <FoundersBanner />
-    </section>
-    <section class="section-border section-margin">
+    </div>
+  </section>
+  <section class="section-border section-margin">
+    <div class="container">
       <CommonSectionHeader headingText="Наши фаундеры" />
+    </div>
+    <div class="container slider-container">
       <FoundersSlider :founders="mockFounders" />
-    </section>
-    <section class="section-border section-margin">
+    </div>
+  </section>
+  <section class="section-border section-margin">
+    <div class="container">
       <CommonSectionHeader
         headingText="Как стать фаундером «Энерготехнохаба Петербург»?"
       />
       <!-- <FoundersBreakPoints /> -->
-    </section>
-    <section class="section-margin">
+    </div>
+  </section>
+  <section class="section-margin">
+    <div class="container">
       <SharedSubmitForm
         title1="Станьте фаундером в"
         title2="«Энерготехнохабе Петербург»"
       />
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <style scoped lang="scss">
+.container.slider-container {
+  background: red;
+  overflow-y: visible;
+  overflow-x: hidden;
+  @include lg {
+    overflow-x: visible;
+  }
+}
 .hero-wrapper {
   margin-bottom: 100px;
 
