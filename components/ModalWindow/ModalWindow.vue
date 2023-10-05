@@ -80,8 +80,8 @@
         <template v-if="store.showConfirmation">
           <CommonXCross class="modal-xcross" @click="store.closeModal" />
           <RequestConfirmation
-            :isError="store.isError"
-            :isSuccess="store.isSuccess"
+            :is-error="store.isError"
+            :is-success="store.isSuccess"
           />
         </template>
       </div>
