@@ -1,5 +1,6 @@
 .swiper {
   padding: 20px 0;
+  overflow-y: visible;
   overflow-x: hidden;
   @include lg {
     overflow-x: visible;
