@@ -24,6 +24,7 @@ const hoverId = ref<number | string>(1);
       ]"
       @mouseover="hoverId = slide.id"
       @mouseleave="hoverId = 1"
+      @click="hoverId = slide.id"
     >
       <FoundersVideoSliderCard
         :slide="slide"
