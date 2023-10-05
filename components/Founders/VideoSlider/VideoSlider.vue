@@ -8,7 +8,7 @@ interface Slide {
 
 defineProps<{ slides: Slide[] }>();
 
-const hoverId = ref<number | string>(1);
+const activeID = ref<number | string>(1);
 </script>
 
 <template>
@@ -19,17 +19,16 @@ const hoverId = ref<number | string>(1);
       :class="[
         'swiper-slide-video',
         {
-          active: String(slide.id) === String(hoverId),
+          active: String(slide.id) === String(activeID),
         },
       ]"
-      @mouseover="hoverId = slide.id"
-      @mouseleave="hoverId = 1"
-      @click="hoverId = slide.id"
+      @mouseover="activeID = slide.id"
+      @click="activeID = slide.id"
     >
       <FoundersVideoSliderCard
         :slide="slide"
         :class="{
-          active: String(slide.id) === String(hoverId),
+          active: String(slide.id) === String(activeID),
         }"
       />
     </SwiperSlide>

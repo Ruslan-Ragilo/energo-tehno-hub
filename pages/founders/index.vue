@@ -113,12 +113,12 @@ const mockVideos = [
     title: "Космос Витальевич",
     link: "https://www.youtube.com/embed/8AK_iiXD9jA?si=CwD7T6T-EPZ83msD",
   },
-  // {
-  // id: 7,
-  //   img: "images/foundersMock/zavod.jpg",
-  //   title: "Саша Белый",
-  //   link: "https://www.youtube.com/embed/FOLxhT74Vxg?si=fuu9tiDqXL__cPkr",
-  // },
+  {
+    id: 7,
+    img: "images/foundersMock/zavod.jpg",
+    title: "Саша Белый",
+    link: "https://www.youtube.com/embed/FOLxhT74Vxg?si=fuu9tiDqXL__cPkr",
+  },
 ];
 </script>
 
