@@ -3,7 +3,7 @@
     <div v-if="store.isModalOpen" class="modal-mask" @click="store.closeModal">
       <div class="modal-container" @click.stop>
         <iframe
-          src="https://www.youtube.com/embed/zuNSxr2azNE"
+          :src="store.link"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

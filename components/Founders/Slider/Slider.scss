@@ -9,5 +9,9 @@
   width: 100%;
   height: 100%;
   max-width: 433px;
-  min-height: 540px;
+  height: 540px;
+  @include responsive(744) {
+    height: 406px;
+    max-width: 333px;
+  }
 }

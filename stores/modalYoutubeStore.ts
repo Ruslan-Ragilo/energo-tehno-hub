@@ -3,17 +3,22 @@
 export const useModalYoutubeStore = defineStore("modal-youtube-store", () => {
   const isModalOpen = ref<boolean>(false);
 
-  function openModal() {
+  const link = ref("");
+
+  function openModal(videoLink) {
+    link.value = videoLink;
     isModalOpen.value = true;
     document.body.classList.add("modal-open");
   }
 
   function closeModal() {
     isModalOpen.value = false;
+    link.value = "";
     document.body.classList.remove("modal-open");
   }
 
   return {
+    link,
     isModalOpen,
     openModal,
     closeModal,

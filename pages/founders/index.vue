@@ -75,6 +75,51 @@ const mockFounders = [
     ],
   },
 ];
+
+const mockVideos = [
+  {
+    id: 1,
+    img: "images/foundersMock/zavod.jpg",
+    title: "Александр Никифоров",
+    link: "https://www.youtube.com/embed/zuNSxr2azNE",
+  },
+  {
+    id: 2,
+    img: "images/foundersMock/zavod.jpg",
+    title: "Маруся Нижняя",
+    link: "https://www.youtube.com/watch?v=FOLxhT74Vxg",
+  },
+  {
+    id: 3,
+    img: "images/foundersMock/zavod.jpg",
+    title: "Ротая Сафиру",
+    link: "https://www.youtube.com/watch?v=g8Qav3vIv9s",
+  },
+  {
+    id: 4,
+    img: "images/foundersMock/zavod.jpg",
+    title: "Вася Пупкин",
+    link: "https://www.youtube.com/watch?v=8AK_iiXD9jA",
+  },
+  {
+    id: 5,
+    img: "images/foundersMock/zavod.jpg",
+    title: "Бандитский Петербург",
+    link: "https://www.youtube.com/watch?v=XucJoMOkrvQ",
+  },
+  {
+    id: 6,
+    img: "images/foundersMock/zavod.jpg",
+    title: "Космос Витальевич",
+    link: "https://www.youtube.com/watch?v=VpaGrVlrLNk",
+  },
+  // {
+  // id: 7,
+  //   img: "images/foundersMock/zavod.jpg",
+  //   title: "Саша Белый",
+  //   link: "https://www.youtube.com/watch?v=l-OqVTkmPKU",
+  // },
+];
 </script>
 
 <template>
@@ -82,8 +127,9 @@ const mockFounders = [
     <div class="container">
       <FoundersHero />
     </div>
-
-    <!-- <FoundersVideoSlider /> -->
+    <div class="container">
+      <FoundersVideoSlider :slides="mockVideos" />
+    </div>
   </section>
   <section class="section-border section-margin">
     <div class="container">

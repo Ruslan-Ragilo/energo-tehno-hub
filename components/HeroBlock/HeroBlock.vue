@@ -3,9 +3,7 @@ import { useModalYoutubeStore } from "@/stores/modalYoutubeStore";
 
 const store = useModalYoutubeStore();
 
-// const handlePlayerClick = () => {
-//   isPlaying.value = !isPlaying.value;
-// };
+const videoLink = "https://www.youtube.com/embed/zuNSxr2azNE";
 </script>
 
 <template>
@@ -55,7 +53,7 @@ const store = useModalYoutubeStore();
           «Место, где верят в твои идеи» с резидентами «Энерготехнохаба
           Петербург»
         </p>
-        <div class="play-button" @click="store.openModal">
+        <div class="play-button" @click="store.openModal(videoLink)">
           <CommonPlayButton :isPlaying="store.isModalOpen" />
         </div>
       </div>

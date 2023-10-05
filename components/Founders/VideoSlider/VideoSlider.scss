@@ -1,0 +1,45 @@
+.swiper-video {
+  padding: 0 40px;
+  height: 316px;
+
+  @include responsive(744) {
+    padding: 0 32px;
+  }
+  @include responsive(375) {
+    padding: 0 16px;
+  }
+}
+
+.swiper-slide-video {
+  width: 100%;
+  max-width: 130px;
+  height: 316px;
+
+  transition: all 0.3s ease-in-out;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+  &:hover,
+  :active:not(:focus) {
+    max-width: 510px;
+
+    @include responsive(744) {
+      max-width: 366px;
+    }
+    @include responsive(375) {
+      max-width: 330px;
+    }
+  }
+
+  &.active {
+    max-width: 510px;
+
+    @include responsive(744) {
+      max-width: 366px;
+    }
+    @include responsive(375) {
+      max-width: 330px;
+    }
+  }
+}
