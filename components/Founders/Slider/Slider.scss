@@ -1,8 +1,8 @@
 .swiper {
   padding: 20px 0;
-  overflow-y: visible;
+  overflow-x: hidden;
   @include lg {
-    overflow: visible;
+    overflow-x: visible;
   }
 }
 .swiper-slide {
