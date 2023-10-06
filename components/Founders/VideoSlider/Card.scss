@@ -30,6 +30,15 @@
     padding: 15px;
   }
 
+  @include responsive(480) {
+    opacity: 1;
+  }
+
+  &:hover,
+  :active:not(:focus) {
+    opacity: 1;
+  }
+
   & .play-button {
     border: none;
     outline: none;

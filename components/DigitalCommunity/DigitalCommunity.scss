@@ -1,7 +1,4 @@
 .section {
-  padding-top: 40px;
-  border-top: 1px solid #dcdcdc;
-
   margin-bottom: 140px;
 
   @include lg {
@@ -21,12 +18,12 @@
     &::before {
       float: left;
       padding-top: 56.25%;
-      content: '';
+      content: "";
     }
 
     &::after {
       display: block;
-      content: '';
+      content: "";
       clear: both;
     }
   }
@@ -37,12 +34,12 @@
       &::before {
         float: left;
         padding-top: calc((5 / 3) * 100%);
-        content: '';
+        content: "";
       }
 
       &::after {
         display: block;
-        content: '';
+        content: "";
         clear: both;
       }
     }
@@ -54,12 +51,12 @@
       &::before {
         float: left;
         padding-top: calc((3 / 1) * 100%);
-        content: '';
+        content: "";
       }
 
       &::after {
         display: block;
-        content: '';
+        content: "";
         clear: both;
       }
     }
@@ -77,10 +74,10 @@
   display: grid;
   grid-gap: 20px;
   grid-template-areas:
-    'news . events events'
-    '. contacts events events'
-    'chatBot . community digest'
-    'telegram telegram . digest';
+    "news . events events"
+    ". contacts events events"
+    "chatBot . community digest"
+    "telegram telegram . digest";
 
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
@@ -92,11 +89,11 @@
     grid-gap: 14px;
 
     grid-template-areas:
-      'news events events'
-      '. events events'
-      'digest contacts .'
-      'digest . community'
-      'chatBot telegram telegram';
+      "news events events"
+      ". events events"
+      "digest contacts ."
+      "digest . community"
+      "chatBot telegram telegram";
   }
 
   @include md {
@@ -105,22 +102,22 @@
     grid-gap: 12px;
 
     grid-template-areas:
-      'news contacts'
-      'news contacts'
-      'news contacts'
-      'events events'
-      'events events'
-      'events events'
-      'events events'
-      'digest digest'
-      'digest digest'
-      'digest digest'
-      'chatBot community'
-      'chatBot community'
-      'chatBot community'
-      'telegram telegram'
-      'telegram telegram'
-      'telegram telegram';
+      "news contacts"
+      "news contacts"
+      "news contacts"
+      "events events"
+      "events events"
+      "events events"
+      "events events"
+      "digest digest"
+      "digest digest"
+      "digest digest"
+      "chatBot community"
+      "chatBot community"
+      "chatBot community"
+      "telegram telegram"
+      "telegram telegram"
+      "telegram telegram";
   }
 }
 

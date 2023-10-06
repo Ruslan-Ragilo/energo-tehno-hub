@@ -197,12 +197,23 @@ const mockVideos = [
   height: fit-content;
   padding: 0 40px 40px;
   margin-bottom: 0;
+
+  @include md {
+    padding: 10px 0;
+  }
 }
 .hero-wrapper-container {
   margin: 0 auto;
 
   padding: 0 50px;
   max-width: 1440px;
+  @include lg {
+    padding: 0 32px;
+  }
+
+  @include md {
+    padding: 0 16px;
+  }
 }
 .hero-wrapper {
   margin-bottom: 100px;
@@ -226,8 +237,6 @@ const mockVideos = [
 }
 
 .section-border {
-  padding-top: 40px;
-  border-top: 1px solid #dcdcdc;
 }
 
 .section-margin {

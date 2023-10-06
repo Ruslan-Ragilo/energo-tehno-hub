@@ -2,6 +2,15 @@
   display: grid;
   grid-template-columns: 2fr 3.7fr;
 
+  padding-top: 40px;
+  border-top: 1px solid #dcdcdc;
+  @include lg {
+    padding-top: 32px;
+  }
+  @include md {
+    padding-top: 18px;
+  }
+
   margin-bottom: 60px;
 
   @include lg {
