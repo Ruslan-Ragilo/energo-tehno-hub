@@ -1,39 +1,6 @@
-<template>
-  <div class="container">
-    <SharedHero
-      title="Технологические вызовы"
-      text="Актуальные отраслевые задачи, решение которых — потенциальный бизнес"
-      class="challenges-hero"
-    />
-    <ChallengesSearch />
-    <CommonText
-      :text="`${mockData.length} вызовов`"
-      size="xl"
-      theme="dark"
-      weight="normal"
-      class="challenges-count"
-    />
-    <div class="card-list">
-      <ChallengesCard
-        v-for="card in mockData"
-        :key="card.title"
-        :title="card.title"
-        :text="card.text"
-        :label="card.label"
-        :onClick="() => handleLabelClick(card)"
-      />
-    </div>
-  </div>
-  <Teleport to="body">
-    <ModalWithSlot>
-      <div @click.stop>{{ selectedCard?.title }}</div>
-    </ModalWithSlot>
-  </Teleport>
-</template>
-
 <script setup>
 useHead({
-  title: "Технологические вызовы",
+  title: "Технологические вызовы | Энерготехнохаб Петербург",
   meta: [
     {
       name: "description",
@@ -100,6 +67,39 @@ const mockData = [
   },
 ];
 </script>
+
+<template>
+  <div class="container">
+    <SharedHero
+      title="Технологические вызовы"
+      text="Актуальные отраслевые задачи, решение которых — потенциальный бизнес"
+      class="challenges-hero"
+    />
+    <ChallengesSearch />
+    <CommonText
+      :text="`${mockData.length} вызовов`"
+      size="xl"
+      theme="dark"
+      weight="normal"
+      class="challenges-count"
+    />
+    <div class="card-list">
+      <ChallengesCard
+        v-for="card in mockData"
+        :key="card.title"
+        :title="card.title"
+        :text="card.text"
+        :label="card.label"
+        :onClick="() => handleLabelClick(card)"
+      />
+    </div>
+  </div>
+  <Teleport to="body">
+    <ModalWithSlot>
+      <div @click.stop>{{ selectedCard?.title }}</div>
+    </ModalWithSlot>
+  </Teleport>
+</template>
 
 <style lang="scss" scoped>
 .challenges-hero {

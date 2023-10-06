@@ -1,14 +1,3 @@
-<template>
-  <div class="container">
-    <HeroBlock />
-    <EnergoTechnoHub />
-    <EcoSystem />
-    <ShowCase />
-    <DigitalCommunity />
-    <Teleport to="body"><ModalYoutube /></Teleport>
-  </div>
-</template>
-
 <script setup>
 useHead({
   title: "Энерготехнохаб Петербург",
@@ -21,6 +10,17 @@ useHead({
   ],
 });
 </script>
+
+<template>
+  <div class="container">
+    <HeroBlock />
+    <EnergoTechnoHub />
+    <EcoSystem />
+    <ShowCase />
+    <DigitalCommunity />
+    <Teleport to="body"><ModalYoutube /></Teleport>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .container {
