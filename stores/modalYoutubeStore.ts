@@ -8,13 +8,13 @@ export const useModalYoutubeStore = defineStore("modal-youtube-store", () => {
   function openModal(videoLink) {
     link.value = videoLink;
     isModalOpen.value = true;
-    document.body.classList.add("modal-open");
+    document?.body?.classList?.add("modal-open");
   }
 
   function closeModal() {
     isModalOpen.value = false;
     link.value = "";
-    document.body.classList.remove("modal-open");
+    document?.body?.classList?.remove("modal-open");
   }
 
   return {

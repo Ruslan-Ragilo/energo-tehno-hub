@@ -2,13 +2,12 @@
 <script setup>
 import "aos/dist/aos.css";
 import AOS from "aos";
-import { useFormPageStore } from "@/stores/formPage";
-import { useModalStore } from "@/stores/modalStore";
 
 onMounted(() => {
   AOS.init();
 });
 
+const menuStore = useMobMenu();
 const formPageStore = useFormPageStore();
 const modalStore = useModalStore();
 
@@ -18,7 +17,8 @@ watch(
   () => route.path,
   () => {
     formPageStore.resetForm();
-    modalStore.resetForm();
+    modalStore.closeModal();
+    menuStore.closeMenu();
   },
 );
 </script>

@@ -9,12 +9,12 @@ export const useModalWithSlotStore = defineStore(
 
     function openModal() {
       isModalOpen.value = true;
-      document.body.classList.add("modal-open");
+      document?.body?.classList?.add("modal-open");
     }
 
     function closeModal() {
       isModalOpen.value = false;
-      document.body.classList.remove("modal-open");
+      document?.body?.classList?.remove("modal-open");
     }
 
     return {

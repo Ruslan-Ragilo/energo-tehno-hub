@@ -67,14 +67,14 @@ export const useModalStore = defineStore("modal-store", () => {
     resetForm();
     commentPlaceholder.value = comment;
     isModalOpen.value = true;
-    document.body.classList.add("modal-open");
+    document?.body?.classList?.add("modal-open");
   }
 
   function closeModal() {
     resetForm();
 
     isModalOpen.value = false;
-    document.body.classList.remove("modal-open");
+    document?.body?.classList?.remove("modal-open");
   }
 
   async function submitModal() {

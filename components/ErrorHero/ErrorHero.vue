@@ -5,12 +5,16 @@
         Совсем скоро эта <br />
         страница появится <br />в доступе
       </h1>
-      <CommonButtonCircle type="link" to="/" text="Перейти на главную" />
+      <CommonButtonCircle
+        text="Перейти на главную"
+        type="button"
+        :onClick="() => clearError({ redirect: '/' })"
+      />
     </div>
     <div class="hero-right"></div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-@import 'ErrorHero.scss';
+@import "ErrorHero.scss";
 </style>
