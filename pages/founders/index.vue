@@ -123,16 +123,16 @@ const mockVideos = [
 </script>
 
 <template>
-  <section class="hero-wrapper">
-    <div class="container">
+  <div class="hero-wrapper-container">
+    <section class="hero-wrapper">
       <FoundersHero />
-    </div>
-    <div class="slider-wrapper">
-      <div class="container slider-container">
-        <FoundersVideoSlider :slides="mockVideos" />
+      <div class="slider-wrapper">
+        <div class="container slider-container padding40">
+          <FoundersVideoSlider :slides="mockVideos" />
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
   <section class="section-border section-margin">
     <div class="container">
       <CommonSectionHeader headingText="Фаундеры «Энерготехнохаба Петербург»" />
@@ -191,6 +191,18 @@ const mockVideos = [
   @include lg {
     overflow-x: visible;
   }
+}
+
+.container.padding40 {
+  height: fit-content;
+  padding: 0 40px 40px;
+  margin-bottom: 0;
+}
+.hero-wrapper-container {
+  margin: 0 auto;
+
+  padding: 0 50px;
+  max-width: 1440px;
 }
 .hero-wrapper {
   margin-bottom: 100px;
