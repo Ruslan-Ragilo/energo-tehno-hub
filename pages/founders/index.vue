@@ -133,7 +133,7 @@ const mockVideos = [
       </div>
     </section>
   </div>
-  <section class="section-border section-margin">
+  <section class="section-margin">
     <div class="container">
       <CommonSectionHeader headingText="Фаундеры «Энерготехнохаба Петербург»" />
       <div class="cards-wrapper">
@@ -153,7 +153,7 @@ const mockVideos = [
       <FoundersBanner />
     </div>
   </section>
-  <section class="section-border section-margin">
+  <section class="section-margin">
     <div class="slider-wrapper">
       <div class="container slider-container">
         <CommonSectionHeader headingText="Наши фаундеры" />
@@ -161,7 +161,7 @@ const mockVideos = [
       </div>
     </div>
   </section>
-  <section class="section-border section-margin">
+  <section class="section-margin">
     <div class="container">
       <CommonSectionHeader
         headingText="Как стать фаундером «Энерготехнохаба Петербург»?"
@@ -234,9 +234,6 @@ const mockVideos = [
 
     box-shadow: none;
   }
-}
-
-.section-border {
 }
 
 .section-margin {

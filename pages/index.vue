@@ -23,5 +23,18 @@ useHead({
 </script>
 
 <style lang="scss" scoped>
-@import "index.scss";
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 50px;
+  margin-bottom: 30px;
+
+  @include lg {
+    padding: 0 32px;
+  }
+
+  @include md {
+    padding: 0 16px;
+  }
+}
 </style>
