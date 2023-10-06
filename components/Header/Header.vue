@@ -119,6 +119,7 @@ const handleBurgerJoinButton = () => {
           <CommonEllipsisButton
             text="Присоединиться"
             :on-click="handleBurgerJoinButton"
+            :style="{ marginBottom: '30px' }"
           />
         </div>
       </teleport>
