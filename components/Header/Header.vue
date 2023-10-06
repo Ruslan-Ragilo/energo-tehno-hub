@@ -101,22 +101,27 @@ const handleBurgerJoinButton = () => {
         </div>
       </nav>
 
-      <div :class="['mob-nav', { ['active']: mobMenuStore.isMobMenuOpen }]">
-        <div class="nav-wrapper">
-          <FooterColumn heading="Экосистема" :links="getRoutes().ecosystem" />
-          <FooterColumn
-            heading="Сервисы"
-            :links="[]"
-            @click="() => router.push('/services')"
+      <teleport to="body">
+        <div :class="['mob-nav', { ['active']: mobMenuStore.isMobMenuOpen }]">
+          <div class="nav-wrapper">
+            <FooterColumn heading="Экосистема" :links="getRoutes().ecosystem" />
+            <FooterColumn
+              heading="Сервисы"
+              :links="[]"
+              @click="() => router.push('/services')"
+            />
+            <FooterColumn
+              heading="Технологии"
+              :links="getRoutes().technology"
+            />
+            <FooterColumn heading="Еще" :links="getRoutes().more" />
+          </div>
+          <CommonEllipsisButton
+            text="Присоединиться"
+            :on-click="handleBurgerJoinButton"
           />
-          <FooterColumn heading="Технологии" :links="getRoutes().technology" />
-          <FooterColumn heading="Еще" :links="getRoutes().more" />
         </div>
-        <CommonEllipsisButton
-          text="Присоединиться"
-          :on-click="handleBurgerJoinButton"
-        />
-      </div>
+      </teleport>
 
       <div class="header-right">
         <!-- <CommonLangSwitcher /> -->

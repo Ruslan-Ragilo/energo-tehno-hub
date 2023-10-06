@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 
-export const useMobMenu = defineStore("modal-youtube-store", () => {
+export const useMobMenu = defineStore("mobile-menu", () => {
   const isMobMenuOpen = ref<boolean>(false);
 
   function openMenu() {
