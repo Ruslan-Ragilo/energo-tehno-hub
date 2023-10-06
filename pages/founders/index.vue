@@ -150,6 +150,9 @@ const mockVideos = [
       <div class="cards-wrapper">
         <FoundersCard
           v-for="(card, index) in mockCards"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="100"
           :key="card.text"
           :text="card.text"
           :index="index"

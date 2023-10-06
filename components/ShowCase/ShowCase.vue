@@ -6,7 +6,11 @@
         titleText="Узнайте, какие технологии интересны отрасли"
       >
         <div class="circle-button">
-          <CommonButtonCircle type="link" to="/services" text="Смотреть все задачи" />
+          <CommonButtonCircle
+            type="link"
+            to="/services"
+            text="Смотреть все задачи"
+          />
         </div>
       </CommonSectionHeader>
       <div class="wrapper-cards">
@@ -43,5 +47,5 @@
 </template>
 
 <style scoped lang="scss">
-@import 'ShowCase.scss';
+@import "ShowCase.scss";
 </style>

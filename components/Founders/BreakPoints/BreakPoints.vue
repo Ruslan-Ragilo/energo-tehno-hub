@@ -1,9 +1,7 @@
-<template">
-  <div>
-
-  </div>
+<template>
+  <div></div>
 </template>
 
 <style lang="scss" scoped>
- @import './BreakPoints.scss'
+@import "./BreakPoints.scss";
 </style>
