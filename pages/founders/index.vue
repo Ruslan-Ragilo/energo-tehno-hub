@@ -50,7 +50,7 @@ const mockFounders = [
       "Технология Предприниматель, основатель компании К-ПЛЮС, аспирантка Сколтеха",
     title: "Стартап",
     text: "Производство калий-ионных аккумуляторов",
-    experts: ["/images/foundersMock/guy.jpg", "/images/foundersMock/guy.jpg"],
+    experts: [],
   },
   {
     id: 3,
@@ -180,7 +180,7 @@ const mockVideos = [
       <CommonSectionHeader
         headingText="Как стать фаундером «Энерготехнохаба Петербург»?"
       />
-      <!-- <FoundersBreakPoints /> -->
+      <FoundersBreakPoints />
     </div>
   </section>
   <section class="section-margin">

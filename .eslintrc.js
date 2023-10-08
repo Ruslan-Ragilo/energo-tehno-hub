@@ -5,20 +5,18 @@ module.exports = {
     node: true,
   },
   parserOptions: {
-    parser: '@typescript-eslint/parser',
+    parser: "@typescript-eslint/parser",
   },
   extends: [
-    'plugin:@typescript-eslint/recommended',
-    'plugin:vue/vue3-recommended',
-    'eslint:recommended',
+    "plugin:@typescript-eslint/recommended",
+    "plugin:vue/vue3-recommended",
+    "eslint:recommended",
   ],
-  plugins: [
-    'vue',
-    '@typescript-eslint',
-  ],
+  plugins: ["vue", "@typescript-eslint"],
   rules: {
     // Добавьте правила, если необходимо
     "no-unused-vars": "error",
+    "no-undef": "off",
     "object-curly-spacing": ["error", "always"],
     "comma-dangle": ["error", "always-multiline"],
     "vue/multi-word-component-names": ["off"],
