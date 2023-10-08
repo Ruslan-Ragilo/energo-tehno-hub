@@ -13,8 +13,7 @@
   @include md {
     padding: 0 37px;
 
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 52px;
   }
 }
