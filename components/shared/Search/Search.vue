@@ -38,10 +38,10 @@ const updateSearch = (e) => {
     <div v-if="isMenuOpen" class="filters">
       <label v-for="box in filters" :key="box" :for="box" class="cbx-container">
         <input
+          v-model="store.checkedFilters"
           type="checkbox"
           :id="box"
           :value="box"
-          v-model="store.checkedFilters"
         />
         <span class="checkmark"></span>
         <p class="check-text">{{ box }}</p>
