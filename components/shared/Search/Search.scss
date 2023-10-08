@@ -1,5 +1,15 @@
 .search-wrapper {
+  position: relative;
+
   margin-bottom: 80px;
+  padding: 21px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #ffffff;
+  border-radius: 10px;
 
   @include lg {
     margin-bottom: 60px;
@@ -8,4 +18,138 @@
   @include md {
     margin-bottom: 50px;
   }
+}
+
+.search {
+  flex-grow: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+
+  &__input {
+    width: 100%;
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+  }
+}
+
+.filter {
+  flex-grow: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  width: fit-content;
+  padding-left: 20px;
+
+  border-left: 1px solid #f0f0f0;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.filters {
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+
+  transform: translateY(100%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+// CheckBox
+
+/* Customize the label (the container) */
+.cbx-container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  // height: 100%;
+  height: 21px;
+  width: 100%;
+
+  font-size: 16px;
+}
+
+/* Hide the browser's default checkbox */
+.cbx-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 3.5px;
+  left: 0;
+  height: 14px;
+  width: 14px;
+  background-color: transparent;
+  border: solid #cdcdcd 1px;
+  border-radius: 4px;
+}
+
+/* When the checkbox is checked, add a blue background */
+.cbx-container input:checked ~ .checkmark {
+  background-color: $dark;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.cbx-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.cbx-container input:checked ~ .checkmark {
+  border: solid $dark 1px;
+}
+
+/* Style the checkmark/indicator */
+.cbx-container .checkmark:after {
+  left: 4px;
+  top: 1px;
+  width: 3px;
+  height: 6px;
+  border: solid white;
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+}
+
+.check-text {
+  position: absolute;
+  top: 2px;
+  left: 24px;
+}
+
+.check-empty-btn {
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
 }

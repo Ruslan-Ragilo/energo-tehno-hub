@@ -19,6 +19,16 @@ const handleLabelClick = (card) => {
   modalStore.openModal();
 };
 
+const searchStore = useSearchStore();
+
+const mockSearchFilters = [
+  "Альтернативная энергетика",
+  "Нефтехимия",
+  "Теплоомбен",
+  "КИПы",
+  "СПГ",
+];
+
 const mockData = [
   {
     title: "Водородная энергетика",
@@ -75,7 +85,15 @@ const mockData = [
       text="Актуальные отраслевые задачи, решение которых — потенциальный бизнес"
       class="challenges-hero"
     />
-    <ChallengesSearch />
+    <SharedSearch
+      v-model:searchValue="searchStore.searchInput"
+      :filters="mockSearchFilters"
+      placeholder="Поиск"
+      :isMenuOpen="searchStore.iMenuOpen"
+      :onFiltersClick="searchStore.toggleMenu"
+      :onEmptyFilters="searchStore.emptyFilters"
+      :store="searchStore"
+    />
     <CommonText
       :text="`${mockData.length} вызовов`"
       size="xl"
