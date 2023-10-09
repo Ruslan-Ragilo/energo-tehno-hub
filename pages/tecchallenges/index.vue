@@ -81,7 +81,7 @@ const mockData = [
 <template>
   <div class="container">
     <SharedHero
-      title="Технологические вызовы"
+      title="Технологические вызовы 1"
       text="Актуальные отраслевые задачи, решение которых — потенциальный бизнес"
       class="challenges-hero"
     />
