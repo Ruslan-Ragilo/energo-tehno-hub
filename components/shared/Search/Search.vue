@@ -28,6 +28,7 @@ const updateSearch = (e) => {
         :placeholder="placeholder"
         :value="searchValue"
         @input="updateSearch"
+        autocomplete="on"
       />
     </div>
     <div class="filter" @click="onFiltersClick">
