@@ -28,7 +28,6 @@ const updateSearch = (e) => {
         :placeholder="placeholder"
         :value="searchValue"
         @input="updateSearch"
-        autocorrect="on"
       />
     </div>
     <div class="filter" @click="onFiltersClick">
